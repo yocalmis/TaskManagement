@@ -1,0 +1,82 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Toplu Sms";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+    List<GorevYoneticisi.Models.IdTextPair> musteriList = (List<GorevYoneticisi.Models.IdTextPair>)Model[0];
+    GorevYoneticisi.Models.smsler mail = (GorevYoneticisi.Models.smsler)Model[1];
+    List<int> musteriIdList = (List<int>)Model[2];
+
+    string isDisabled = "disabled";
+    string isHidden = "hidden";
+    if (mail == null)
+    {
+        mail = new GorevYoneticisi.Models.smsler();
+        isDisabled = "";
+        isHidden = "";
+    }
+
+    string isAllChecked = "";
+    if (musteriList.Count == musteriIdList.Count)
+    {
+        isAllChecked = "checked";
+    }
+
+    int smsSayisi = (int)Model[3];
+}
+
+<h2>Toplu Sms @Html.Raw("(SMS Hakkınız : " + smsSayisi + ")")</h2>
+
+<form class="form-default" id="_form">
+    <div class="musteri-list" style="height:400px; overflow:auto;">
+        <div class="item">
+            <input type="checkbox" name="musteriList[]" value="0" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(isAllChecked)>Tümü
+        </div>
+        @foreach (GorevYoneticisi.Models.IdTextPair mstr in musteriList)
+        {
+            <div class="item">
+                <input type="checkbox" name="musteriList[]" value="@mstr.id" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(musteriIdList.Contains(mstr.id) ? "checked" : "")>@Html.Raw(mstr.text)
+            </div>
+        }
+    </div>
+    <div class="clearfix">
+        <div class="item">
+            <div class="lbl">Sms</div>
+            <textarea id="icerik" maxlength="160" name="icerik" placeholder="Sms" @Html.Raw(isDisabled)>@Html.Raw(mail.icerik)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+    });
+    function form_send(form) {
+        loadingAc();
+        $.post('@Url.Action("smsGonderToplu")', form.serialize(), function (data) {
+            loadingKapat();
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+                $('#_form')[0].reset();
+                $('#icerik').val("");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    $(document).on("click", ".musteri-list .item input:checked", function () {
+        if ($(this).val() == 0 && $(this).is(':checked') == true) {
+            $(".musteri-list .item input").prop('checked', true);
+        }
+    });
+</script>

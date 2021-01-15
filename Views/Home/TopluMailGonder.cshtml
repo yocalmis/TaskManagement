@@ -1,0 +1,94 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Toplu Mail";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+    List<GorevYoneticisi.Models.IdTextPair> idTextList = (List<GorevYoneticisi.Models.IdTextPair>)Model[0];
+    GorevYoneticisi.Models.mailler mail = (GorevYoneticisi.Models.mailler)Model[1];
+    List<int> musteriIdList = (List<int>)Model[2];
+
+    string isDisabled = "disabled";
+    string isHidden = "hidden";
+    if (mail == null)
+    {
+        mail = new GorevYoneticisi.Models.mailler();
+        isDisabled = "";
+        isHidden = "";
+    }
+
+    string isAllChecked = "";
+    if (idTextList.Count == musteriIdList.Count)
+    {
+        isAllChecked = "checked";
+    }
+}
+
+<script type="text/javascript" src="~/ckfinder/ckfinder_v1.js"></script>
+<script src="~/ckeditor/ckeditor.js"></script>
+
+<h2>Toplu Mail</h2>
+
+<form class="form-default" id="_form">
+    <div class="musteri-list" style="height:400px; overflow:auto;">
+        <div class="item">
+            <input type="checkbox" name="kullaniciList[]" value="0" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(isAllChecked)>Tümü
+        </div>
+        @foreach (GorevYoneticisi.Models.IdTextPair idt in idTextList)
+        {
+            <div class="item">
+                <input type="checkbox" name="musteriList[]" value="@idt.id" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(musteriIdList.Contains(idt.id) ? "checked" : "")>@Html.Raw(idt.text)
+            </div>
+        }
+    </div>
+    <div class="clearfix">
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Konu</div>
+                <input type="text" name="konu" placeholder="Konu" value="@Html.Raw(mail.konu)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="item">
+            <div class="lbl">Mail</div>
+            <textarea id="icerik" name="icerik" placeholder="Mail" @Html.Raw(isDisabled)>@Html.Raw(mail.icerik)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var editor = CKEDITOR.replace('icerik');
+    CKFinder.SetupCKEditor(editor, '@Url.Content("~/ckfinder/")');
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+    });
+    function form_send(form) {
+        loadingAc();
+        $('#icerik').val(CKEDITOR.instances['icerik'].getData());
+        $.post('@Url.Action("mailGonderToplu")', form.serialize(), function (data) {
+            loadingKapat();
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+                $('#_form')[0].reset();
+                $('#icerik').val("");
+                CKEDITOR.instances['icerik'].setData("");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    $(document).on("click", ".musteri-list .item input:checked", function () {
+        if ($(this).val() == 0 && $(this).is(':checked') == true) {
+            $(".musteri-list .item input").prop('checked', true);
+        }
+    });
+</script>
+

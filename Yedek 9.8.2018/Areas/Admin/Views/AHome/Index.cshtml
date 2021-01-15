@@ -1,0 +1,192 @@
+﻿@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+
+    List<GorevYoneticisi.Models.firma_musavir> fmList = (List<GorevYoneticisi.Models.firma_musavir>)Model[0];
+    List<GorevYoneticisi.Models.kullanicilar> userList = (List<GorevYoneticisi.Models.kullanicilar>)Model[1];
+
+    List<GorevYoneticisi.Models.GorevVeProjeSurecOzetModel> projeSurecGorevList2 = (List<GorevYoneticisi.Models.GorevVeProjeSurecOzetModel>)Model[2];
+}
+
+<h2>Anasayfa</h2>
+
+<div class="row clearfix">
+    <div class="dashboard-tabs" id="dashboard-tab-id">
+        <div class="tab-list">
+            <a class="item active" href="#" data-tab="musteri">Firma/Müşavirler</a>
+            <a class="item" href="#" data-tab="kullanici">Kullanıcılar</a>
+            <a class="item" href="#" data-tab="proje">Proje/Görev/Süreç</a>
+        </div>
+        <div class="list">
+            <div class="tab-cont">
+                <div id="musteri" class="ic-div active">
+                    <ul>
+                        <li>
+                            <span class="baslik1">Tür</span>
+                            <span class="baslik2">İsim</span>
+                        </li>
+                        @{
+                            foreach (GorevYoneticisi.Models.firma_musavir mstr in fmList)
+                            {
+                                <li>
+                                    <a href="#" onclick="musteriProjeleriniGetir(@Html.Raw("'" + mstr.url + "'"),this)" class="clearfix">
+                                        <span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="yazi">@Html.Raw(mstr.firma_adi)</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+                <div id="kullanici" class="ic-div">
+                    <ul>
+                        <li>
+                            <span class="baslik1">Tür</span>
+                            <span class="baslik2">İsim</span>
+                        </li>
+                        @{
+                            foreach (GorevYoneticisi.Models.kullanicilar usr in userList)
+                            {
+                                <li>
+                                    <a href="#" onclick="kullaniciProjeleriniGetir(@Html.Raw("'" + usr.url + "'"),this)" class="clearfix">
+                                        <span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="yazi">@Html.Raw(usr.ad + " " + usr.soyad)</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+                <div id="proje" class="ic-div">
+                    <ul>
+                        <li>
+                            <span class="baslik1">Tür</span>
+                            <span class="baslik2">İsim</span>
+                        </li>
+                        @{
+                            foreach (GorevYoneticisi.Models.GorevVeProjeSurecOzetModel psg in projeSurecGorevList2)
+                            {
+                                <li>
+                                    <a href="#" onclick="projeGorevleriniGetir(@Html.Raw("'" + ((psg.tur == 3) ? psg.url : psg.id.ToString()) + "'"), @psg.tur,this)" class="clearfix">
+                                        <span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="yazi">@Html.Raw(psg.isim)</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="proje-list">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function kullaniciProjeleriniGetir(kullanici_url,a) {
+        $(".dashboard-tabs .list .tab-cont .ic-div ul li a").removeClass("clicked");
+        $(a).addClass("clicked");
+        $.post('@Url.Action("kullaniciProjeGorevleri")', { kullanici_url: kullanici_url }, function (data) {
+            var text = "";
+            text += '<li><span class="baslik1">Tür</span><span class="baslik2">İsim</span><span class="baslik3">Başlama Tarihi</span><span class="baslik4">Bitiş Tarihi</span></li>';
+            if (data.IsSuccess != true) {
+                alert(data.Message);
+            } else {
+                $.each(data['Message'], function () {
+                    console.log(this);
+                    text += '<li>';
+                    if (this.tur == 1) {
+                        text += '<a href="proje/' + this.url + '" class="clearfix">';
+                    } else if (this.tur == 2) {
+                        text += '<a href="surec/' + this.url + '" class="clearfix">';
+                    } else {
+                        text += '<a href="gorev/' + this.url + '" class="clearfix">';
+                    }
+                    text += '<span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>';
+                    text += '<span class="yazi">' + this.isim + '</span>';
+                    text += '<span class="bas-tar">' + this.baslangic_tarihi + '</span>';
+                    text += '<span class="bit-tar">' + this.bitis_tarihi + '</span>';
+                    text += '</a>';
+                    text += '</li>';
+                });
+            }
+            $(".dashboard-tabs .list .proje-list").html(text);
+        });
+    }
+    function musteriProjeleriniGetir(musteri_url, a) {
+        $(".dashboard-tabs .list .tab-cont .ic-div ul li a").removeClass("clicked");
+        $(a).addClass("clicked");
+        $.post('@Url.Action("musteriProjeGorevleri")', { musteriUrl: musteri_url }, function (data) {
+            var text = "";
+            text += '<li><span class="baslik1">Tür</span><span class="baslik2">İsim</span><span class="baslik3">Başlama Tarihi</span><span class="baslik4">Bitiş Tarihi</span></li>';
+            if (data.IsSuccess != true) {
+                alert(data.Message);
+            } else {
+                $.each(data['Message'], function () {
+                    console.log(this);
+                    text += '<li>';
+                    if (this.tur == 1) {
+                        text += '<a href="proje/' + this.url + '" class="clearfix">';
+                    } else if (this.tur == 2) {
+                        text += '<a href="surec/' + this.url + '" class="clearfix">';
+                    } else {
+                        text += '<a href="gorev/' + this.url + '" class="clearfix">';
+                    }
+                    text += '<span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>';
+                    text += '<span class="yazi">'+this.isim+'</span>';
+                    text += '<span class="bas-tar">'+this.baslangic_tarihi+'</span>';
+                    text += '<span class="bit-tar">' + this.bitis_tarihi + '</span>';
+                    text += '</a>';
+                    text += '</li>';
+                });
+            }
+            $(".dashboard-tabs .list .proje-list").html(text);
+        });
+    }
+    function projeGorevleriniGetir(id, tur,a) {
+        //console.log(proje_url);
+        $(".dashboard-tabs .list .tab-cont .ic-div ul li a").removeClass("clicked");
+        $(a).addClass("clicked");
+        if(tur == 1 || tur == 2)//Proje veya Süreç
+        {
+            $.post('@Url.Action("anasayfaProjeGorevleriniGetir")', { id: id }, function (data) {
+                var text = "";
+                text += '<li><span class="baslik1">Tür</span><span class="baslik2">İsim</span><span class="baslik3">Başlama Tarihi</span><span class="baslik4">Bitiş Tarihi</span></li>';
+                if (data.IsSuccess != true) {
+                    alert(data.Message);
+                } else {
+                    $.each(data['Message'], function () {
+                        console.log(this);
+                        text += '<li>';
+                        if (this.tur == 1) {
+                            text += '<a href="proje/' + this.url + '" class="clearfix">';
+                        } else if (this.tur == 2) {
+                            text += '<a href="surec/' + this.url + '" class="clearfix">';
+                        } else {
+                            text += '<a href="gorev/' + this.url + '" class="clearfix">';
+                        }
+                        text += '<span class="icon"><i class="fa fa-plane" aria-hidden="true"></i></span>';
+                        text += '<span class="yazi">' + this.isim + '</span>';
+                        text += '<span class="bas-tar">' + this.baslangic_tarihi + '</span>';
+                        text += '<span class="bit-tar">' + this.bitis_tarihi + '</span>';
+                        text += '</a>';
+                        text += '</li>';
+                    });
+                }
+                $(".dashboard-tabs .list .proje-list").html(text);
+            });
+        }
+        else if (tur == 3)//Görev
+        {
+            window.location.replace("@Html.Raw(GorevYoneticisi.Tools.config.url)" + "Gorev/" + id);
+        }
+    }
+</script>
+
+
+
+

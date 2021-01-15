@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Şifre Sıfırla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.slider = false;
+    string guid = ViewBag.guid;
+}
+<div class="container">
+    <h2>Şifre Sıfırla</h2>
+
+
+    <form class="form-first" id="sifremi_unuttum_form">
+        <input type="text" name="id" value="@Html.Raw(guid)" hidden />
+        <div class="item">
+            <input type="text" name="pwd1" placeholder="Şifre" required />
+        </div>
+        <div class="item">
+            <input type="text" name="pwd2" placeholder="Şifre(Tekrar)" required />
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">Kaydet</button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("header").addClass("ic-sayfa");
+        $("h2").addClass("active");
+
+        $('#sifremi_unuttum_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                sifre_send($(form));
+            }
+        });
+    });
+
+
+    function sifre_send(form) {
+        $.post('@Url.Action("sifreSifirla")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

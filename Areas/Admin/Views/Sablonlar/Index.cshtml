@@ -1,0 +1,51 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Şablonlar";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+    List<GorevYoneticisi.Models.proje_surec_sablon> sablonList = (List<GorevYoneticisi.Models.proje_surec_sablon>)Model[0];
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Şablonlar</h2>
+</div>
+
+<div class="ilan-list">
+    <a id="yeni-uye" href="@Url.Action("sablon", "Sablonlar")">+</a>
+    <div class="head clearfix">
+        <h4 class="col-sm-4">ŞABLON İSMİ</h4>
+        <h4 class="col-sm-4">İSİM</h4>
+        <h4 class="col-sm-2">ŞABLON TÜRÜ</h4>
+        <h4 class="col-sm-2"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.proje_surec_sablon sablon in sablonList)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-4">@Html.Raw(sablon.sablon_ismi)</div>
+            <div class="col-sm-4">@Html.Raw(sablon.isim)</div>
+            <div class="col-sm-2">@Html.Raw(GorevYoneticisi.Tools.ProjeSurecTur.getProjeSurecString(sablon.tur))</div>
+            <div class="col-sm-2">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("sablon", "Sablonlar", new { id = sablon.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a id="wrong-button" href="#" data-id="@Html.Raw(sablon.id)" data-url="@Html.Raw(sablon.url)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    function sil(id, url) {
+        $.ajax({
+            url: "@Url.Action("silSablon", "Sablonlar")",
+            data: { id: id, url: url, tempGuid:@Html.Raw("''") },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+    $(document).on("click", "#wrong-button", function (e) {
+        e.preventDefault();
+        sil($(this).data("id"), $(this).data("url"));
+    });
+</script>

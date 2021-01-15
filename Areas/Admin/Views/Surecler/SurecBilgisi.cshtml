@@ -1,0 +1,198 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Süreç";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+
+    GorevYoneticisi.Models.proje_surec surec = (GorevYoneticisi.Models.proje_surec)Model[0];
+    List<GorevYoneticisi.Models.musteriler> musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[1];
+    GorevYoneticisi.Models.proje_musteri projeMusterisi = (GorevYoneticisi.Models.proje_musteri)Model[2];
+    /*List<GorevYoneticisi.Models.kullanicilar> kullaniciList = null;
+    if (Model[3] != null)
+    {
+        kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[3];
+    }*/
+    List<GorevYoneticisi.Models.firma_musavir> firmaList = (List<GorevYoneticisi.Models.firma_musavir>)Model[3];
+
+    List<GorevYoneticisi.Models.StringWithValue> swvList = GorevYoneticisi.Tools.SurecPeriyotTurleri.getPeriyotList();
+
+    List<GorevYoneticisi.Models.GorevVeProjeOzetModel> gorevList = (List<GorevYoneticisi.Models.GorevVeProjeOzetModel>)Model[4];
+}
+
+<h2>Süreç</h2>
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@surec.url">
+        <div class="item">
+            <select id="firma_id" name="firma_id" required disabled>
+                <option value="">İlgili Firma</option>
+                @foreach (GorevYoneticisi.Models.firma_musavir frm in firmaList)
+                {
+                    <option value="@frm.id" @(frm.id == surec.firma_id ? "selected" : "")>@Html.Raw(frm.firma_adi)</option>
+                }
+            </select>
+        </div>
+        <div class="item">
+            <input type="text" name="isim" placeholder="Süreç İsmi" value="@Html.Raw(surec.isim)" required disabled />
+        </div>
+        <div class="item">
+            <input type="date" name="baslangic_tarihi" placeholder="Başlangıç Tarihi" value="@Html.Raw(surec.baslangic_tarihi.ToString("yyyy-MM-dd"))" required disabled />
+        </div>
+        <div class="item">
+            <input type="date" name="bitis_tarihi" placeholder="Bitiş Tarihi" value="@Html.Raw(surec.bitis_tarihi.ToString("yyyy-MM-dd"))" required disabled />
+        </div>
+        <div class="item">
+            <input type="text" name="yuzde" placeholder="Tamamlanma Oranı" value="%@Html.Raw(surec.yuzde)" required disabled />
+        </div>
+        <div class="item">
+            <select name="periyot_turu" required disabled>
+                @foreach (GorevYoneticisi.Models.StringWithValue swv in swvList)
+                {
+                    <option value="@swv.value" @(surec.periyot_turu == Convert.ToInt32(swv.value) ? "selected" : "")>@Html.Raw(swv.text)</option>
+                }
+            </select>
+        </div>
+        <div class="item">
+            <textarea name="aciklama" placeholder="Açıklama" disabled>@Html.Raw(surec.aciklama)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" hidden>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+
+<div class="clearfix row">
+    <div class="col-md-6">
+        <div class="item-list">
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Projeye Eklenmiş Kullanıcılar</h2>
+            </div>
+            <div id="kullaniciList">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="item-list">
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Projeye Eklenmiş Müşteriler</h2>
+            </div>
+            <div>
+                <div id="musteriList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Süreç Görevleri</h2>
+</div>
+
+<div class="ilan-list">
+    <div class="head clearfix">
+        <h4 class="col-sm-3 col-xs-4">GÖREV İSMİ</h4>
+        <h4 class="col-sm-3 col-xs-5">TAMAMLANMA YÜZDESİ</h4>
+        <h4 class="col-sm-2 hidden-xs">BAŞLANGIÇ TARİHİ</h4>
+        <h4 class="col-sm-2 hidden-xs">BİTİŞ TARİHİ</h4>
+        <h4 class="col-sm-1 hidden-xs">DURUM</h4>
+        <h4 class="col-sm-1 col-xs-3"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.GorevVeProjeOzetModel grv in gorevList)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-3 col-xs-4">@Html.Raw(grv.gorev_ismi)</div>
+            <div class="col-sm-3 col-xs-5"><span class="yuzde"><span class="bar" style="width: @Html.Raw(grv.yuzde + "%;")"></span><span class="yuzde-yazi">@Html.Raw("% " + grv.yuzde)</span></span></div>
+            <div class="col-sm-2 hidden-xs">@Html.Raw(grv.baslangic_tarihi.ToString("dd.MM.yyyy"))</div>
+            <div class="col-sm-2 hidden-xs">@Html.Raw(grv.bitis_tarihi.ToString("dd.MM.yyyy"))</div>
+            <div class="col-sm-1 hidden-xs">@Html.Raw(GorevYoneticisi.Tools.TamamlamaDurumlari.getTamamlamaDurum(grv.durum))</div>
+            <div class="col-sm-1 col-xs-3" style="margin-top:-5px;">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("GorevBilgisi", "Gorevler", new { id = grv.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        kullanicilariGetir();
+        musterileriGetir();
+    });
+    function kullanicilariGetir() {
+        $.post('@Url.Action("projeSurecKullanicilariGetir", "Projeler")', {id : @surec.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#kullaniciList").html("");
+                $.each(data.Message, function () {
+                    $("#kullaniciList").append('<div class="removable-item">' + this.ad + ' ' + this.soyad + '<a href="#" onclick="silKullanici(' + this.id + ')" class="times" hidden><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function musterileriGetir() {
+        $.post('@Url.Action("projeSurecMusterileriGetir", "Projeler")', {id : @surec.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#musteriList").html("");
+                $.each(data.Message, function () {
+                    $("#musteriList").append('<div class="removable-item">' + this.firma_adi + '<a href="#" onclick="silMusteri(' + this.id + ')" class="times" hidden><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>
+
+<!--<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('Url.Action("surecDuzenle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                var uurl = $('#url').val();
+                if (uurl == "") {
+                    $("#_form")[0].reset();
+                }
+                alert("Süreç Kaydedildi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    $("#firma_id").change(function () {
+        var str = "";
+        var firma_id = $("#firma_id option:selected").val();
+        if (firma_id != "") {
+            $.post('Url.Action("getFirmaMusteri", "AHome")', { firma_id: firma_id }, function (data) {
+                if (data.IsSuccess == true) {
+                    console.log(data);
+                    $("#musteri_id").html("");
+                    $("#musteri_id").append('<option value="0")>İlgili Müşteri</option>'); $.each(data.Message, function () {
+                        $("#musteri_id").append('<option value="' + this.id + '")>' + this.firma_adi + '</option>');
+                    });
+                }
+                else {
+                    alert(data.Message);
+                }
+            });
+        }
+    });
+</script>-->

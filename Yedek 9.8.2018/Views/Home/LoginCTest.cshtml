@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "LoginCTest";
+}
+
+<h2>LoginCTest</h2>
+
+<script type="text/javascript">
+    $(function () {
+        $.post('/LoginC', { username: 'admin', password: 'admin', password2: '787ce43e651dcf9171c1c7ca2ff31636' }, function (data) {
+            console.log(data);
+            if (data.IsSuccess == true) {
+                window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "MainPage";
+            }
+            else {
+                alert(data.Message);
+            }
+            //$('#ilan_form')[0].reset();
+            //grecaptcha.reset();
+        });
+    });
+</script>
+

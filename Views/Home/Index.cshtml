@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    bool loginOlmus = false;
+    if (lgm != null)
+    {
+        loginOlmus = true;
+    }
+}
+@if (!loginOlmus)
+{
+    <div class="login-form-parent">
+        <form class="loginform" id="login_form" autocomplete="off">
+            <h1>Lütfen Giriş Yapınız</h1>
+            <div class="item inp">
+                <i class="fa fa-user"></i>
+                <input type="text" name="username" placeholder="Kullanıcı Adınız" />
+            </div>
+            <div class="item inp">
+                <i class="fa fa-lock"></i>
+                <input type="password" name="password" placeholder="Parola" />
+            </div>
+            <div class="item">
+                <a href="@Url.Action("sifremiUnuttum")">Şifremi Unuttum</a>
+                <button>Giriş</button>
+            </div>
+            <!--<div class="g-recaptcha" data-sitekey="6LfaFw4UAAAAACzIA0WJWMLT8SOm_Eg-kaBeIp3u"></div>-->
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#login_form').validate({
+                rules: {
+                    email: { email: true }
+                },
+                submitHandler: function (form) {
+                    login_send($(form));
+                }
+            });
+        });
+
+        function login_send(form) {
+            $.post('@Url.Action("Login")', form.serialize(), function (data) {
+                console.log(data);
+                if (data.IsSuccess == true) {
+                    window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "MainPage";
+                }
+                else {
+                    $('#login_form').animateCss('shake');
+                    $('#login_form').addClass("wrong");
+                }
+                //$('#ilan_form')[0].reset();
+                //grecaptcha.reset();
+            });
+        }
+    </script>
+}
+else
+{
+    <script>
+        $(function(){
+            window.location.href = '@Url.Action("MainPage")';
+        });
+    </script>
+}

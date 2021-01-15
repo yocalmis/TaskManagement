@@ -1,0 +1,126 @@
+﻿@{
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    bool yetkiAdmin = false;
+    string url =GorevYoneticisi.Tools.config.url;
+    if (lgm.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.super_admin || lgm.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.firma_admin)
+    {
+        yetkiAdmin = true;
+    }
+    bool yetkiYetkili = false;
+    if (lgm.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.super_admin || lgm.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.firma_admin || lgm.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili)
+    {
+        yetkiYetkili = true;
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/public/img/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/fullcalendar.min.css" />    
+    <link rel="stylesheet" type="text/css" href="~/public/img/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/query.css" />
+
+</head>
+<body>
+    <a id="burger-menu" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <div id="loading" class="loading" style="display:none;">
+        <div id="loading_div">
+            <img id="loading_image" src="~/public/img/loading.gif" alt="Yükleniyor..." style="width:70px;height:70px;"/>
+            <label id="loading_text">Yükleniyor...</label>
+        </div>        
+    </div> 
+    <div class="col-lg-2 col-md-3 sidebar">
+        <h4>Görev Yöneticisi</h4>
+        <hr />
+        <div class="kisi">
+            <span class="resim" style="background-image:url(@Html.Raw(url+"public/img/nouser.jpg")"></span>
+            <h3>@Html.Raw(lgm.ad+" "+lgm.soyad)</h3>
+        </div>
+        <div class="sub-menu">
+            <a class="linked" href="@Url.Action("Mesajlar")"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+            <a class="linked" href="@Url.Action("ayarlar")"><i class="fa fa-cog" aria-hidden="true"></i></a>
+            <a class="linked" href="@Url.Action("LogOff")"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <div class="settings">
+                <div class="notification">
+                    <a href="#" class="bell"><i class="fa fa-bell" aria-hidden="true"></i><span>0</span></a>
+                    <ul>
+                        <a href="#" class="devamini-yukle">Devamını Yükle</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <ul>
+            <li><a href="@Url.Action("MainPage")"><i class="fa fa-home" aria-hidden="true"></i>Anasayfa</a></li>
+            @if (yetkiYetkili)
+            {
+                <li><a href="@Url.Action("Kullanicilar")"><i class="fa fa-user" aria-hidden="true"></i>Kullanıcılar</a></li>
+            }  
+            @if (yetkiAdmin)
+            {
+                <li><a href="@Url.Action("Firma")"><i class="fa fa-list" aria-hidden="true"></i>Firma/Müşavir</a></li>
+            }           
+            <li><a href="@Url.Action("Musteriler")"><i class="fa fa-book" aria-hidden="true"></i>Müşteriler/Mükellefler</a></li>
+            <li><a href="@Url.Action("Projeler")"><i class="fa fa-briefcase" aria-hidden="true"></i>Projeler</a></li>
+            <li><a href="@Url.Action("Surecler")"><i class="fa fa-refresh" aria-hidden="true"></i>Süreçler</a></li>
+            <li><a href="@Url.Action("Gorevler")"><i class="fa fa-file-text" aria-hidden="true"></i>Görevler</a></li>
+            <li><a href="@Url.Action("raporlar")"><i class="fa fa-bar-chart" aria-hidden="true"></i>Raporlar</a></li>
+            <li><a href="@Url.Action("sifreAyarlari")"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Şifre Ayarları</a></li>
+            <li><a href="@Url.Action("Yardim")"><i class="fa fa-life-ring" aria-hidden="true"></i>Yardım</a></li>
+            <li><a href="@Url.Action("Mailler")"><i class="fa fa-envelope" aria-hidden="true"></i>Toplu Mail</a></li>
+            <li><a href="@Url.Action("Smsler")"><i class="fa fa-comment" aria-hidden="true"></i>Toplu Sms</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-9 content">
+        @RenderBody()
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            
+        });
+        
+    </script>
+    <script type="text/javascript" src="~/public/js/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.js"></script>
+    
+    <script type="text/javascript" src="~/public/js/tr.js"></script>
+    <script type="text/javascript" src="~/public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/public/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/public/js/isonsc.min.js"></script>
+    
+    <script type="text/javascript" src="~/public/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="~/public/js/jquery.smooth-scroll.js"></script>
+    <script type="text/javascript" src="~/public/js/roundslider.js"></script>
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBx8FO37fvYqiPVC2rU7FQGniGWUyx6-4&v=3.exp&sensor=false&callback=initialize"></script>-->
+
+    <script type="text/javascript" src="~/public/js/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/additional-methods.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/localization/messages_tr.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/jquery-validate.bootstrap-tooltip.js"></script>
+
+    <script type="text/javascript" src="~/public/js/fastclick.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script type="text/javascript" src="~/public/js/script.js"></script>
+</body>
+</html>

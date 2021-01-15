@@ -1,0 +1,598 @@
+﻿@model List<GorevYoneticisi.Models.kullanicilar>
+@{
+    ViewBag.Title = "raporlar";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+
+    List<GorevYoneticisi.Models.StringWithValue> tamamlanmaList = GorevYoneticisi.Tools.TamamlamaDurumlari.getTamamlamaList();
+}
+<div class="top clearfix">
+    <i class="fa fa-file-text" aria-hidden="true"></i>
+    <h2>Raporlar</h2>
+</div>
+<div class="rapor-list">
+    <div class="row clearfix">
+        <!--
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="bar-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>-->
+        <div class="col-sm-6">
+            <h3 style="margin:0;">Filtrele</h3>
+            <div class="rapor-turu">
+                <span class="lbl">Rapor Türünü Seçiniz</span>
+                <select name="rpr-tur">
+                    <option value="0">Tarihe Göre Proje/Süreç/Görev Sayıları</option>
+                    <option value="1">Çalışanlara Göre Proje/Süreç/Görev Sayısı</option>
+                    <option value="2">Çalışan Konum Bilgisi</option>
+                </select>
+            </div>
+            <div id="aylara-gore-sayilar" class="form-rapor" style="margin:0;">
+                <div class="item">
+                    <span class="lbl">Rapor Türü</span>
+                    <div>
+                        <input type="checkbox" name="gorev" value="1"> <span>Görev</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="proje" value="1"> <span>Proje</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="surec" value="1"> <span>Süreç</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="lbl">Tarih Türü</span>
+                    <select name="tarihTur">
+                        <option value="1">Başlangıç</option>
+                        <option value="2">Bitiş</option>
+                        <option value="3">Tamamlanma</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <span class="lbl">Periyot</span>
+                    <select name="periyot">
+                        <option value="">Periyot Seçiniz</option>
+                        <option value="1">Son 1 Hafta</option>
+                        <option value="2">Son 1 Ay</option>
+                        <option value="3">Son 1 Yıl</option>
+                        <option value="4">Belirlenen Tarih</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <span class="lbl">Durum</span>
+                    <div>
+                        <input type="checkbox" name="bekleyen" value="1"> <span>Bekleyen</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="devameden" value="1"> <span>Devam Eden</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="tamamlanan" value="1"> <span>Tamamlanan</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="pasif" value="1"> <span>Pasif</span>
+                    </div>
+                </div>
+                <div class="item date" style="display:none;">
+                    <span class="lbl" style="width: 5%; display: inline-block;">Tarih</span>
+                    <input type="date" name="baslangic" value="@Html.Raw(DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd"))"/>
+                    <input type="date" name="bitis" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd"))"/>
+                </div>
+                <div class="item" style="margin-top: 25px;">
+                    <a class="btn-first" href="#">SORGULA</a>
+                </div>
+            </div>
+            <div id="calisanlara-gore-sayilar" class="form-rapor" style="margin:0;">
+                <div class="item">
+                    <span class="lbl">Kullanıcı Seçiniz</span>
+                    @foreach (GorevYoneticisi.Models.kullanicilar usr in Model)
+                    {
+                        <div>
+                            <input type="checkbox" name="calisan" value="@Html.Raw(usr.url)"> <span>@Html.Raw(usr.ad + " " + usr.soyad)</span>
+                        </div>
+                    }                    
+                </div>
+                <div class="item">
+                    <span class="lbl">Rapor Türü</span>
+                    <div>
+                        <input type="checkbox" name="gorev" value="1"> <span>Görev</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="proje" value="1"> <span>Proje</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="surec" value="1"> <span>Süreç</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <span class="lbl">Tarih Türü</span>
+                    <select name="tarihTur">
+                        <option value="1">Başlangıç</option>
+                        <option value="2">Bitiş</option>
+                        <option value="3">Tamamlanma</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <span class="lbl">Periyot</span>
+                    <select name="periyot">
+                        <option value="">Periyot Seçiniz</option>
+                        <option value="1">Son 1 Hafta</option>
+                        <option value="2">Son 1 Ay</option>
+                        <option value="3">Son 1 Yıl</option>
+                        <option value="4">Belirlenen Tarih</option>
+                    </select>
+                </div>
+                <div class="item" style="display:none;">
+                    <span class="lbl">Rapor Türü</span>
+                    <input type="date" name="baslangic" value="@Html.Raw(DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd"))"/>
+                    <input type="date" name="bitis" style="width: 42%;" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd"))"/>
+                </div>
+                <div class="item">
+                    <a class="btn-first" href="#">SORGULA</a>
+                </div>
+            </div>
+            <div id="calisanlara-konum-bilgisi" class="form-rapor" style="margin:0;">
+                <div class="item">
+                    <span class="lbl">Kullanıcı Seçiniz</span>
+                    <select name="calisan-ismi">
+                        <option value="">---Seçiniz---</option>
+                        @foreach (GorevYoneticisi.Models.kullanicilar usr in Model)
+                        {
+                            <option value="@Html.Raw(usr.url)">@Html.Raw(usr.ad + " " + usr.soyad)</option>
+                        }
+                    </select>
+                </div>
+                <div class="item">
+                    <span class="lbl">Rapor Türü</span>
+                    <input type="date" name="baslangic" style="width: 42%;"/>
+                    <input type="date" name="bitis" />
+                </div>
+                <div class="item">
+                    <a class="btn-first" href="#">SORGULA</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 rapor1" style="display:none">
+            <div class="item">
+                <canvas id="line-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6 rapor2" style="display:none">
+            <div class="item">
+                <canvas id="bar-chart-grouped" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        
+        <!--
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="pie-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="radar-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="polar-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="doughnut-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="bar-chart-horizontal" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="bar-chart-grouped" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="mixed-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="item">
+                <canvas id="bubble-chart" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>-->
+    </div>
+</div>
+<div class="user-report-list" style="display:none;">
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="head clearfix">
+                <div class="col-sm-4">Kullanıcı</div>
+                <div class="col-sm-4">İsim</div>
+                <div class="col-sm-3">Tür</div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="reportlist">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).on("change", ".rapor-turu select", function () {
+        $(".user-report-list").css("display","none;");
+        var value = $(this).val();
+        if (value == 0) {
+            $("#aylara-gore-sayilar").css("display", "block");
+            $("#calisanlara-gore-sayilar").css("display", "none");
+            $("#calisanlara-konum-bilgisi").css("display", "none");
+        } else if (value == 1) {
+            $("#aylara-gore-sayilar").css("display", "none");
+            $("#calisanlara-gore-sayilar").css("display", "block");
+            $("#calisanlara-konum-bilgisi").css("display", "none");
+        } else {
+            $("#aylara-gore-sayilar").css("display", "none");
+            $("#calisanlara-gore-sayilar").css("display", "none");
+            $("#calisanlara-konum-bilgisi").css("display", "block");
+        }
+    });
+    $(document).on("change", "#aylara-gore-sayilar select[name=periyot]", function () {
+        if ($(this).val() == 4)
+            $("#aylara-gore-sayilar .item.date").css("display", "block");
+        else
+            $("#aylara-gore-sayilar .item.date").css("display", "none");
+    });
+    $(document).on("change", "#calisanlara-gore-sayilar select[name=periyot]", function () {
+        if ($(this).val() == 4)
+            $("#calisanlara-gore-sayilar .item.date").css("display", "block");
+        else
+            $("#calisanlara-gore-sayilar .item.date").css("display", "none");
+    });
+    $(document).on("click", "#calisanlara-gore-sayilar .btn-first", function (e) {
+        e.preventDefault();
+        $(".user-report-list").css("display","block;");
+        $(".rapor1").css("display", "none");
+        $(".rapor2").css("display", "block");
+        var calisanlar = "";
+        $("input[name=calisan]").each(function () {
+            calisanlar += $(this).val() + ";";
+        });
+        var gorev = 0;
+        var proje = 0;
+        var surec = 0;
+        var bekleyen = 1;
+        var devameden = 1;
+        var tamamlanan = 1;
+        var pasif = 1;
+        var rprTur = $("select[name=rpr-tur]").val();
+        var tarihTur = $("#calisanlara-gore-sayilar select[name=tarihTur]").val();
+        if ($("#calisanlara-gore-sayilar input[name=gorev]").is(':checked')) {
+            gorev = 1;
+        }
+        if ($("#calisanlara-gore-sayilar input[name=proje]").is(':checked')) {
+            proje = 1;
+        }
+        if ($("#calisanlara-gore-sayilar input[name=surec]").is(':checked')) {
+            surec = 1;
+        }
+        var periyot = $("#calisanlara-gore-sayilar select[name=periyot]").val();
+        var baslangic = $("#calisanlara-gore-sayilar input[name=baslangic]").val();
+        var bitis = $("#calisanlara-gore-sayilar input[name=bitis]").val();
+        var sorgu = { "raporturu": rprTur, "baslangic": baslangic, "bitis": bitis, "periyot": periyot, "gorev": gorev, "surec": surec, "proje": proje, "bekleyen": bekleyen, "devameden": devameden, "tamamlanan": tamamlanan, "pasif": pasif, "tarihTur": tarihTur, "kullanicilarurl": calisanlar };
+        $(".user-report-list .reportlist").html("");
+        $.post('/turRapor', sorgu, function (datas) {
+            console.log(datas);
+            new Chart(document.getElementById("bar-chart-grouped"), {
+                type: 'bar',
+                //data: { "labels": [], "datasets": [{ "data": [0, 0, 0], "label": "Görev", "backgroundColor": "#f98e02" }, { "data": [0, 0, 0], "label": "Süreç", "backgroundColor": "#53ad56" }, { "data": [1, 0, 1], "label": "Proje", "backgroundColor": "#d62263" }] }
+                data: JSON.parse(datas.Message.json)
+            });
+            $.each(datas.Message.liste[0], function () {
+                
+                $(".user-report-list .reportlist").append('<div class="item clearfix"><div class="col-sm-4">' + this.ad_soyad + '</div><div class="col-sm-4">' + this.isim + '</div><div class="col-sm-3">' + this.tur + '</div><div class="col-sm-1"><a href="' + this.url + '" class="btn-first">Git</a></div></div>');
+            });
+        });
+    });
+    $(document).on("click", "#aylara-gore-sayilar .btn-first", function (e) {
+        e.preventDefault();
+        $(".rapor2").css("display", "none");
+        $(".rapor1").css("display", "block");
+        var gorev = 0;
+        var proje = 0;
+        var surec = 0;
+        var bekleyen = 0;
+        var devameden = 0;
+        var tamamlanan = 0;
+        var pasif = 0;
+        var rprTur = $("select[name=rpr-tur]").val();
+        var tarihTur = $("#aylara-gore-sayilar select[name=tarihTur]").val();
+
+        if ($("#aylara-gore-sayilar input[name=bekleyen]").is(':checked')) {
+            bekleyen = 1;
+        }
+        if ($("#aylara-gore-sayilar input[name=devameden]").is(':checked')) {
+            devameden = 1;
+        }
+        if ($("#aylara-gore-sayilar input[name=tamamlanan]").is(':checked')) {
+            tamamlanan = 1;
+        }
+        if ($("#aylara-gore-sayilar input[name=pasif]").is(':checked')) {
+            pasif = 1;
+        }
+
+        if ($("#aylara-gore-sayilar input[name=gorev]").is(':checked')) {
+            gorev = 1;
+        }
+        if ($("#aylara-gore-sayilar input[name=proje]").is(':checked')) {
+            proje = 1;
+        }
+        if ($("#aylara-gore-sayilar input[name=surec]").is(':checked')) {
+            surec = 1;
+        }
+        var periyot = $("#aylara-gore-sayilar select[name=periyot]").val();
+        var baslangic = $("#aylara-gore-sayilar input[name=baslangic]").val();
+        var bitis = $("#aylara-gore-sayilar input[name=bitis]").val();
+        var sorgu = { "raporturu": rprTur, "baslangic": baslangic, "bitis": bitis, "periyot": periyot, "gorev": gorev, "surec": surec, "proje": proje, "bekleyen": bekleyen, "devameden": devameden, "tamamlanan": tamamlanan, "pasif": pasif, "tarihTur": tarihTur, "kullanicilarurl":'bilgehan-kaya2;'};
+        $.post('/turRapor',sorgu , function (datas) {
+            new Chart(document.getElementById("line-chart"), {
+                type: 'line',
+                data: JSON.parse(datas.Message.json)
+            });
+        });
+    });
+    // Bar chart
+    new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        options: {
+            title: {
+                display: true,
+                text: 'Aylara Göre Tamamlanma Sayıları'
+            }
+        }
+    });
+    new Chart(document.getElementById("bar-chart-grouped"), {
+        type: 'bar',
+        options: {
+            title: {
+                display: true,
+                text: 'Population growth (millions)'
+            }
+        }
+    });
+
+    /*
+    new Chart(document.getElementById("pie-chart"), {
+        type: 'pie',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                data: [2478, 5267, 734, 784, 433]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });
+    new Chart(document.getElementById("radar-chart"), {
+        type: 'radar',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [
+              {
+                  label: "1950",
+                  fill: true,
+                  backgroundColor: "rgba(179,181,198,0.2)",
+                  borderColor: "rgba(179,181,198,1)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(179,181,198,1)",
+                  data: [8.77, 55.61, 21.69, 6.62, 6.82]
+              }, {
+                  label: "2050",
+                  fill: true,
+                  backgroundColor: "rgba(255,99,132,0.2)",
+                  borderColor: "rgba(255,99,132,1)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(255,99,132,1)",
+                  pointBorderColor: "#fff",
+                  data: [25.48, 54.16, 7.61, 8.06, 4.45]
+              }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Distribution in % of world population'
+            }
+        }
+    });
+    new Chart(document.getElementById("polar-chart"), {
+        type: 'polarArea',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [
+              {
+                  label: "Population (millions)",
+                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                  data: [2478, 5267, 734, 784, 433]
+              }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });
+    new Chart(document.getElementById("doughnut-chart"), {
+        type: 'doughnut',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [
+              {
+                  label: "Population (millions)",
+                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                  data: [2478, 5267, 734, 784, 433]
+              }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });
+    new Chart(document.getElementById("bar-chart-horizontal"), {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [
+              {
+                  label: "Population (millions)",
+                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                  data: [2478, 5267, 734, 784, 433]
+              }
+            ]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });
+    new Chart(document.getElementById("bar-chart-grouped"), {
+        type: 'bar',
+        data: {
+            labels: ["1900", "1950", "1999", "2050"],
+            datasets: [
+              {
+                  label: "Africa",
+                  backgroundColor: "#3e95cd",
+                  data: [133, 221, 783, 2478]
+              }, {
+                  label: "Europe",
+                  backgroundColor: "#8e5ea2",
+                  data: [408, 547, 675, 734]
+              }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Population growth (millions)'
+            }
+        }
+    });
+    new Chart(document.getElementById("mixed-chart"), {
+        type: 'bar',
+        data: {
+            labels: ["1900", "1950", "1999", "2050"],
+            datasets: [{
+                label: "Europe",
+                type: "line",
+                borderColor: "#8e5ea2",
+                data: [408, 547, 675, 734],
+                fill: false
+            }, {
+                label: "Africa",
+                type: "line",
+                borderColor: "#3e95cd",
+                data: [133, 221, 783, 2478],
+                fill: false
+            }, {
+                label: "Europe",
+                type: "bar",
+                backgroundColor: "rgba(0,0,0,0.2)",
+                data: [408, 547, 675, 734],
+            }, {
+                label: "Africa",
+                type: "bar",
+                backgroundColor: "rgba(0,0,0,0.2)",
+                backgroundColorHover: "#3e95cd",
+                data: [133, 221, 783, 2478]
+            }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Population growth (millions): Europe & Africa'
+            },
+            legend: { display: false }
+        }
+    });
+    new Chart(document.getElementById("bubble-chart"), {
+        type: 'bubble',
+        data: {
+            labels: "Africa",
+            datasets: [
+              {
+                  label: ["China"],
+                  backgroundColor: "rgba(255,221,50,0.2)",
+                  borderColor: "rgba(255,221,50,1)",
+                  data: [{
+                      x: 21269017,
+                      y: 5.245,
+                      r: 15
+                  }]
+              }, {
+                  label: ["Denmark"],
+                  backgroundColor: "rgba(60,186,159,0.2)",
+                  borderColor: "rgba(60,186,159,1)",
+                  data: [{
+                      x: 258702,
+                      y: 7.526,
+                      r: 10
+                  }]
+              }, {
+                  label: ["Germany"],
+                  backgroundColor: "rgba(0,0,0,0.2)",
+                  borderColor: "#000",
+                  data: [{
+                      x: 3979083,
+                      y: 6.994,
+                      r: 15
+                  }]
+              }, {
+                  label: ["Japan"],
+                  backgroundColor: "rgba(193,46,12,0.2)",
+                  borderColor: "rgba(193,46,12,1)",
+                  data: [{
+                      x: 4931877,
+                      y: 5.921,
+                      r: 15
+                  }]
+              }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }, scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Happiness"
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "GDP (PPP)"
+                    }
+                }]
+            }
+        }
+    });*/
+</script>

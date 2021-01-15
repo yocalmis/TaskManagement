@@ -1,0 +1,168 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Mesaj";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+
+    List<GorevYoneticisi.Models.kullanicilar> kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[0];
+    GorevYoneticisi.Models.mesajlar msj = (GorevYoneticisi.Models.mesajlar)Model[1];
+    List<GorevYoneticisi.Models.mesajlar> mesajList = (List<GorevYoneticisi.Models.mesajlar>)Model[2];
+    GorevYoneticisi.Models.LoggedUserModel lgm = (GorevYoneticisi.Models.LoggedUserModel)Model[3];
+    string ilkTarih = "01.01.2017 01:01:01";
+    string sonTarih = "01.01.2017 01:01:01";
+    if (mesajList.Count != 0)
+    {
+        ilkTarih = mesajList[0].date.ToString("dd.MM.yyyy HH:mm:ss");
+        sonTarih = mesajList[mesajList.Count - 1].date.ToString("dd.MM.yyyy HH:mm:ss");
+    }
+    int alan_id = msj.alan_id;
+    if (lgm.id == msj.alan_id)
+    {
+        alan_id = msj.gonderen_id;
+    }
+}
+
+<h2>Mesaj</h2>
+<div class="mesajlar">
+    @if (msj.id != 0)
+    {
+        <a href="#" onclick="mesajlariCek(1)">Önceki Mesajlar</a>
+        <div id="mesajList">
+            @foreach (GorevYoneticisi.Models.mesajlar msj2 in mesajList)
+            {
+                <div class="item clearfix">
+                    @if (msj2.alan_id == lgm.id)
+                    {
+                        <div class="gelen">
+                            <div class="yazi">@Html.Raw(msj2.mesaj)</div>
+                            <div class="tarih">@Html.Raw(msj2.date.ToString("dd.MM.yyyy HH:mm:ss"))</div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="giden">
+                            <div class="yazi">@Html.Raw(msj2.mesaj)</div>
+                            <div class="tarih">@Html.Raw(msj2.date.ToString("dd.MM.yyyy HH:mm:ss"))</div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+    <form class="form-mesaj" id="_form">
+        <div class="clearfix">
+            <input id="url" name="url" type="hidden" value="@msj.url">
+            <input id="parent_url" name="parent_url" type="hidden" value="@msj.parent_url">
+            @if (msj.id == 0)
+            {
+                <div class="item" style="position: fixed;top: 20px;right: 0;">
+                    <select name="alan_id" required>
+                        <option value="">Hedef Kullanıcı</option>
+                        @foreach (GorevYoneticisi.Models.kullanicilar usr in kullaniciList)
+                        {
+                            <option value="@usr.id">@Html.Raw(usr.ad + " " + usr.soyad)</option>
+                        }
+                    </select>
+                </div>
+            }
+            else
+            {
+                <input type="hidden" id="alan_id" name="alan_id" value="@alan_id">
+            }
+            <div class="item">
+                <textarea name="mesaj" placeholder="Mesajınız"></textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    var last_date = '@Html.Raw(sonTarih)';
+    var first_date = '@Html.Raw(ilkTarih)';
+    var kisiId = @lgm.id;
+    $(function () {
+        $('#_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                mesaj_send($(form));
+            }
+        });
+        setInterval(function () { mesajlariCek(2); }, 3000);
+    });
+    function mesaj_send(form) {
+        $.post('@Url.Action("mesajGonder")', form.serialize(), function (data) {
+            console.log(data);
+            if (data.IsSuccess == true) {
+                $('#_form')[0].reset();
+                var uurl = $('#url').val();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    var a = null;
+    function mesajlariCek(once1Sonra2) {
+        var tarih = last_date;
+        if (once1Sonra2 == 1) {
+            tarih = first_date;
+        }
+        $.post('@Url.Action("mesajList")', {url : @Html.Raw("'" + msj.parent_url + "'"), son_tarih : tarih, once1Sonra2 : once1Sonra2}, function (data) {
+            if (data.IsSuccess == true) {
+                //console.log(data);
+                $.each(data.Message, function () {
+                    var date = new Date(parseInt(this.date.substr(6)));
+                    var formatted = ("0" + date.getDate()).slice(-2) + "." +
+                          ("0" + (date.getMonth() + 1)).slice(-2) + "." +
+                          date.getFullYear() + " " + ("0" + date.getHours()).slice(-2) + ":" +
+                          ("0" + date.getMinutes()).slice(-2) + ":" + ("0" + date.getSeconds()).slice(-2);
+
+                    if (this.alan_id == kisiId)
+                    {
+                        var text = '<div class="item clearfix"><div class="gelen">'
+                                +'<div class="yazi">' + this.mesaj + '</div>'
+                                +'<div class="tarih">' + formatted + '</div>'
+                            +'</div>'
+                        +'</div>';
+                        if (once1Sonra2 == 1) {
+                            $("#mesajList").prepend(text);
+                        }
+                        else {
+                            $("#mesajList").append(text);
+                        }
+                    }
+                    else
+                    {
+                        var text2 = '<div class="item clearfix">'
+                            +'<div class="giden">'
+                                +'<div class="yazi">' + this.mesaj + '</div>'
+                                +'<div class="tarih">' + formatted + '</div>'
+                                +'</div></div>';
+                        if (once1Sonra2 == 1) {
+                            $("#mesajList").prepend(text2);
+                        }
+                        else {
+                            $("#mesajList").append(text2);
+                        }
+                    }
+                    if(once1Sonra2 == 2 && data.Message[$(data.Message).size() - 1].id == this.id)
+                    {
+                        last_date = formatted;
+                    }
+                    else if(once1Sonra2 == 1 && data.Message[$(data.Message).size() - 1].id == this.id) {
+                        first_date = formatted;
+                    }
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>
+
+
+

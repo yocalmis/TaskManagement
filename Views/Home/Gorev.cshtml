@@ -1,0 +1,936 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Görev";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+
+    GorevYoneticisi.Models.gorevler gorev = (GorevYoneticisi.Models.gorevler)Model[0];
+    List<GorevYoneticisi.Models.proje_surec> projeList = (List<GorevYoneticisi.Models.proje_surec>)Model[1];
+    List<GorevYoneticisi.Models.proje_surec> surecList = (List<GorevYoneticisi.Models.proje_surec>)Model[2];
+    //List<GorevYoneticisi.Models.musteriler> musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[3];
+    List<GorevYoneticisi.Models.musteriler> musteriList = null;
+    if (Model[3] != null)
+    {
+        musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[3];
+    }
+    /*List<GorevYoneticisi.Models.kullanicilar> kullaniciList = null;
+    if (Model[4] != null)
+    {
+        kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[4];
+    }*/
+    GorevYoneticisi.Models.gorev_proje gorevProje = (GorevYoneticisi.Models.gorev_proje)Model[5];
+    GorevYoneticisi.Models.LoggedUserModel lgm = (GorevYoneticisi.Models.LoggedUserModel)Model[6];
+
+    string isDisabled = "";
+    string isHidden = "";
+    if (GorevYoneticisi.Tools.KullaniciTurleri.user <= lgm.kullanici_turu || (gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.tamamlandi || gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.pasif || gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.oncekiGorevBekleniyor))
+    {
+        isDisabled = "disabled";
+        isHidden = "hidden";
+    }
+    bool tamamlandiMi = false;
+    if (gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.tamamlandi || gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.pasif || gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.oncekiGorevBekleniyor)
+    {
+        tamamlandiMi = true;
+    }
+    GorevYoneticisi.Models.gorev_proje gp = gorev.gorev_proje.Where(e => e.flag == GorevYoneticisi.Tools.durumlar.aktif).FirstOrDefault();
+
+    string tempGuid = ViewBag.tempGuid;
+
+    List<GorevYoneticisi.Models.proje_surec_sablon> sablonList = (List<GorevYoneticisi.Models.proje_surec_sablon>)Model[7];
+}
+<div class="top">
+    <i class="fa fa-file-text" aria-hidden="true"></i>
+    <h2>Görev</h2>
+    @if ((gp == null || (gp != null && (gp.proje_surec.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.basladi || gp.proje_surec.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.bekliyor))) && isDisabled.Equals("disabled") && GorevYoneticisi.Tools.KullaniciTurleri.user > lgm.kullanici_turu && gorev.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.oncekiGorevBekleniyor)
+    {
+        <a id="teklif-button" data-toggle="tooltip" title="Görevi Aktif Et" href="#" onclick="goreviAktiflestir(@Html.Raw("'" + gorev.url + "'"))">Görevi Aktif Et</a>
+    }
+    else if (gorev.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.oncekiGorevBekleniyor)
+    {
+        <text>
+            <label>
+                Bu görevi aktifleştirmek için bağlantılı görevlerin tamamlanması gerekmektedir.
+            </label>
+        </text>
+    }
+</div>
+@if (gorev.id == 0)
+{
+    <select id="sablonlar" name="sablonlar">
+        <option>Şablonlar</option>
+        @foreach (GorevYoneticisi.Models.proje_surec_sablon sablon in sablonList)
+        {
+            <option value="@sablon.id">@Html.Raw(sablon.sablon_ismi)</option>
+        }
+    </select>
+}
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@gorev.url">
+        <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">İlgili Proje</div>
+                <select id="proje_id" name="proje_id" required @Html.Raw(isDisabled) onchange="projeyiGuncelle()">
+                    <option value="0">İlgili Proje/Süreç Yok</option>
+                    <option value="0">--Projeler--</option>
+                    @foreach (GorevYoneticisi.Models.proje_surec prj in projeList)
+                    {
+                        <option value="@prj.id" @(prj.id == gorevProje.proje_id ? "selected" : "")>@Html.Raw(prj.isim)</option>
+                    }
+                    <option value="0">--Süreçler--</option>
+                    @foreach (GorevYoneticisi.Models.proje_surec src in surecList)
+                    {
+                        <option value="@src.id" @(src.id == gorevProje.proje_id ? "selected" : "")>@Html.Raw(src.isim + "(" + src.baslangic_tarihi.ToString("dd.MM.yyyy") + ")")</option>
+                    }
+                </select>
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">İsim</div>
+                <input type="text" name="isim" placeholder="Görev İsmi" value="@Html.Raw(gorev.isim)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Başlama Tarihi</div>
+                <input type="date" name="baslangic_tarihi" placeholder="Başlangıç Tarihi" value="@Html.Raw(gorev.baslangic_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Bitiş Tarihi</div>
+                <input type="date" name="bitis_tarihi" placeholder="Bitiş Tarihi" value="@Html.Raw(gorev.bitis_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="item">
+            <div class="lbl">Tamamlanma Yüzdesi</div><br />
+            <span class="yuzde" style="padding: 10px;"><span id="yuzdeGrafik" class="bar" style="width: @Html.Raw(gorev.yuzde+"%;")"></span><span class="yuzde-yazi" id="yuzdeYazi">@Html.Raw("% " + gorev.yuzde)</span></span>
+        </div>
+        <div class="item">
+            <div class="lbl">Açıklama</div>
+            <textarea name="aciklama" placeholder="Açıklama" @Html.Raw(isDisabled)>@Html.Raw(gorev.aciklama)</textarea>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="gorev_multiply" value="Görevi Kopyala" style="display:inline;width:40px;" @Html.Raw(gorev.gorev_multiply == 1 ? "checked" : "") />Bu görevi her kullanıcı için kopyala
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">KAYDET</button>
+    </div>
+</form>
+<div class="clearfix row">
+    <div class="col-md-6">
+        <div class="item-list">
+            @if (!isHidden.Equals("hidden"))
+            {
+                <div class="top">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <h2>Kullanıcılar</h2>
+                </div>
+                <form class="form-default2" id="kullanici_form">
+                    <div class="clearfix">
+                        <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+                        <input id="gorev_id" name="gorev_id" type="hidden" value="@gorev.id">
+                        <div class="item">
+                            <select id="kullanici_id" name="kullanici_id" required>
+                                <!--<option value="">Kullanıcılar</option>
+                                foreach (GorevYoneticisi.Models.kullanicilar usr in kullaniciList)
+                                {
+                                    <option value="usr.id">Html.Raw(usr.ad + " " + usr.soyad)</option>
+                                }-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item" style="text-align:right;">
+                        <button class="btn-first">EKLE</button>
+                    </div>
+                </form>
+            }
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Göreve Eklenmiş Kullanıcılar</h2>
+            </div>
+            <div class="list-padding">
+                <div id="kullaniciList">
+
+                </div>
+            </div>
+        </div>
+        <div class="item-list">
+            @if (!tamamlandiMi)
+            {
+                <div class="top">
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>
+                    <h2>Yapılacaklar</h2>
+                </div>
+                <form class="form-default2" id="yapilacak_form">
+                    <div class="clearfix">
+                        <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+                        <input id="gorev_id" name="gorev_id" type="hidden" value="@gorev.id">
+                        <div class="item">
+                            <input type="text" name="isim" placeholder="Yapılacak İsmi" value="" required />
+                        </div>
+                        <div class="item" hidden>
+                            <textarea name="aciklama" placeholder="Açıklama"></textarea>
+                        </div>
+                    </div>
+                    <div class="item" style="text-align:right;">
+                        <button class="btn-first">EKLE</button>
+                    </div>
+                </form>
+            }
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Yapılacak Listesi</h2>
+            </div>
+            <div class="list-padding">
+                <div id="yapilacakList" class="clearfix">
+
+                </div>
+            </div>
+        </div>
+        <div class="item-list">
+            @if (!tamamlandiMi)
+            {
+                <div class="top">
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                    <h2>Dosyalar</h2>
+                </div>
+                <form class="form-default2" id="dosya_form">
+                    <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+                    <input id="gorev_id" name="gorev_id" type="hidden" value="@gorev.id">
+                    <div class="item col-sm-6" style="margin:0 0 25px;">
+                        <div class="lbl">İsim</div>
+                        <input type="text" name="isim" placeholder="Dosya İsmi" required />
+                    </div>
+                    <div class="inp">
+                        <input type="file" name="fileUpload" id="fileUpload" style="width: 100%;" required>
+                    </div>
+                    <div class="item" style="text-align:right;">
+                        <button class="btn-first">EKLE</button>
+                    </div>
+                </form>
+            }
+            <div class="list-padding">
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Dosya Listesi</h2>
+                </div>
+                <div id="dosyaList">
+
+                </div>
+            </div>
+        </div>
+        <div class="item-list">
+            @if (!isHidden.Equals("hidden"))
+            {
+                <div class="top">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <h2>Görev Bağlantıları(Eklediğiniz görevlerden herhangi biri bittikten sonra bu görev başlayacak)</h2>
+                </div>
+                <form class="form-default2" id="gorev_baglanti_form">
+                    <div class="clearfix">
+                        <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+                        <input id="gorev_id" name="gorev_id" type="hidden" value="@gorev.id">
+                        <div class="item">
+                            <select id="bagli_gorev" name="bagli_gorev" required>
+                                <option value="">Görev Seç</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item" style="text-align:right;">
+                        <button class="btn-first">EKLE</button>
+                    </div>
+                </form>
+            }
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Bağlantılı Görevler</h2>
+            </div>
+            <div class="list-padding">
+                <div id="gorevBaglantiList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="item-list">
+            <div class="top">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <h2>Müşteriler</h2>
+            </div>
+            <form class="form-default2" id="musteri_form">
+                <div class="clearfix">
+                    <input id="tempGuid" name="tempGuid" type="hidden" value="@tempGuid">
+                    <input id="gorev_id" name="gorev_id" type="hidden" value="@gorev.id">
+                    <div class="msuteri-list" id="proje_musteri_list" style="max-height:800px; overflow:auto;">
+                        @foreach (GorevYoneticisi.Models.musteriler mstr in musteriList)
+                        {
+                            <div class="item">
+                                <input type="checkbox" name="musteriList[]" value="@mstr.id" style="display:inline;width: auto;" @Html.Raw(isDisabled)>@Html.Raw(mstr.firma_adi)
+                            </div>
+                        }
+                    </div>
+                    <div class="item">
+                        <select id="musteri_kullanici_id" name="kullanici_id" @Html.Raw(isDisabled) required></select>
+                    </div>
+                </div>
+                <div class="item" style="text-align:right;">
+                    <button class="btn-first">EKLE</button>
+                </div>
+            </form>
+            <div class="top">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <h2>Göreve Eklenmiş Müşteriler</h2>
+            </div>
+            <div class="list-padding">
+                <div id="musteriList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+
+</div>
+<div class="clearfix">
+    <div class="gorev-tarihcesi">
+        <div class="top">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+            <h2>Görev Tarihçesi</h2>
+        </div>
+        <ul id="logList"></ul>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    @if ((gp == null || (gp != null && (gp.proje_surec.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.basladi || gp.proje_surec.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.bekliyor))) && isDisabled.Equals("disabled") && GorevYoneticisi.Tools.KullaniciTurleri.user > lgm.kullanici_turu)
+    {
+        <text>
+    function goreviAktiflestir(id) {
+        $.ajax({
+            url: "@Url.Action("goreviAktiflestir")",
+            data: { id: id },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+    </text>
+    }
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+        @if (!isHidden.Equals("hidden"))
+        {
+            <text>
+        $('#kullanici_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_user($(form));
+            }
+        });
+        $('#musteri_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_musteri($(form));
+            }
+        });
+        $('#gorev_baglanti_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_gorev_baglanti($(form));
+            }
+        });
+        </text>
+        }
+        yapilacaklariGetir();
+        projeKullanicilariGetir();
+        kullanicilariGetir();
+        dosyalariGetir();
+        loglariGetir();
+        projeyiGuncelle();
+        $('#yapilacak_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_yapilacak($(form));
+            }
+        });
+
+        $('#sablonlar').change(function () {
+            var id = $($('#sablonlar option:selected')[0]).attr("value");
+            sablonSec(id);
+        });
+    });
+    function sablonSec(id) {
+        console.log(id);
+         $.ajax({
+            url: "@Url.Action("sablonSecGorev")",
+            data: { id: id, tempGuid:'@Html.Raw(tempGuid)' },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+    function setTempGorevId(id)
+    {
+        @if(tempGuid != null && !tempGuid.Equals(string.Empty))
+        {
+            <text>
+        var eskiId = $('#_form_gorev #gorev_id').val();
+        $('#_form #url').val(id);
+        $('#musteri_form #gorev_id').val(id);
+        $('#gorev_baglanti_form #gorev_id').val(id);
+        $('#kullanici_form #gorev_id').val(id);
+        $('#yapilacak_form #gorev_id').val(id);
+        $('#dosya_form #gorev_id').val(id);
+        if(eskiId != id)
+        {
+            //tüm alanları güncelle
+            //tempGorevleriGetir(id);
+            yapilacaklariGetir();
+            kullanicilariGetir(id);
+            //musterileriGetir();
+        }
+        </text>
+        }
+    }
+    function form_send(form) {
+        loadingAc();
+        $.post('@Url.Action("GorevDuzenle")', form.serialize(), function (data) {
+            loadingKapat();
+            if (data.IsSuccess == true) {
+                @if (tempGuid != null && !tempGuid.Equals(string.Empty)) {
+                    <text>
+                window.location.replace("@Url.Action("Gorev")" + "/" + data.Message);
+                </text>
+                }
+            else{
+                <text>
+                loglariGetir();
+                </text>
+                }
+                //alert("Görev Kaydedildi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function yapilacaklariGetir() {
+        var gorev_id;
+        @{
+            <text>
+        if(@Html.Raw("'" + tempGuid + "'") == null || @Html.Raw("'" + tempGuid + "'") == "")
+        {
+            gorev_id = @Html.Raw("'" + gorev.url + "'");
+        }
+        else {
+            gorev_id = $('#yapilacak_form #gorev_id').val();
+        }
+        </text>
+        }
+        $.post('@Url.Action("yapilacaklarList")', {gorev_url : gorev_id, tempGuid :@Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#yapilacakList").html("");
+                $.each(data.Message, function () {
+                    var durum = "";
+                    if(this.durum == 2)
+                    {
+                        durum = "checked";
+                    }
+                    var checkBoxStr = '';
+                    @if (tempGuid == null || tempGuid.Equals(""))
+	                {
+                        <text>
+                    checkBoxStr = '<input type="checkbox" name="yapilacak" value="asd" @Html.Raw(tamamlandiMi ? "disabled" : "") onchange="yapilacakIsaretle(\'' + this.url + '\', this)" ' + durum + '>';
+                    </text>
+	                }
+                    $("#yapilacakList").append('<div class="col-md-6"><div class="do-list">' + checkBoxStr + '<span>' + this.isim + '</span><a href="#" onclick="silYapilacak(\'' + this.url + '\')" class="times" @Html.Raw(tamamlandiMi ? "style=\"visibility:hidden;\"" : "")><i class="fa fa-times" aria-hidden="true"></i></a></div></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function yapilacakIsaretle(url, ths) {
+        var value = $(ths).is(":checked");
+        $.post('@Url.Action("yapilacakIsaretle")', {url : url, value: value}, function (data) {
+            //console.log(data);
+            if (data.IsSuccess == true) {
+                gorevYuzdesiniGuncelle();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function gorevYuzdesiniGuncelle() {
+        console.log(1);
+        @if(tempGuid == null || tempGuid.Equals(string.Empty))
+        {
+            <text>
+        console.log(2);
+        $.post('@Url.Action("gorevYuzdesiCek")', {url : @Html.Raw("'" + gorev.url + "'")}, function (data) {
+            console.log(data);
+            if (data.IsSuccess == true) {
+                if(data.Message != null)
+                {
+                    $("#yuzdeYazi").html('% ' + data.Message.yuzde);
+                    $("#yuzdeGrafik").attr('style', 'width:' + data.Message.yuzde + '%;'); //style="width: Html.Raw(gorev.yuzde+"%;")" .attr("style", "display:none");
+                }
+                loglariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+        </text>
+        }
+
+    }
+    function add_yapilacak(form) {
+        $.post('@Url.Action("YapilacakDuzenle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                @if(tempGuid == null || tempGuid.Equals(string.Empty))
+                {
+                    <text>
+                setTempGorevId(data.Message);
+                </text>
+                }
+                $('#yapilacak_form')[0].reset();
+                yapilacaklariGetir();
+                //loglariGetir();
+                gorevYuzdesiniGuncelle();
+                alert("Yapılacaklar listesi güncellendi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silYapilacak(id) {
+        $.post('@Url.Action("silYapilacak")', {id : id, gorev_id : "0", tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Yapılacaklar listesi güncellendi.");
+                gorevYuzdesiniGuncelle();
+                yapilacaklariGetir();
+                //loglariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function kullanicilariGetir() {
+        var gorev_id = $('#yapilacak_form #gorev_id').val();
+        if (gorev_id == null) {
+            gorev_id = @Html.Raw(gorev.id);
+        }
+        $.post('@Url.Action("gorevKullanicilariGetir")', {id : gorev_id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#kullaniciList").html("");
+                //var calistir = false;
+                /*if(kullaniciStr == "")
+                {
+                    calistir = true;
+                }*/
+                var htmlText = "<option>Kullanıcılar</option>";
+                kullaniciStr = '[{"url":"","isim":"İlgili Kullanıcı"}';
+                $('#musteri_kullanici_id').html("");
+
+                //$('#kullanici_id').html("");
+
+                $.each(data.Message, function () {
+                    $("#kullaniciList").append('<div class="removable-item">' + this.ad + ' ' + this.soyad + '<a href="#" class="times" onclick="silKullanici(' + this.id + ')" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+
+                    htmlText += "<option value='" + this.kullanici_id + "'>" + this.ad + " " + this.soyad + "</option>";
+                    kullaniciStr += ',{"url":"' + this.url + '","isim":"' + this.ad + ' ' + this.soyad + '"}';
+                });
+                kullaniciStr += ']';
+                //$('#kullanici_id').html(htmlText);
+                $('#musteri_kullanici_id').html(htmlText);
+                musterileriGetir();
+                /*if(calistir)
+                {
+                    musterileriGetir();
+                }*/
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    @if (lgm.kullanici_turu <= GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili)
+    {
+        <text>
+    function add_user(form) {
+        $.post('@Url.Action("gorevKullanicisiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                @if(!(tempGuid == null || tempGuid.Equals(string.Empty)))
+                {
+                    <text>
+                setTempGorevId(data.Message);
+                </text>
+                }
+                alert("Kullanıcı Eklendi.");
+                kullanicilariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silKullanici(id) {
+        $.post('@Url.Action("gorevKullanicisiSil")', {id : id, tempGuid:@Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Kullanıcı Silindi.");
+                kullanicilariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    </text>
+    }
+
+    @if (lgm.kullanici_turu <= GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili)
+    {
+        <text>
+    function add_musteri(form) {
+        $.post('@Url.Action("gorevMusterisiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                @if(tempGuid == null || tempGuid.Equals(string.Empty))
+                {
+                    <text>
+                setTempGorevId(data.Message);
+                </text>
+                }
+                alert("Müşteri Eklendi.");
+                musterileriGetir();
+                $("#musteri_form")[0].reset();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silMusteri(url) {
+        var gorev_url = $('#_form #url').val();
+        $.post('@Url.Action("gorevMusterisiSil")', {url : url, gorev_url : gorev_url, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Müşteri Silindi.");
+                musterileriGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    </text>
+    }
+
+    function musteriPaylasimi(drp, id) {
+        var gorev_id = $('#musteri_form #gorev_id').val();
+        var kullanici = $(drp).val();
+        $.post('@Url.Action("gorevMusteriPaylasimi")', {gorevid : gorev_id, hedefkullanici:kullanici, kaynak_kullanici:id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess != true) {
+                musterileriGetir();
+                alert(data.Message);
+            }
+        });
+    }
+    function musterileriGetir() {
+        var gorev_id = $('#musteri_form #gorev_id').val();
+        if (gorev_id == null) {
+            gorev_id = @Html.Raw(gorev.id);
+        }
+        $.post('@Url.Action("gorevMusterileriGetir")', {id : gorev_id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#musteriList").html("");
+                var obj = jQuery.parseJSON(kullaniciStr);
+                console.log(data);
+                $.each(data.Message, function () {
+                    var tempG = @Html.Raw("'" + tempGuid + "'");
+                    var kStr = "";
+                    var dataThs = this;
+                    var ifSelected = "";
+                    for(i = 0; i < obj.length; i++)
+                    {
+                        if (obj[i].url == dataThs.kullaniciUrl) {
+                            ifSelected = " selected";
+                        }
+                        kStr += "<option value='" + obj[i].url + "' " + ifSelected + ">" + obj[i].isim + "</option>";
+                        ifSelected = "";
+                    }
+                    var gorev_url = @Html.Raw("'" + gorev.url + "'");
+                    @if(tempGuid != null && !tempGuid.Equals(string.Empty))
+                    {
+                        <text>
+                    gorev_url = $('#_form #url').val();
+                    </text>
+                    }
+                    $("#musteriList").append('<a href="#" data-user-id="'+this.kullaniciId+'" onclick="musterileriIsaretle(\'[' + this.musteriIdList + ']\', ' + this.kullaniciId + ')"><div class="removable-item">' + this.musteriIdList.length + ' Firma <select onchange="musteriPaylasimi(this, \'' + this.kullaniciUrl + '\')" @Html.Raw(isDisabled)>' + kStr + '</select><a href="#" class="times" onclick="silMusteri(\'' + this.kullaniciUrl + '\', \'' + gorev_url + '\', \'\')" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div></a>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function musterileriIsaretle(musteriIdList, kullaniciId)
+    {
+        $(".removable-item a").removeClass("clicked-personnel");
+        $($('a[data-user-id="'+kullaniciId+'"]')[1]).addClass("clicked-personnel");
+        var obj = JSON.parse(musteriIdList);
+        var bulundu = false;
+        for(i = 0; i < $('#proje_musteri_list').children(0).length; i++){
+            bulundu = false;
+            for(j = 0; j < obj.length; j++)
+            {
+                if(obj[j] == $($('#proje_musteri_list').children(0).get(i)).children(0).get(0).value){
+                    $($('#proje_musteri_list').children(0).get(i)).children(0).get(0).checked = true;
+                    bulundu = true;
+                }
+            }
+            if(!bulundu)
+            {
+                $($('#proje_musteri_list').children(0).get(i)).children(0).get(0).checked = false;
+            }
+        }
+        for(k = 0; k < $('#musteri_kullanici_id').children(0).length; k++)
+        {
+            if(kullaniciId == $('#musteri_kullanici_id').children(0).get(k).value)
+            {
+                $('#musteri_kullanici_id').children(0).get(k).selected = true;
+            }
+            else {
+                $('#musteri_kullanici_id').children(0).get(k).selected = false;
+            }
+        }
+    }
+    $("#dosya_form").submit(function () {
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: '@Url.Action("gorevDosyasiEkle")',
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {
+                if (data.IsSuccess == false) {
+                    alert(data.Message);
+                }
+                else if (data.IsSuccess == true) {
+                    @if(!(tempGuid == null || tempGuid.Equals(string.Empty)))
+                    {
+                        <text>
+                    setTempGorevId(data.Message);
+                    </text>
+                    }
+                    alert("Dosya Eklendi.");
+                    dosyalariGetir();
+                    loglariGetir();
+                    $("#dosya_form")[0].reset();
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+    });
+    function silDosya(id) {
+        $.post('@Url.Action("gorevDosyasiSil")', {id : id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Dosya Silindi.");
+                dosyalariGetir();
+                loglariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function dosyalariGetir() {
+        var gorev_id = $('#dosya_form #gorev_id').val();
+        if (gorev_id == null) {
+            gorev_id = @Html.Raw(gorev.id);
+        }
+        $.post('@Url.Action("gorevDosyalariGetir")', {id : gorev_id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#dosyaList").html("");
+                $.each(data.Message, function () {
+                    $("#dosyaList").append('<div class="removable-item"><a href="' + @Html.Raw("'" + GorevYoneticisi.Tools.config.url + ((tempGuid != null && !tempGuid.Equals(string.Empty)) ? "public/upload/dosyalar/" : "public/upload/dosyalar/temp/") + ((tempGuid != null && !tempGuid.Equals(string.Empty)) ? "temp/" : "") + "'") + this.url + '" target="_blank">' + this.isim + '</a><a href="#" onclick="silDosya(' + this.id + ')" class="times" @Html.Raw(tamamlandiMi ? "style=\"visibility:hidden;\"" : "")><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function loglariGetir() {
+        $.post('@Url.Action("gorevLoglariGetir")', {id : @gorev.id}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#logList").html("");
+                $.each(data.Message, function () {
+                    $("#logList").append('<li><span class="icon">%</span>'
+                        + '<span class="yazi">' + this.aciklama + '</span>'
+                        + '<span class="date">' + this.ad + ' ' + this.soyad + ' - ' + this.date + '</span></li>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function projeyiGuncelle()
+    {
+        projeKullanicilariGetir();
+        projeMusterileriGetir();
+        projeGorevleriniGetir();
+    }
+    function projeGorevleriniGetir()
+    {
+        var proje_id = $("select#proje_id").val();
+        $.post('@Url.Action("projeGorevleriniGetir")', {id : proje_id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#bagli_gorev").html("");
+                $("#bagli_gorev").append('<option value="">Görev Seçiniz</option>');
+                for(i = 0; i < data.Message.length; i++)
+                {
+                    if(data.Message[i].id != @Html.Raw(gorev.id) && 1 == 1)
+                    {
+                        $("#bagli_gorev").append('<option value="' + data.Message[i].id + '">' + data.Message[i].isim + '</option>');
+                    }
+                }
+                gorevBaglantiGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+
+    }
+    function add_gorev_baglanti(form) {
+        $.post('@Url.Action("gorevBaglantiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                setTempGorevId(data.Message);
+                gorevBaglantiGetir();
+                $('#gorev_baglanti_form')[0].reset();
+                alert("Görev bağlantısı eklendi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function gorevBaglantiGetir() {
+        var gorev_id = $('#gorev_baglanti_form #gorev_id').val();
+        if (gorev_id == null) {
+            gorev_id = @Html.Raw(gorev.id);
+        }
+        $.post('@Url.Action("gorevBaglantiGetir")', {id : gorev_id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#gorevBaglantiList").html("");
+                $.each(data.Message, function () {
+                    var size = $("#bagli_gorev option").size();
+                    var isim = "";
+                    for(i = 0; i < size; i++)
+                    {
+                        if($("#bagli_gorev option")[i].value == this.bagli_gorev)
+                        {
+                            isim = $("#bagli_gorev option")[i].text;
+                        }
+                    }
+                    if(isim == "")
+                    {
+                        isim = this.isim;
+                    }
+                    $("#gorevBaglantiList").append('<div class="removable-item">' + isim + ' <a href="#" class="times" onclick="silBaglanti(' + this.id + ')" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silBaglanti(id) {
+        $.post('@Url.Action("gorevBaglantiSil")', {id : id, tempGuid : @Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                gorevBaglantiGetir();
+                alert("Bağlantı Silindi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+
+    var kullaniciStr= "";
+    function projeKullanicilariGetir() {
+        var proje_id = $("select#proje_id").val();
+        $.post('@Url.Action("projeSurecKullanicilariGetir")', {id : proje_id, tempGuid:@Html.Raw("'" + tempGuid + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                $('#kullanici_id').html("");
+                var htmlText = "<option>Kullanıcılar</option>";
+                //kullaniciStr = '[{"url":"","isim":"İlgili Kullanıcı"}';
+                $.each(data.Message, function () {
+                    htmlText += "<option value='" + this.kullanici_id + "'>" + this.ad + " " + this.soyad + "</option>";
+                    //kullaniciStr += ',{"url":"' + this.url + '","isim":"' + this.ad + ' ' + this.soyad + '"}';
+                });
+                //kullaniciStr += ']';
+                $('#kullanici_id').html(htmlText);
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function projeMusterileriGetir() {
+        var proje_id = $("select#proje_id").val();
+        $.post('@Url.Action("projeSurecMusterileriGetir")', {id : proje_id, tempGuid:@Html.Raw("'" + tempGuid + "' ")}, function (data) {
+            if (data.IsSuccess == true) {
+                $("#proje_musteri_list").html("");
+                var projeMusteriStr = "";
+                if(data.Message.length > 0)
+                {
+                    for(i = 0; i < data.Message.length; i++)
+                    {
+                        var ad = "";
+                        if(data.Message[i].firma_adi != null)
+                        {
+                            ad =  data.Message[i].firma_adi;
+                        }
+                        else
+                        {
+                            ad = data.Message[i].ad;
+                        }
+                        projeMusteriStr += '<div class="item"><input type="checkbox" name="musteriList[]" value="' + data.Message[i].musteri_id + '" style="display:inline;width: auto;" @Html.Raw(isDisabled)>' + ad + '</div>';
+                    }
+                }
+                $('#proje_musteri_list').html(projeMusteriStr);
+                //});
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

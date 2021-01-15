@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Şifre Ayarları";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+}
+
+<h2>Şifre Ayarları</h2>
+<div class="content">
+    <form class="form-default" id="sifre_form">
+        <div class="clearfix">
+            <div class="item">
+                <div class="lbl">Mevcut Şifre</div>
+                <input type="text" name="current_password" placeholder="Mevcut Şifre" required />
+            </div>
+            <div class="item">
+                <div class="lbl">Yeni Şifre</div>
+                <input type="text" name="password" placeholder="Yeni Şifre" required/>
+            </div>
+            <div class="item">
+                <div class="lbl">Yeni Şifre(Tekrar)</div>
+                <input type="text" name="password_control" placeholder="Yeni Şifre(Tekrar)" required />
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#sifre_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                sifre_send($(form));
+            }
+        });
+    });
+    function sifre_send(form) {
+        $.post('@Url.Action("sifreAyarlari")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

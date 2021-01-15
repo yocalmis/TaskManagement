@@ -1,0 +1,32 @@
+﻿@model List<GorevYoneticisi.Models.YardimModel>
+@{
+    ViewBag.Title = "Yardim";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+}
+<div class="top clearfix">
+    <i class="fa fa-life-ring" aria-hidden="true"></i>
+    <h2>Yardim</h2>
+</div>
+
+<div class="yardim-list">
+    <div class="liste clearfix">
+        @foreach (GorevYoneticisi.Models.YardimModel yrdm in Model)
+        {
+            <div class="item">
+                <div class="baslik">
+                    @Html.Raw(yrdm.baslik)
+                </div>
+                <div class="icerik">
+                    <div class="tarih"><i class="fa fa-calendar" aria-hidden="true"></i>@Html.Raw(yrdm.date.ToString("dd.MM.yyyy"))</div>
+                    <div class="yazi">@Html.Raw(yrdm.icerik)</div>
+                    <div class="video"><iframe width="560" height="315" src="@Html.Raw(yrdm.video)" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).on("click", ".yardim-list .liste .item", function () {
+        $(this).toggleClass("active");
+    });
+</script>

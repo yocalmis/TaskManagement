@@ -1,0 +1,50 @@
+﻿@model List<GorevYoneticisi.Models.firma_musavir>
+@{
+    ViewBag.Title = "Firma/Müşavir Hesapları";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Firma/Müşavir Hesapları</h2>
+</div>
+
+<div class="ilan-list">
+    <a id="yeni-uye" href="@Url.Action("yeniFirmaMusavir", "FirmaMusavir")">+</a>
+    <div class="head clearfix">
+        <h4 class="col-sm-6">FİRMA/MÜŞAVİR İSMİ</h4>
+        <h4 class="col-sm-4">TÜRÜ</h4>
+        <h4 class="col-sm-2"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.firma_musavir user in Model)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-6">@Html.Raw(user.firma_adi)</div>
+            <div class="col-sm-4">@Html.Raw(GorevYoneticisi.Tools.FirmaMusavirTur.getFirmaMusavirText(user.fm_tur))</div>
+            <div class="col-sm-2">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("firmaMusavirDuzenle", "FirmaMusavir", new { id = user.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a id="wrong-button" href="#" data-id="@Html.Raw(user.url)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    function sil(url) {
+        $.ajax({
+            url: "@Url.Action("silFirmaMusavir", "FirmaMusavir")",
+            data: { id: url },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+    $(document).on("click", "#wrong-button", function (e) {
+        e.preventDefault();
+        sil($(this).data("id"));
+    });
+</script>
+
+

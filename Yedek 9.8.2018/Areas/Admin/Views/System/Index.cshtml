@@ -1,0 +1,69 @@
+﻿@model GorevYoneticisi.Models.sistem_ayarlari
+@{
+    ViewBag.Title = "Sistem Ayarları";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Sistem Ayarları</h2>
+</div>
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <div class="item col-md-6">
+            <div class="lbl">Sistem e-Mail</div>
+            <input type="text" name="mail_address" placeholder="Sistem e-Mail" required value="@Html.Raw(Model.mail_address)" />
+        </div>
+        <div class="item col-md-6">
+            <div class="lbl">e-Mail Şifresi</div>
+            <input type="text" name="mail_pswd" placeholder="e-Mail Şifresi" required value="@Html.Raw(Model.mail_pswd)" />
+        </div>
+        <div class="item col-sm-6">
+            <div class="lbl">e-Mail Portu</div>
+            <input type="text" name="mail_port" placeholder="e-Mail Portu" value="@Html.Raw(Model.mail_port)" required />
+        </div>
+        <div class="item col-sm-6">
+            <div class="lbl">e-Mail SSL</div>
+            <select name="mail_ssl">
+                <option value="true" @(Model.mail_ssl.Equals("true") ? "selected" : "")>true</option>
+                <option value="false" @(Model.mail_ssl.Equals("false") ? "selected" : "")>false</option>
+            </select>
+        </div>
+        <div class="item col-md-6">
+            <div class="lbl">e-Mail Host</div>
+            <input type="text" name="mail_host" placeholder="e-Mail Host" required value="@Html.Raw(Model.mail_host)" />
+        </div>
+        <div class="item col-md-6">
+            <div class="lbl">Sistem Sms Başlığı</div>
+            <input type="text" name="sms_header" placeholder="Sistem Sms Başlığı" required value="@Html.Raw(Model.sms_header)" />
+        </div>
+        <div class="item col-md-6">
+            <div class="lbl">Sistem Sms Kullanıcı Adı</div>
+            <input type="text" name="sms_username" placeholder="Sistem Sms Kullanıcı Adı" value="@Html.Raw(Model.sms_username)" />
+        </div>
+        <div class="item col-md-6">
+            <div class="lbl">Sistem Sms Şifresi</div>
+            <input type="text" name="sms_password" placeholder="Sistem Sms Şifresi" required value="@Html.Raw(Model.sms_password)" />
+        </div>
+    </div>
+    <div class="item" style="text-align:right;">
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+    });
+    function form_send(form) {
+        $.post('@Url.Action("ayarlariKaydet", "System")', form.serialize(), function (data) {
+            alert(data.Message);
+        });
+    }
+</script>

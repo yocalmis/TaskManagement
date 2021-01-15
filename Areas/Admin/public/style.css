@@ -1,0 +1,312 @@
+﻿body{
+	clear:both;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	color: #000;
+	overflow-x: hidden;
+}
+.clr{
+	clear:both;
+}
+a,a:hover,a:focus,a:active { text-decoration:none; color:inherit; }
+body,html {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	width: 100%;
+    overflow-y:auto;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.sidebar{
+    background: #374650;
+    color: #E6F4FA;
+    height: 100%;
+}
+.sidebar li{
+    margin: 10px 0;
+    font-size: 15px;
+}
+.sidebar li a{
+}
+.sidebar li a i{
+    margin-right: 7px;
+}
+.content{
+    position: relative;
+}
+#yeni-teklif{background: #F14A52;position: absolute;right: 50px;top: 37px;display: block;padding: 10px 20px;color: #e6f4fa;}
+#yeni-teklif:hover:after{width: 100%;}
+#yeni-teklif:hover:before{width: 100%;}
+#yeni-teklif:before{
+	content:"";
+	-o-transition:.3s;
+	transition:.3s;
+	-webkit-transition:.3s;
+	background: #374650;
+	display: block;
+	position: absolute;
+	left: 0;
+	height: 4px;
+	top: 0;
+	width: 0px;
+	z-index: 0;
+}
+#yeni-teklif:after{
+    content:"";
+    -o-transition:.3s;
+    transition:.3s;
+    -webkit-transition:.3s;
+    width: 0;
+    background: #374650;
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 4px;
+    bottom: 0;
+}
+.ilan-list{}
+.ilan-list .head{
+    border-bottom: 2px solid #374650;
+}
+.ilan-list .satir{
+    padding: 10px 0;
+}
+.ilan-list .satir:nth-child(even){
+    background: #95C4E8;
+}
+#duzenle-button{
+    display: inline-block;
+    background: #dee031;
+    color: #374650;
+    padding: 10px 10px;
+    position:relative;
+}
+#sil-button{
+    background: #9e3939;
+    color: #fff;
+    padding: 10px 10px;
+    position:relative;
+}
+#btn-first{
+    width: 100px;
+    background: #176d1e;
+    color: #fff;
+    position:relative;
+    border:none;
+    padding:10px;
+}
+#btn-first:hover:after,
+#duzenle-button:hover:after,
+#sil-button:hover:after{width: 100%;}
+
+#btn-first:hover::before{width: 100%;}
+#duzenle-button:hover::before{width: 100%;}
+#sil-button:hover::before{width: 100%;}
+
+#btn-first:before,
+#duzenle-button:before,
+#sil-button:before{
+	content:"";
+	-o-transition:.3s;
+	transition:.3s;
+	-webkit-transition:.3s;
+	background: #374650;
+	display: block;
+	position: absolute;
+	left: 0;
+	height: 4px;
+	top: 0;
+	width: 0px;
+	z-index: 0;
+}
+
+#btn-first:after,
+#duzenle-button:after,
+#sil-button:after{
+    content:"";
+    -o-transition:.3s;
+    transition:.3s;
+    -webkit-transition:.3s;
+    width: 0;
+    background: #374650;
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 4px;
+    bottom: 0;
+}
+form{
+    padding: 0 10px;
+}
+form .item{
+    margin: 10px 0;
+}
+form .lbl{
+    float: none;
+}
+form .inp{
+    width: 100%;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+}
+form textarea{
+    width: 100%;
+    padding: 10px;
+}
+.dashboard-tabs{
+    margin: 20px;
+}
+.dashboard-tabs .tab-list{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.dashboard-tabs .tab-list a.item{
+    display: inline-block;
+    font-size: 17px;
+    margin: 0 15px;
+    color: #17191e;
+}
+.dashboard-tabs .tab-list a.item.active{
+    border-bottom:1px solid #101820;
+    color:#101820
+}
+.dashboard-tabs .list{
+    background:#fff;
+    -webkit-box-shadow: 0px 2px 5px #ccc;
+            box-shadow: 0px 2px 5px #ccc;
+}
+.dashboard-tabs .list .tab-cont{
+    width: 49%;
+    display: inline-block;
+    padding: 15px;
+    vertical-align: top;
+}
+.dashboard-tabs .list .tab-cont .musteri{
+    
+}
+.dashboard-tabs .list .tab-cont .kullanici{
+    
+}
+.dashboard-tabs .list .tab-cont .proje{
+    
+}
+.dashboard-tabs .list .tab-cont .ic-div {
+    display:none;
+    height: 400px;
+    overflow: auto;
+}
+.dashboard-tabs .list .tab-cont .ic-div.active{
+    display:block;
+}
+.dashboard-tabs .list .proje-list{
+    width: 50%;
+    display: inline-block;
+    padding: 15px;
+}
+.dashboard-tabs .list .proje-list ul{}
+.dashboard-tabs .list .proje-list ul li{}
+.dashboard-tabs .list .proje-list ul li a{}
+.dashboard-tabs .list .tab-cont .ic-div ul{
+    margin: 15px 0;
+    color: #1b1c1f;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li{
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .icon{
+    font-size: 16px;
+    width: 5%;
+    display: inline-block;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .yazi{
+    width: 85%;
+    display: inline-block;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .baslik1{
+    display: inline-block;
+    width: 5%;
+    font-weight: 800;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .baslik2{
+    display: inline-block;
+    width: 85%;
+    font-weight: 800;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .baslik3{
+    display: inline-block;
+    font-weight: 800;
+    width: 24%;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .baslik4{
+    display: inline-block;
+    font-weight: 800;
+    width: 24%;
+}    
+.dashboard-tabs .list .tab-cont .ic-div ul li .bas-tar{
+    width: 23%;
+    display: inline-block;
+    margin-right: 1%;
+}
+.dashboard-tabs .list .tab-cont .ic-div ul li .bit-tar{
+    width: 20%;
+    display: inline-block;
+}
+
+.dashboard-tabs .proje-list ul{
+    margin: 15px 0;
+    color: #1b1c1f;
+}
+.dashboard-tabs .proje-list li{
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    list-style: none;
+}
+.dashboard-tabs .proje-list .icon{
+    font-size: 16px;
+    width: 5%;
+    display: inline-block;
+}
+.dashboard-tabs .proje-list .yazi{
+    width: 44%;
+    display: inline-block;
+}
+.dashboard-tabs .proje-list li .baslik1{
+    display: inline-block;
+    width: 5%;
+    font-weight: 800;
+}
+.dashboard-tabs .proje-list li .baslik2{
+    display: inline-block;
+    width: 44%;
+    font-weight: 800;
+}
+.dashboard-tabs .proje-list li .baslik3{
+    display: inline-block;
+    font-weight: 800;
+    width: 24%;
+}
+.dashboard-tabs .proje-list li .baslik4{
+    display: inline-block;
+    font-weight: 800;
+    width: 24%;
+}    
+.dashboard-tabs .proje-list li .bas-tar{
+    width: 23%;
+    display: inline-block;
+    margin-right: 1%;
+}
+.dashboard-tabs .proje-list li .bit-tar{
+    width: 20%;
+    display: inline-block;
+}

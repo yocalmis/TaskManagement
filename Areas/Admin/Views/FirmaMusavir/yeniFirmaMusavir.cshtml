@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Yeni Firma/Müşavir";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Yeni Firma/Müşavir</h2>
+</div>
+
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <div class="item col-sm-6">
+                <div class="lbl">Tür</div>
+                <select name="fm_tur">
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.firma">Firma</option>
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.musavir">Müşavir</option>
+                </select>
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Firma Adı</div>
+                <input type="text" name="firma_adi" placeholder="Firma Adı" required />
+            </div>
+            <div class="item col-md-6">
+                <div class="lbl">Müşteri No</div>
+                <input type="text" name="musteri_no" placeholder="Müşteri No" required/>
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Üyelik Başlangıcı</div>
+                <input type="date" name="baslangic_tarihi" placeholder="Üyelik Başlangıcı" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Üyelik Bitişi</div>
+                <input type="date" name="bitis_tarihi" placeholder="Üyelik Bitişi" required />
+            </div>
+
+            <div class="item col-sm-6">
+                <div class="lbl">Vergi Dairesi</div>
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Vergi No</div>
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Çalışan Konum Alma Aralığı(Dakika)</div>
+                <input type="number" min="1" max="30" name="konum_periyot" placeholder="Çalışan Konum Alma Aralığı(Dakika)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Kullanıcı Sayısı</div>
+                <input type="number" min="0" name="kullanici_sayisi" placeholder="Kullanıcı Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Müşteri Sayısı</div>
+                <input type="number" min="0" name="musteri_sayisi" placeholder="Müşteri Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Görev Sayısı</div>
+                <input type="number" min="0" name="gorev_sayisi" placeholder="Görev Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Süreç Sayısı</div>
+                <input type="number" min="0" name="surec_sayisi" placeholder="Süreç Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Proje Sayısı</div>
+                <input type="number" min="0" name="proje_sayisi" placeholder="Proje Sayısı" required />
+            </div>
+
+            <div class="item col-md-6">
+                <div class="lbl">E-Mail</div>
+                <input type="text" name="firma_mail" placeholder="e-Mail Adresi" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Mail Port</div>
+                <input type="text" name="mail_port" placeholder="Mail Port" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Mail SSL</div>
+                <select name="mail_ssl">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Mail Host</div>
+                <input type="text" name="mail_host" placeholder="Mail Host" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Mail Şifresi</div>
+                <input type="text" name="mail_pass" placeholder="Mail Şifresi" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Sms Başlığı</div>
+                <input type="text" maxlength="11" name="sms_header" placeholder="Sms Başlığı" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Açıklama</div>
+                <textarea name="aciklama" placeholder="Açıklama"></textarea>
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Adres</div>
+                <textarea name="adres" placeholder="Adres" required></textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                _send($(form));
+            }
+        });
+    });
+    function _send(form) {
+        console.log("asdasdsd");
+        $.post('@Url.Action("newFirmaMusavir", "FirmaMusavir")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                //console.log("Html.Raw(GorevYoneticisi.Tools.config.url)" + "Admin/FirmaMusavir/firmaMusavirDuzenle/" + data.Message);
+                window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "Admin/FirmaMusavir/firmaMusavirDuzenle/" + data.Message;
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

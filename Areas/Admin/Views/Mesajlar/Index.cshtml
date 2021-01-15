@@ -1,0 +1,32 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Sms'ler";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+    List<GorevYoneticisi.Models.SmslerCountModel> smsList = (List<GorevYoneticisi.Models.SmslerCountModel>)Model[0];
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Sms'ler</h2>
+</div>
+
+<div class="ilan-list">
+    <a id="yeni-uye" href="@Url.Action("yeniSms")" data-toggle="tooltip" title="Yeni Toplu Sms">+</a>
+    <div class="head clearfix">
+        <h4 class="col-sm-2 col-xs-4">ALICI(LAR)</h4>
+        <h4 class="col-sm-2 col-xs-4">TARİH SAAT</h4>
+        <h4 class="col-sm-2 col-xs-4">KONU</h4>
+        <h4 class="col-sm-1 col-xs-4"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.SmslerCountModel sms in smsList)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-2 col-xs-4">@Html.Raw((sms.count > 1 ? sms.count + " Kişi" : sms.hedef_numara))</div>            <div class="col-sm-2 col-xs-4">@Html.Raw(sms.date.ToString("dd.MM.yyyy HH:mm"))</div>
+            <div class="col-sm-2 col-xs-4">@Html.Raw(GorevYoneticisi.Tools.OurFunctions.ourSubString(sms.icerik, 50))</div>
+            <div class="col-sm-1 col-xs-4" style="margin-top:-5px;">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("yeniSms", new { id = sms.sms_grup_id }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    }
+</div>

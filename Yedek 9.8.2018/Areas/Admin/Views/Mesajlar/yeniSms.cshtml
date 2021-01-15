@@ -1,0 +1,75 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Yeni Toplu Sms";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+    List<GorevYoneticisi.Models.KullaniciFirmaOzetModel> kullaniciFirmaOzetList = (List<GorevYoneticisi.Models.KullaniciFirmaOzetModel>)Model[0];
+    GorevYoneticisi.Models.smsler mail = (GorevYoneticisi.Models.smsler)Model[1];
+    List<int> kullaniciIdList = (List<int>)Model[2];
+
+    string isDisabled = "disabled";
+    string isHidden = "hidden";
+    if (mail == null)
+    {
+        mail = new GorevYoneticisi.Models.smsler();
+        isDisabled = "";
+        isHidden = "";
+    }
+
+    string isAllChecked = "";
+    if (kullaniciFirmaOzetList.Count == kullaniciIdList.Count)
+    {
+        isAllChecked = "checked";
+    }
+}
+
+<h2>Yeni Toplu Sms</h2>
+
+<form class="form-default" id="_form">
+    <div class="musteri-list" style="height:400px; overflow:auto;">
+        <div class="item">
+            <input type="checkbox" name="kullaniciList[]" value="0" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(isAllChecked)>Tümü
+        </div>
+        @foreach (GorevYoneticisi.Models.KullaniciFirmaOzetModel kfom in kullaniciFirmaOzetList)
+        {
+            <div class="item">
+                <input type="checkbox" name="kullaniciList[]" value="@kfom.id" style="display:inline;width: auto;" @Html.Raw(isDisabled) @Html.Raw(kullaniciIdList.Contains(kfom.id) ? "checked" : "")>@Html.Raw(kfom.ad + " " + kfom.soyad + " (" + kfom.firma_adi + ")")
+            </div>
+        }
+    </div>
+    <div class="clearfix">
+        <div class="item">
+            <div class="lbl">Sms</div>
+            <textarea id="icerik" maxlength="160" name="icerik" placeholder="Sms" @Html.Raw(isDisabled)>@Html.Raw(mail.icerik)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+    });
+    function form_send(form) {
+        loadingAc();
+        $.post('@Url.Action("smsGonder")', form.serialize(), function (data) {
+            loadingKapat();
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+                $('#_form')[0].reset();
+                $('#icerik').val("");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

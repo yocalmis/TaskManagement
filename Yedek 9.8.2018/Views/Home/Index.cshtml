@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    bool loginOlmus = false;
+    if (lgm != null)
+    {
+        loginOlmus = true;
+    }
+}
+@if (!loginOlmus)
+{
+    <form class="loginform" id="login_form">
+        <h1>Lütfen Giriş Yapınız</h1>
+        <input type="text" name="username" placeholder="Kullanıcı Adınız" />
+        <input type="password" name="password" placeholder="Parola" />
+        <button>Giriş</button>
+        <a href="@Url.Action("sifremiUnuttum")">Şifremi Unuttum</a>
+        <!--<div class="g-recaptcha" data-sitekey="6LfaFw4UAAAAACzIA0WJWMLT8SOm_Eg-kaBeIp3u"></div>-->
+    </form>
+    <script type="text/javascript">
+        $(function () {
+            $('#login_form').validate({
+                rules: {
+                    email: { email: true }
+                },
+                submitHandler: function (form) {
+                    login_send($(form));
+                }
+            });
+        });
+
+        function login_send(form) {
+            $.post('@Url.Action("Login")', form.serialize(), function (data) {
+                console.log(data);
+                if (data.IsSuccess == true) {
+                    window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "MainPage";
+                }
+                else {
+                    alert(data.Message);
+                }
+                //$('#ilan_form')[0].reset();
+                //grecaptcha.reset();
+            });
+        }
+    </script>
+}
+else
+{
+    <a href="@Url.Action("MainPage")">Panele Gir</a>
+}

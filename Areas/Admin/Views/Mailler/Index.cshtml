@@ -1,0 +1,33 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Mailler";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+     List<GorevYoneticisi.Models.MaillerCountModel> mailList = (List<GorevYoneticisi.Models.MaillerCountModel>)Model[0];
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Mailler</h2>
+</div>
+
+<div class="ilan-list">
+    <a id="yeni-uye" href="@Url.Action("yeniMail")" data-toggle="tooltip" title="Yeni Toplu Mail">+</a>
+    <div class="head clearfix">
+        <h4 class="col-sm-2 col-xs-4">ALICI(LAR)</h4>
+        <h4 class="col-sm-2 col-xs-4">TARİH SAAT</h4>
+        <h4 class="col-sm-2 col-xs-4">KONU</h4>
+        <h4 class="col-sm-1 col-xs-4"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.MaillerCountModel mail in mailList)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-2 col-xs-4">@Html.Raw((mail.count > 1 ? mail.count + " Kişi" : mail.alan_mail))</div>
+            <div class="col-sm-2 col-xs-4">@Html.Raw(mail.date.ToString("dd.MM.yyyy HH:mm"))</div>
+            <div class="col-sm-2 col-xs-4">@Html.Raw(mail.konu)</div>
+            <div class="col-sm-1 col-xs-4" style="margin-top:-5px;">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("yeniMail", new { id = mail.mail_grup_id }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    }
+</div>

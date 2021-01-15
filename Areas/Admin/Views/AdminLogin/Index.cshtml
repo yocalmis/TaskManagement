@@ -1,0 +1,86 @@
+﻿@{
+    string imgUrl = GorevYoneticisi.Tools.config.imgUrl;
+    string url = GorevYoneticisi.Tools.config.url;
+    ViewBag.Title = "Admin Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/public/img/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/roundslider.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/public/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/public/query.css" />
+</head>
+<body>
+    <div class="all-wrap" style="background-image:url(@Url.Content(imgUrl+"anasayfa2.png"));">
+        <form class="loginform" id="login_form">
+            <h1>Lütfen Giriş Yapınız</h1>
+            <input type="text" name="username" placeholder="Kullanıcı Adı" />
+            <input type="password" name="password" placeholder="Parola" />
+            <button>Giriş</button>
+            <a href="@Url.Action("sifremiUnuttum", "Home", new { area = "" })">Şifremi Unuttum</a>
+            <!--<div class="g-recaptcha" data-sitekey="6LfaFw4UAAAAACzIA0WJWMLT8SOm_Eg-kaBeIp3u"></div>-->
+        </form>
+    </div>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="~/public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/public/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="~/public/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/public/js/isonsc.min.js"></script>
+    <script type="text/javascript" src="~/public/js/jquery.smooth-scroll.js"></script>
+    <script type="text/javascript" src="~/public/js/roundslider.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+    <script type="text/javascript" src="~/public/js/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/additional-methods.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/localization/messages_tr.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/jquery-validate.bootstrap-tooltip.js"></script>
+
+    <script type="text/javascript" src="~/public/js/fastclick.js"></script>
+
+    <script type="text/javascript" src="~/Areas/Admin/public/script.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        $('#login_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                login_send($(form));
+            }
+        });
+    });
+
+    function login_send(form) {
+        $.post('@Url.Action("Index", "AdminLogin")', form.serialize(), function (data) {
+            console.log(data);
+            if (data == 1) {
+                dogru();
+            }
+            else {
+                hatali();
+            }
+            //$('#ilan_form')[0].reset();
+            //grecaptcha.reset();
+        });
+    }
+</script>
+

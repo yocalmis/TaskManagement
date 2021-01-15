@@ -1,0 +1,81 @@
+﻿@{ 
+    string url = GorevYoneticisi.Tools.config.url;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+    <script type="text/javascript" src="~/public/js/fastclick.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/public/img/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/public/img/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/public/img/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/public/img/query.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="loading" class="loading" style="display:none;">
+        <div id="loading_div">
+            <img id="loading_image" src="~/public/img/loading.gif" alt="Yükleniyor..." style="width:70px;height:70px;" />
+            <label id="loading_text">Yükleniyor...</label>
+        </div>
+    </div> 
+    <a href="#" id="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <div class="col-sm-3 col-md-2 sidebar">
+        <h4>Görev Yöneticisi</h4>
+        <hr />
+        <div class="kisi">
+            <span class="resim" style="background-image:url(@Html.Raw(url+"public/img/nouser.jpg")"></span>
+            <h3>Admin</h3>
+        </div>
+        <hr />
+        <ul>
+            <li><a href="@Url.Action("Index", "AHome")"><i class="fa fa-home" aria-hidden="true"></i>Anasayfa</a></li>
+            <li><a href="@Url.Action("Index", "Sablonlar")"><i class="fa fa-life-ring" aria-hidden="true"></i>Şablonlar</a></li>
+            <li><a href="@Url.Action("Index", "YardimSayfasi")"><i class="fa fa-life-ring" aria-hidden="true"></i>Yardım Sayfası</a></li>
+            <li><a href="@Url.Action("Index", "kullanicilar")"><i class="fa fa-users" aria-hidden="true"></i>Kullanicilar</a></li>  
+            <li><a href="@Url.Action("Index", "FirmaMusavir")"><i class="fa fa-building" aria-hidden="true"></i>Firma/Müşavir</a></li>  
+            <li><a href="@Url.Action("Index", "Musteriler")"><i class="fa fa-user-plus" aria-hidden="true"></i>Müşteriler/Mükellefler</a></li> 
+            <li><a href="@Url.Action("Index", "Projeler")"><i class="fa fa-list" aria-hidden="true"></i>Projeler</a></li> 
+            <li><a href="@Url.Action("Index", "Surecler")"><i class="fa fa-list" aria-hidden="true"></i>Süreçler</a></li> 
+            <li><a href="@Url.Action("Index", "Gorevler")"><i class="fa fa-list" aria-hidden="true"></i>Görevler</a></li> 
+            <li><a href="@Url.Action("Index", "Mailler")"><i class="fa fa-envelope" aria-hidden="true"></i>Mailler</a></li>    
+            <li><a href="@Url.Action("Index", "Mesajlar")"><i class="fa fa-comments-o" aria-hidden="true"></i>SMS'ler</a></li>    
+            <li><a href="@Url.Action("Index", "Mesajlarim")"><i class="fa fa-paper-plane" aria-hidden="true"></i>Mesajlarım</a></li>
+            <li><a href="@Url.Action("Index", "System")"><i class="fa fa-cogs" aria-hidden="true"></i>Sistem Ayarları</a></li>
+            <li><a href="@Url.Action("ayarlar", "AHome")"><i class="fa fa-cog" aria-hidden="true"></i>Ayarlar</a></li>
+            <li><a href="@Url.Action("sifreAyarlari", "AHome")"><i class="fa fa-list" aria-hidden="true"></i>Şifre Ayarları</a></li>
+            <li><a href="@Url.Action("LogOff", "AdminLogin")"><i class="fa fa-sign-out" aria-hidden="true"></i>Çıkış</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-md-10 content">
+        @RenderBody()
+    </div>
+    <!--<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/public/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/public/script.js"></script>
+    <script type="text/javascript" src="~/public/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/public/js/isonsc.min.js"></script>
+
+    <script type="text/javascript" src="~/public/js/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/additional-methods.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/localization/messages_tr.min.js"></script>
+    <script type="text/javascript" src="~/public/js/validate/jquery-validate.bootstrap-tooltip.js"></script>
+</body>
+</html>

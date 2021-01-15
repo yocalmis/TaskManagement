@@ -1,0 +1,60 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Müşteri/Mükellef";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+    
+    GorevYoneticisi.Models.musteriler mstr = (GorevYoneticisi.Models.musteriler)Model[0];
+    List<GorevYoneticisi.Models.firma_musavir> fmList = (List<GorevYoneticisi.Models.firma_musavir>)Model[1];
+}
+
+<h2>Müşteri/Mükellef</h2>
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@mstr.url">
+        <div class="item col-md-6">
+            <select name="firma_id" required disabled>
+                <option value="">İlgili Firma Seç</option>
+                @foreach (GorevYoneticisi.Models.firma_musavir fm in fmList)
+                {
+                    <option value="@fm.id" @(mstr.firma_id == fm.id ? "selected" : "")>@Html.Raw(fm.firma_adi)</option>
+                }
+            </select>
+        </div>
+
+        <div class="item col-md-6">
+            <input type="text" name="ad" placeholder="Yetkili Ad" value="@Html.Raw(mstr.ad)" required disabled />
+        </div>
+        <div class="item col-md-6">
+            <input type="text" name="soyad" placeholder="Yetkili Soyad" value="@Html.Raw(mstr.soyad)" required disabled />
+        </div>        
+        <div class="item col-md-6">
+            <input type="text" name="firma_adi" placeholder="Firma İsmi" value="@Html.Raw(mstr.firma_adi)" required disabled />
+        </div>
+        <div class="item col-md-6">
+            <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(mstr.tel)" required disabled />
+        </div>
+
+        <div class="item col-md-6">
+            <input type="text" name="gsm" placeholder="GSM" value="@Html.Raw(mstr.gsm)" required disabled />
+        </div>
+        <div class="item col-md-6">
+            <input type="text" name="email" placeholder="E-Mail" value="@Html.Raw(mstr.email)" required disabled />
+        </div>
+
+        <div class="item col-md-6">
+            <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(mstr.vergi_dairesi)" disabled />
+        </div>
+        <div class="item col-md-6">
+            <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(mstr.vergi_no)" disabled />
+        </div>
+        <div class="item col-md-6">
+            <textarea name="aciklama" placeholder="Açıklama" disabled>@Html.Raw(mstr.aciklama)</textarea>
+        </div>
+        <div class="item col-md-6">
+            <textarea name="adres" placeholder="Adres" disabled>@Html.Raw(mstr.adres)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" hidden>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>

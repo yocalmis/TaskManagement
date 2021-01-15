@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Yeni Yardım Sayfası";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<script src="~/ckfinder/ckfinder.js"></script>
+<script src="~/ckeditor/ckeditor.js"></script>
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Yeni Yardım Sayfası</h2>
+</div>
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <div class="item">
+                <input type="text" name="baslik" placeholder="Başlık" required />
+            </div>
+            <div class="item">
+                <input type="text" name="video" placeholder="Video" />
+            </div>
+            <div class="item text-area">
+                <textarea id="icerik" name="icerik" placeholder="İçerik" required></textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    var editor = CKEDITOR.instances['icerik'];
+    if (editor) { editor.destroy(true); }
+    CKEDITOR.replace('icerik', {
+        enterMode: CKEDITOR.ENTER_BR,
+    });
+    CKFinder.setupCKEditor(null, "@Url.Content("~/ckfinder/")");
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                _send($(form));
+            }
+        });
+    });
+    function _send(form) {
+        $('#icerik').val(CKEDITOR.instances['icerik'].getData());
+        $.post('@Url.Action("YardimEkle", "YardimSayfasi")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "Admin/YardimSayfasi/YardimDuzenle/" + data.Message;
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

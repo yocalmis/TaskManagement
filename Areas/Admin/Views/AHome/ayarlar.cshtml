@@ -1,0 +1,79 @@
+﻿@model GorevYoneticisi.Models.kullanicilar
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Ayarlar</h2>
+</div>
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <div class="item col-sm-6">
+                <div class="lbl">Ad</div>
+                <input type="text" name="ad" placeholder="Ad" value="@Html.Raw(Model.ad)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Soyad</div>
+                <input type="text" name="soyad" placeholder="Soyad" value="@Html.Raw(Model.soyad)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Telefon</div>
+                <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(Model.tel)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Kullanıcı Adı</div>
+                <input type="text" name="username" placeholder="Kullanıcı Adı" value="@Html.Raw(Model.username)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">e-Mail</div>
+                <input type="text" name="email" placeholder="e-Mail Adresi" value="@Html.Raw(Model.email)" required />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">SGK No</div>
+                <input type="text" name="sgk_no" placeholder="SGK Numarası" value="@Html.Raw(Model.sgk_no)" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">TC NO</div>
+                <input type="text" name="tc_no" placeholder="T.C. Kimlik Numarası" value="@Html.Raw(Model.tc_no)" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Vergi Dairesi</div>
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(Model.vergi_dairesi)" />
+            </div>
+            <div class="item col-sm-6">
+                <div class="lbl">Vergi No</div>
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(Model.vergi_no)" />
+            </div>
+            <div class="item col-sm-12">
+                <div class="lbl">Adres</div>
+                <textarea name="adres" placeholder="Adres">@Html.Raw(Model.adres)</textarea>
+            </div>
+            <div class="item col-sm-12">
+                <input type="checkbox" name="mail_permission" value="Mail İzni" style="display:inline;width:40px;" @Html.Raw(Model.mail_permission == GorevYoneticisi.Tools.Permissions.granted ? "checked" : "") />Sistem bildirimlerini mail olarak almak istiyorum.
+            </div>
+            <div class="item col-sm-12">
+                <input type="checkbox" name="sms_permission" value="Sms İzni" style="display:inline;width:40px;" @Html.Raw(Model.sms_permission == GorevYoneticisi.Tools.Permissions.granted ? "checked" : "") />Sistem bildirimlerini sms olarak almak istiyorum.
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('@Url.Action("ayarlarKaydet", "AHome")', form.serialize(), function (data) {
+            alert(data.Message);
+        });
+    }
+</script>
