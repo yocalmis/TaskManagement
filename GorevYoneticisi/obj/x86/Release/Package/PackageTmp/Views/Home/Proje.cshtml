@@ -1,0 +1,393 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Proje";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+
+    GorevYoneticisi.Models.proje_surec proje = (GorevYoneticisi.Models.proje_surec)Model[0];
+    //List<GorevYoneticisi.Models.musteriler> musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[1];
+    List<GorevYoneticisi.Models.musteriler> musteriList = null;
+    if (Model[1] != null)
+    {
+        musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[1];
+    }
+    List<GorevYoneticisi.Models.kullanicilar> kullaniciList = null;
+    if (Model[2] != null)
+    {
+        kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[2];
+    }
+
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    string isDisabled = "";
+    string isHidden = "";
+    if (GorevYoneticisi.Tools.KullaniciTurleri.user <= lgm.kullanici_turu || (proje.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.tamamlandi || proje.durum == GorevYoneticisi.Tools.TamamlamaDurumlari.pasif))
+    {
+        isDisabled = "disabled";
+        isHidden = "hidden";
+    }
+    List<GorevYoneticisi.Models.GorevVeProjeOzetModel> gorevList = (List<GorevYoneticisi.Models.GorevVeProjeOzetModel>)Model[3];
+}
+<div class="top clearfix">
+    <i class="fa fa-briefcase" aria-hidden="true"></i>
+    <h2>Proje</h2>
+    @if (isDisabled.Equals("disabled") && GorevYoneticisi.Tools.KullaniciTurleri.user > lgm.kullanici_turu)
+    {
+        <a id="teklif-button" data-toggle="tooltip" title="Projeyi Aktif Et" href="#" onclick="projeyiAktiflestir(@Html.Raw("'" + proje.url + "'"))">Projeyi Aktif Et</a>
+    }
+</div>
+
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@proje.url">
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Proje İsmi</div>
+                <input type="text" name="isim" placeholder="Proje İsmi" value="@Html.Raw(proje.isim)" required @Html.Raw(isDisabled)/>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Başlangıç Tarihi</div>
+                <input type="date" name="baslangic_tarihi" placeholder="Başlangıç Tarihi" value="@Html.Raw(proje.baslangic_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Bitiş Tarihi</div>
+                <input type="date" name="bitis_tarihi" placeholder="Bitiş Tarihi" value="@Html.Raw(proje.bitis_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="lbl">Yüzde</div><br />
+            <span class="yuzde"><span class="bar" style="width: @Html.Raw(proje.yuzde+"%;")"></span><span class="yuzde-yazi">@Html.Raw("% " + proje.yuzde)</span></span>
+        </div>
+        <div class="item">
+            <div class="lbl">Açıklama</div>
+            <textarea name="aciklama" placeholder="Açıklama" @Html.Raw(isDisabled)>@Html.Raw(proje.aciklama)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">KAYDET</button>
+    </div>
+</form>
+
+@if (proje.id != 0)
+{
+    <div class="clearfix row">
+        <div class="col-md-6">
+            <div class="item-list">
+                @if (!isHidden.Equals("hidden"))
+                {
+                    <div class="top">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <h2>Kullanıcılar</h2>
+                    </div>
+                    <form class="form-default2" id="kullanici_form">
+                        <div class="clearfix">
+                            <input id="proje_id" name="proje_id" type="hidden" value="@proje.id">
+                            <div class="item">
+                                <select name="kullanici_id" required>
+                                    <option value="">Kullanıcılar</option>
+                                    @foreach (GorevYoneticisi.Models.kullanicilar usr in kullaniciList)
+                                    {
+                                        <option value="@usr.id">@Html.Raw(usr.ad + " " + usr.soyad)</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item" style="text-align:right;">
+                            <button class="btn-first">EKLE</button>
+                        </div>
+                    </form>
+                }
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Projeye Eklenmiş Kullanıcılar</h2>
+                </div>
+                <div id="kullaniciList">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="item-list">
+                @if (!isHidden.Equals("hidden"))
+                {
+                    <div class="top">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <h2>Müşteriler</h2>
+                    </div>
+                    <form class="form-default2" id="musteri_form">
+                        <div class="clearfix">
+                            <input id="proje_id" name="proje_id" type="hidden" value="@proje.id">
+                            <div class="item">
+                                <select name="musteri_id" required>
+                                    <option value="">Müşteriler</option>
+                                    @foreach (GorevYoneticisi.Models.musteriler mstr in musteriList)
+                                    {
+                                        <option value="@mstr.id">@Html.Raw(mstr.firma_adi)</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item" style="text-align:right;">
+                            <button class="btn-first">EKLE</button>
+                        </div>
+                    </form>
+                }
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Projeye Eklenmiş Müşteriler</h2>
+                </div>
+                <div>
+                    <div id="musteriList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="top">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        <h2>Proje Görevleri</h2>
+    </div>
+
+    <div class="ilan-list">
+        <a id="yeni-uye" href="@Url.Action("Gorev")" data-toggle="tooltip" title="Yeni Görev Ekle" @Html.Raw(isHidden)>+</a>
+        <div class="head clearfix">
+            <h4 class="col-sm-3 col-xs-4">GÖREV İSMİ</h4>
+            <h4 class="col-sm-2 col-xs-5">TAMAMLANMA YÜZDESİ</h4>
+            <h4 class="col-sm-2 hidden-xs">BAŞLANGIÇ TARİHİ</h4>
+            <h4 class="col-sm-2 hidden-xs">BİTİŞ TARİHİ</h4>
+            <h4 class="col-sm-1 hidden-xs">DURUM</h4>
+            <h4 class="col-sm-2 col-xs-3"></h4>
+        </div>
+        @foreach (GorevYoneticisi.Models.GorevVeProjeOzetModel grv in gorevList)
+        {
+            <div class="satir clearfix">
+                <div class="col-sm-3 col-xs-4">@Html.Raw(grv.gorev_ismi)</div>
+                <div class="col-sm-2 col-xs-5"><span class="yuzde"><span class="bar" style="width: @Html.Raw(grv.yuzde + "%;")"></span><span class="yuzde-yazi">@Html.Raw("% " + grv.yuzde)</span></span></div>
+                <div class="col-sm-2 hidden-xs">@Html.Raw(grv.baslangic_tarihi.ToString("dd.MM.yyyy"))</div>
+                <div class="col-sm-2 hidden-xs">@Html.Raw(grv.bitis_tarihi.ToString("dd.MM.yyyy"))</div>
+                <div class="col-sm-1 hidden-xs">@Html.Raw(GorevYoneticisi.Tools.TamamlamaDurumlari.getTamamlamaDurum(grv.durum))</div>
+                <div class="col-sm-2 col-xs-3" style="margin-top:-5px;">
+                    <a id="teklif-button" href="@Html.Raw(Url.Action("Gorev", new { id = grv.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    @if (grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.pasif && grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.pasif && grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.tamamlandi && lgm.kullanici_turu <= GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili)
+                    {
+                        <a id="wrong-button" href="#" data-id="@Html.Raw(grv.url)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    }
+                    @if (grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.pasif && grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.pasif && grv.durum != GorevYoneticisi.Tools.TamamlamaDurumlari.tamamlandi && grv.yuzde == 100 && lgm.kullanici_turu <= GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili)
+                    {
+                        <a id="teklif-button" data-toggle="tooltip" title="Görev Tamamlandı" href="#" onclick="tamamlandiGorev('@Html.Raw(grv.url)')"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    }
+                </div>
+            </div>
+
+        }
+    </div>
+}
+
+
+<script type="text/javascript">
+    function projeyiAktiflestir(id) {
+        $.ajax({
+            url: "@Url.Action("projeSurecAktiflestir")",
+            data: { id: id },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+    function tamamlandi(id) {
+        $.ajax({
+            url: "@Url.Action("gorevTamamlandi")",
+            data: { id: id },
+        dataType: "json",
+        type: "POST",
+        success: function (data) {
+            location.reload();
+        }
+    });
+    }
+    function sil(id) {
+        $.ajax({
+            url: "@Url.Action("silGorev")",
+            data: { id: id },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+        }
+        $(document).on("click", "#wrong-button", function (e) {
+            e.preventDefault();
+            sil($(this).data("id"));
+        });
+</script>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                form_send($(form));
+            }
+        });
+        @if (kullaniciList != null && proje.id != 0)
+        {
+            <text>
+        $('#kullanici_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_user($(form));
+            }
+        });
+        $('#musteri_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_musteri($(form));
+            }
+        });
+        </text>
+        }
+        kullanicilariGetir();
+        musterileriGetir();
+    });
+    function form_send(form) {
+        $.post('@Url.Action("ProjeDuzenle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                var uurl = $('#url').val();
+                if (uurl == "") {
+                    $("#_form")[0].reset();
+                }
+                alert("Proje Kaydedildi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    @if (kullaniciList != null && proje.id != 0)
+    {
+        <text>
+    function add_user(form) {
+        $.post('@Url.Action("projeSurecKullanicisiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert("Kullanıcı Eklendi.");
+                kullanicilariGetir();
+                $("#kullanici_form")[0].reset();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silKullanici(id) {
+        $.post('@Url.Action("projeSurecKullanicisiSil")', {id : id}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Kullanıcı Silindi.");
+                kullanicilariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    </text>
+    }
+    function kullanicilariGetir() {
+        $.post('@Url.Action("projeSurecKullanicilariGetir")', {id : @proje.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#kullaniciList").html("");
+                $.each(data.Message, function () {
+                    $("#kullaniciList").append('<div class="removable-item">' + this.ad + ' ' + this.soyad + '<a href="#" onclick="silKullanici(' + this.id + ')" class="times" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    @if (musteriList != null && proje.id != 0)
+    {
+        <text>
+    function add_musteri(form) {
+        $.post('@Url.Action("projeSurecMusterisiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert("Müşteri Eklendi.");
+                musterileriGetir();
+                $("#musteri_form")[0].reset();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silMusteri(id) {
+        $.post('@Url.Action("projeSurecMusterisiSil")', {id : id}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Müşteri Silindi.");
+                musterileriGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    </text>
+    }
+
+    @{
+        string kullaniciStr = "[{\"url\":\"\",\"isim\":\"İlgili Kullanıcı\"}";
+        foreach (GorevYoneticisi.Models.kullanicilar usr in kullaniciList)
+        {
+    kullaniciStr += ",{\"url\":\"" + usr.url + "\",\"isim\":\"" + usr.ad + " " + usr.soyad + "\"}";
+    }
+    kullaniciStr += "]";
+    <text>
+@Html.Raw("var kullaniciStr=" + kullaniciStr + "");
+    </text>
+    }
+    function musteriPaylasimi(drp, id) {
+        var kullanici = $(drp).val();
+        $.post('@Url.Action("projeSurecMusteriPaylasimi")', {id : id, kullanici:kullanici}, function (data) {
+            if (data.IsSuccess != true) {
+                alert(data.Message);
+            }
+        });
+    }
+    function musterileriGetir() {
+        $.post('@Url.Action("projeSurecMusterileriGetir")', {id : @proje.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#musteriList").html("");
+                $.each(data.Message, function () {
+                    var kStr = "";
+                    var dataThs = this;
+                    var ifSelected = "";
+                    $.each(kullaniciStr, function () {
+                        if (this.url == dataThs.kUrl) {
+                            ifSelected = " selected";
+                        }
+                        kStr += "<option value='" + this.url + "' " + ifSelected + ">" + this.isim + "</option>";
+                        ifSelected = "";
+                    });
+                    $("#musteriList").append('<div class="removable-item">' + this.firma_adi + ' <select onchange="musteriPaylasimi(this,' + this.id + ')">' + kStr + '</select><a href="#" onclick="silMusteri(' + this.id + ')" class="times" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

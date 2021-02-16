@@ -1,0 +1,134 @@
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.csprojResolveAssemblyReference.cache
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.dll.config
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.pdb
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Antlr3.Runtime.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.SqlServer.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Google.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Web.Infrastructure.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Newtonsoft.Json.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Owin.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Helpers.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Mvc.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Optimization.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Razor.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Deployment.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Razor.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\WebGrease.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Helpers.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Mvc.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Optimization.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Razor.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Deployment.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Razor.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Antlr3.Runtime.pdb
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Newtonsoft.Json.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.SqlServer.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Google.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.pdb
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Data.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Data.Entity.EF6.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Web.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\CKFinder.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\CKFinder.pdb
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Net.Http.Formatting.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Net.Http.Formatting.xml
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.WebHost.dll
+D:\Çalışmalar\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.WebHost.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.dll.config
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\GorevYoneticisi.pdb
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Antlr3.Runtime.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\CKFinder.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.SqlServer.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Data.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\MySql.Web.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Newtonsoft.Json.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Owin.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Net.Http.Formatting.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Helpers.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.WebHost.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Mvc.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Optimization.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Razor.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\WebGrease.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\CKFinder.pdb
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Net.Http.Formatting.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Http.WebHost.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Helpers.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Mvc.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Optimization.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.Razor.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Antlr3.Runtime.pdb
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Newtonsoft.Json.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\EntityFramework.SqlServer.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.csprojAssemblyReference.cache
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.csproj.CoreCompileInputs.cache
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.csproj.CopyComplete
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.dll
+C:\Users\Yusuf\Desktop\Kaynak Kodlar\wetransfer-d81488\Görev Yönetim Sistemi\GorevYoneticisi\obj\Debug\GorevYoneticisi.pdb

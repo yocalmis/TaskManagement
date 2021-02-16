@@ -1,0 +1,209 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Müşteri/Mükellef";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+
+    GorevYoneticisi.Models.musteriler musteri = (GorevYoneticisi.Models.musteriler)Model[0];
+    List<GorevYoneticisi.Models.kullanicilar> kullaniciList = null;
+    if (Model[1] != null)
+    {
+        kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[1];
+    }
+
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    string isDisabled = "";
+    string isHidden = "";
+    if (GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili <= lgm.kullanici_turu)
+    {
+        isDisabled = "disabled";
+        isHidden = "hidden";
+    }
+}
+
+<h2>Müşteri/Mükellef</h2>
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@musteri.url">
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Yetkili Ad</div>
+                <input type="text" name="ad" placeholder="Yetkili Ad" value="@Html.Raw(musteri.ad)" required @Html.Raw(isDisabled)/>
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Yetkili Soyad</div>
+                <input type="text" name="soyad" placeholder="Yetkili Soyad" value="@Html.Raw(musteri.soyad)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Firma İsmi</div>
+                <input type="text" name="firma_adi" placeholder="Firma İsmi" value="@Html.Raw(musteri.firma_adi)" required @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Firma Telefonu</div>
+                <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(musteri.tel)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>      
+        
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;" required>
+                <div class="lbl">GSM</div>
+                <input type="text" name="gsm" placeholder="GSM" value="@Html.Raw(musteri.gsm)" required @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;" required>
+                <div class="lbl">E-Mail</div>
+                <input type="text" name="email" placeholder="E-Mail" value="@Html.Raw(musteri.email)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>        
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi Numarası</div>
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(musteri.vergi_no)" @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi Dairesi</div>
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(musteri.vergi_dairesi)" @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="item">
+            <div class="lbl">Açıklama</div>
+            <textarea name="aciklama" placeholder="Açıklama" @Html.Raw(isDisabled)>@Html.Raw(musteri.aciklama)</textarea>
+        </div>
+        <div class="item">
+            <textarea name="adres" placeholder="Adres" @Html.Raw(isDisabled)>@Html.Raw(musteri.adres)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+
+@if (musteri.id != 0)
+{
+    <div class="clearfix row">
+        <div class="col-md-12">
+            <div class="item-list">
+                @if (kullaniciList != null)
+                {
+                    <div class="top">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <h2>Kullanıcılar</h2>
+                    </div>
+                    <form class="form-default2" id="kullanici_form">
+                        <div class="clearfix">
+                            <input id="musteri_id" name="musteri_id" type="hidden" value="@musteri.id">
+                            <div class="item">
+                                <select name="kullanici_id" required>
+                                    <option value="">Kullanıcılar</option>
+                                    @foreach (GorevYoneticisi.Models.kullanicilar usr in kullaniciList)
+                                    {
+                                        <option value="@usr.id">@Html.Raw(usr.ad + " " + usr.soyad)</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item" style="text-align:right;">
+                            <button class="btn-first">EKLE</button>
+                        </div>
+                    </form>
+                }
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Müşteriye Atanmış Kullanıcılar</h2>
+                </div>
+                <div id="kullaniciList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('input[name=tel]').mask('+90 (999) 999-99-99');
+        $('input[name=gsm]').mask('+90 (999) 999-99-99');
+        $('#_form').validate({
+            rules: {
+                email: { email: true },
+                gsm: {
+                    matches:"/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/",
+                    minlength:10, 
+                    maxlength:10
+                },
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+        @if (kullaniciList != null && musteri.id != 0)
+        {
+            <text>
+        $('#kullanici_form').validate({
+            rules: {
+            },
+            submitHandler: function (form) {
+                add_user($(form));
+            }
+        });        
+        </text>
+        }
+        kullanicilariGetir();
+    });
+    function user_send(form) {
+        $.post('@Url.Action("MusteriDuzenle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                var uurl = $('#url').val();
+                if (uurl == "") {
+                    $("#_form")[0].reset();
+                }
+                alert("Müşteri/Mükellef Kaydedildi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    @if (kullaniciList != null && musteri.id != 0)
+     {
+         <text>
+    function add_user(form) {
+        $.post('@Url.Action("musteriKullanicisiEkle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert("Kullanıcı Eklendi.");
+                kullanicilariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function silKullanici(id) {
+        $.post('@Url.Action("musteriKullanicisiSil")', {id : id}, function (data) {
+            if (data.IsSuccess == true) {
+                alert("Kullanıcı Silindi.");
+                kullanicilariGetir();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }    
+         </text>
+     }
+    function kullanicilariGetir() {
+        $.post('@Url.Action("musteriKullanicilariGetir")', {id : @musteri.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#kullaniciList").html("");
+                $.each(data.Message, function () {
+                    $("#kullaniciList").append('<div class="removable-item">' + this.ad + ' ' + this.soyad + '<a href="#" onclick="silKullanici(' + this.id + ')" class="times" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                    //$("#kullaniciList").append('<div>' + this.ad + ' ' + this.soyad + '<a href="#" onclick="silKullanici(' + this.id + ')">Sil</a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

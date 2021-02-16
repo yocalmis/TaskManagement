@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gorevYoneticisiModelStoreContainer" CdmEntityContainer="vrlfgysdbEntities">
+    <EntitySetMapping Name="dosyalar">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.dosyalar">
+        <MappingFragment StoreEntitySet="dosyalar">
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="firma_musavir">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.firma_musavir">
+        <MappingFragment StoreEntitySet="firma_musavir">
+          <ScalarProperty Name="konum_periyot" ColumnName="konum_periyot" />
+          <ScalarProperty Name="fm_tur" ColumnName="fm_tur" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="firma_adi" ColumnName="firma_adi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="proje_sayisi" ColumnName="proje_sayisi" />
+          <ScalarProperty Name="surec_sayisi" ColumnName="surec_sayisi" />
+          <ScalarProperty Name="gorev_sayisi" ColumnName="gorev_sayisi" />
+          <ScalarProperty Name="musteri_sayisi" ColumnName="musteri_sayisi" />
+          <ScalarProperty Name="kullanici_sayisi" ColumnName="kullanici_sayisi" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorev_dosya">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_dosya">
+        <MappingFragment StoreEntitySet="gorev_dosya">
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+          <ScalarProperty Name="dosya_id" ColumnName="dosya_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorev_loglari">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_loglari">
+        <MappingFragment StoreEntitySet="gorev_loglari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="islem" ColumnName="islem" />
+          <ScalarProperty Name="gorevin_eski_durumu" ColumnName="gorevin_eski_durumu" />
+          <ScalarProperty Name="gorevin_yeni_durumu" ColumnName="gorevin_yeni_durumu" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorev_proje">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_proje">
+        <MappingFragment StoreEntitySet="gorev_proje">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+          <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici_gorev">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_gorev">
+        <MappingFragment StoreEntitySet="kullanici_gorev">
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici_musteri">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_musteri">
+        <MappingFragment StoreEntitySet="kullanici_musteri">
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici_proje">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_proje">
+        <MappingFragment StoreEntitySet="kullanici_proje">
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesajlar">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.mesajlar">
+        <MappingFragment StoreEntitySet="mesajlar">
+          <ScalarProperty Name="parent_url" ColumnName="parent_url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+          <ScalarProperty Name="alan_id" ColumnName="alan_id" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musteriler">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.musteriler">
+        <MappingFragment StoreEntitySet="musteriler">
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="firma_adi" ColumnName="firma_adi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="firma" ColumnName="firma" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proje_musteri">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.proje_musteri">
+        <MappingFragment StoreEntitySet="proje_musteri">
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+          <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saha_takip">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.saha_takip">
+        <MappingFragment StoreEntitySet="saha_takip">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistem_bildirimleri">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.sistem_bildirimleri">
+        <MappingFragment StoreEntitySet="sistem_bildirimleri">
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="ilgili_url" ColumnName="ilgili_url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="bildirim_turu" ColumnName="bildirim_turu" />
+          <ScalarProperty Name="ilgili_id" ColumnName="ilgili_id" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="okundu" ColumnName="okundu" />
+          <ScalarProperty Name="okunma_tarihi" ColumnName="okunma_tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smsler">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.smsler">
+        <MappingFragment StoreEntitySet="smsler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+          <ScalarProperty Name="hedef_numara" ColumnName="hedef_numara" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="hedef_id" ColumnName="hedef_id" />
+          <ScalarProperty Name="hedef_tur" ColumnName="hedef_tur" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yardim">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.yardim">
+        <MappingFragment StoreEntitySet="yardim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mailler">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.mailler">
+        <MappingFragment StoreEntitySet="mailler">
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="hedef_tur" ColumnName="hedef_tur" />
+          <ScalarProperty Name="hedef_id" ColumnName="hedef_id" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="konu" ColumnName="konu" />
+          <ScalarProperty Name="alan_mail" ColumnName="alan_mail" />
+          <ScalarProperty Name="gonderen_mail" ColumnName="gonderen_mail" />
+          <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicilar">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="reset_guidexpiredate" ColumnName="reset_guidexpiredate" />
+          <ScalarProperty Name="reset_guid" ColumnName="reset_guid" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="tc_no" ColumnName="tc_no" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="sgk_no" ColumnName="sgk_no" />
+          <ScalarProperty Name="satis_musteri_id" ColumnName="satis_musteri_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="kullanici_turu" ColumnName="kullanici_turu" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yapilacaklar">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.yapilacaklar">
+        <MappingFragment StoreEntitySet="yapilacaklar">
+          <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="gerceklestiren_id" ColumnName="gerceklestiren_id" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorev_musteri">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_musteri">
+        <MappingFragment StoreEntitySet="gorev_musteri">
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+          <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorevler">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.gorevler">
+        <MappingFragment StoreEntitySet="gorevler">
+          <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+          <ScalarProperty Name="onaylayan_yetkili" ColumnName="onaylayan_yetkili" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+          <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+          <ScalarProperty Name="yuzde" ColumnName="yuzde" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proje_surec">
+      <EntityTypeMapping TypeName="gorevYoneticisiModel.proje_surec">
+        <MappingFragment StoreEntitySet="proje_surec">
+          <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+          <ScalarProperty Name="onaylayan_yetkili" ColumnName="onaylayan_yetkili" />
+          <ScalarProperty Name="mevcut_donem" ColumnName="mevcut_donem" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="parent_vid" ColumnName="parent_vid" />
+          <ScalarProperty Name="periyot_turu" ColumnName="periyot_turu" />
+          <ScalarProperty Name="yuzde" ColumnName="yuzde" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+          <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+          <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

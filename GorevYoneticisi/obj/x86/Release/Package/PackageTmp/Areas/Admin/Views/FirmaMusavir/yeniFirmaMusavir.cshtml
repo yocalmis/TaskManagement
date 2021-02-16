@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Yeni Firma/Müşavir";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Yeni Firma/Müşavir</h2>
+</div>
+
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <div class="item col-sm-6">
+                <select name="fm_tur">
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.firma">Firma</option>
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.musavir">Müşavir</option>
+                </select>
+            </div>
+            <div class="item col-sm-6">
+                <input type="text" name="firma_adi" placeholder="Firma Adı" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="1" max="30" name="konum_periyot" placeholder="Çalışan Konum Alma Aralığı(Dakika)" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="0" name="kullanici_sayisi" placeholder="Kullanıcı Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="0" name="musteri_sayisi" placeholder="Müşteri Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="0" name="gorev_sayisi" placeholder="Görev Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="0" name="surec_sayisi" placeholder="Süreç Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <input type="number" min="0" name="proje_sayisi" placeholder="Proje Sayısı" required />
+            </div>
+            <div class="item col-sm-6">
+                <textarea name="aciklama" placeholder="Açıklama"></textarea>
+            </div>
+            <div class="item col-sm-6">
+                <textarea name="adres" placeholder="Adres" required></textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                _send($(form));
+            }
+        });
+    });
+    function _send(form) {
+        console.log("asdasdsd");
+        $.post('@Url.Action("newFirmaMusavir", "FirmaMusavir")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                //console.log("Html.Raw(GorevYoneticisi.Tools.config.url)" + "Admin/FirmaMusavir/firmaMusavirDuzenle/" + data.Message);
+                window.location.href = "@Html.Raw(GorevYoneticisi.Tools.config.url)" + "Admin/FirmaMusavir/firmaMusavirDuzenle/" + data.Message;
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

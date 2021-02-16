@@ -1,0 +1,9 @@
+﻿@{
+    string uyr = ViewBag.uyari;
+    ViewBag.Title = "Uyarı - " + GorevYoneticisi.Tools.OurFunctions.ourSubString(uyr, 20);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.slider = false;
+}
+<div class="container">
+    <p>@Html.Raw(uyr)</p>
+</div>

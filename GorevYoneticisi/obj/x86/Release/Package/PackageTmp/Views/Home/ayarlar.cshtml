@@ -1,0 +1,81 @@
+﻿@model GorevYoneticisi.Models.kullanicilar
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+}
+
+<h2>Ayarlar</h2>
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Ad</div>
+                <input type="text" name="ad" placeholder="Ad" value="@Html.Raw(Model.ad)" required />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Soyad</div>
+                <input type="text" name="soyad" placeholder="Soyad" value="@Html.Raw(Model.soyad)" required />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Telefon</div>
+                <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(Model.tel)" required />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">e-Mail</div>
+                <input type="text" name="email" placeholder="e-Mail Adresi" value="@Html.Raw(Model.email)" required />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">SGK Numarası</div>
+                <input type="text" name="sgk_no" placeholder="SGK Numarası" value="@Html.Raw(Model.sgk_no)" />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">T.C. Numarası</div>
+                <input type="text" name="tc_no" placeholder="T.C. Kimlik Numarası" value="@Html.Raw(Model.tc_no)" />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi Dairesi</div>
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(Model.vergi_dairesi)" />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi No</div>
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(Model.vergi_no)" />
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="lbl">Adres</div>
+            <textarea name="adres" placeholder="Adres">@Html.Raw(Model.adres)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;">
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('@Url.Action("ayarlarKaydet")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

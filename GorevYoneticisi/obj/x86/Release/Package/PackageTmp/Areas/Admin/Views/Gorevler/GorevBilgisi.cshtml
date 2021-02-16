@@ -1,0 +1,242 @@
+﻿@model List<object>
+@{
+    ViewBag.Title = "Görev";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+
+    GorevYoneticisi.Models.gorevler gorev = (GorevYoneticisi.Models.gorevler)Model[0];
+    List<GorevYoneticisi.Models.proje_surec> projeList = (List<GorevYoneticisi.Models.proje_surec>)Model[1];
+    List<GorevYoneticisi.Models.proje_surec> surecList = (List<GorevYoneticisi.Models.proje_surec>)Model[2];
+    //List<GorevYoneticisi.Models.musteriler> musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[3];
+    List<GorevYoneticisi.Models.musteriler> musteriList = null;
+    if (Model[3] != null)
+    {
+        musteriList = (List<GorevYoneticisi.Models.musteriler>)Model[3];
+    }
+    List<GorevYoneticisi.Models.kullanicilar> kullaniciList = null;
+    if (Model[4] != null)
+    {
+        kullaniciList = (List<GorevYoneticisi.Models.kullanicilar>)Model[4];
+    }
+    GorevYoneticisi.Models.gorev_proje gorevProje = (GorevYoneticisi.Models.gorev_proje)Model[5];
+    //GorevYoneticisi.Models.LoggedUserModel lgm = (GorevYoneticisi.Models.LoggedUserModel)Model[6];
+    GorevYoneticisi.Models.firma_musavir firma = (GorevYoneticisi.Models.firma_musavir)Model[7];
+
+    string isDisabled = "disabled";
+    string isHidden = "hidden";
+}
+<div class="top">
+    <i class="fa fa-briefcase" aria-hidden="true"></i>
+    <h2>Görev</h2>
+</div>
+
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@gorev.url">
+        <div class="item">
+            <div class="lbl">İlgili Firma</div><br />
+            <input type="text" name="isim" placeholder="ilgili Firma" value="@Html.Raw(firma.firma_adi)" required @Html.Raw(isDisabled) />
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">İlgili Proje</div>
+                <select name="proje_id" required @Html.Raw(isDisabled)>
+                    <option value="0">İlgili Proje/Süreç Yok</option>
+                    <option value="">--Projeler--</option>
+                    @foreach (GorevYoneticisi.Models.proje_surec prj in projeList)
+                    {
+                        <option value="@prj.id" @(prj.id == gorevProje.proje_id ? "selected" : "")>@Html.Raw(prj.isim)</option>
+                    }
+                    <option value="">--Süreçler--</option>
+                    @foreach (GorevYoneticisi.Models.proje_surec src in surecList)
+                    {
+                        <option value="@src.id" @(src.id == gorevProje.proje_id ? "selected" : "")>@Html.Raw(src.isim)</option>
+                    }
+                </select>
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">İsim</div>
+                <input type="text" name="isim" placeholder="Proje İsmi" value="@Html.Raw(gorev.isim)" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Başlama Tarihi</div>
+                <input type="date" name="baslangic_tarihi" placeholder="Başlangıç Tarihi" value="@Html.Raw(gorev.baslangic_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Bitiş Tarihi</div>
+                <input type="date" name="bitis_tarihi" placeholder="Bitiş Tarihi" value="@Html.Raw(gorev.bitis_tarihi.ToString("yyyy-MM-dd"))" required @Html.Raw(isDisabled) />
+            </div>
+        </div>
+        <div class="item">
+            <div class="lbl">Tamamlanma Yüzdesi</div><br />
+            <span class="yuzde" style="padding: 10px;"><span id="yuzdeGrafik" class="bar" style="width: @Html.Raw(gorev.yuzde+"%;")"></span><span class="yuzde-yazi" id="yuzdeYazi">@Html.Raw("% " + gorev.yuzde)</span></span>
+        </div>
+        <div class="item">
+            <div class="lbl">Açıklama</div>
+            <textarea name="aciklama" placeholder="Açıklama" @Html.Raw(isDisabled)>@Html.Raw(gorev.aciklama)</textarea>
+        </div>
+    </div>
+    <div class="item" style="text-align:right;" @Html.Raw(isHidden)>
+        <button class="btn-first">KAYDET</button>
+    </div>
+</form>
+<div class="clearfix row">
+        <div class="col-md-6">
+            <div class="item-list">
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Göreve Eklenmiş Kullanıcılar</h2>
+                </div>
+                <div class="list-padding">
+                    <div id="kullaniciList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="item-list">
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Göreve Eklenmiş Müşteriler</h2>
+                </div>
+                <div class="list-padding">
+                    <div id="musteriList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clr"></div>
+        <div class="col-md-6">
+            <div class="item-list">
+                <div class="top">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    <h2>Yapılacak Listesi</h2>
+                </div>
+                <div class="list-padding">
+                    <div id="yapilacakList" class="clearfix">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="item-list">
+                <div class="list-padding">
+                    <div class="top">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                        <h2>Dosya Listesi</h2>
+                    </div>
+                    <div id="dosyaList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clr"></div>
+</div>
+@if (gorev.id != 0)
+{
+    <div class="clearfix">
+        <div class="gorev-tarihcesi">
+            <div class="top">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                <h2>Görev Tarihçesi</h2>
+            </div>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        yapilacaklariGetir();
+        musterileriGetir();
+        kullanicilariGetir();
+        dosyalariGetir();
+        loglariGetir();
+    });
+    function yapilacaklariGetir() {
+        $.post('@Url.Action("yapilacaklarList")', {gorev_url : @Html.Raw("'" + gorev.url + "'")}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#yapilacakList").html("");
+                $.each(data.Message, function () {
+                    var durum = "";
+                    if(this.durum == 2)
+                    {
+                        durum = "checked";
+                    }
+                    $("#yapilacakList").append('<div class="col-md-6"><div class="do-list"><input type="checkbox" name="yapilacak" value="asd" onchange="yapilacakIsaretle(\'' + this.url + '\', this)" ' + durum + ' disabled><span>' + this.isim + this.aciklama + '</span></div></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function kullanicilariGetir() {
+        $.post('@Url.Action("gorevKullanicilariGetir")', {id : @gorev.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#kullaniciList").html("");
+                $.each(data.Message, function () {
+                    $("#kullaniciList").append('<div class="removable-item">' + this.ad + ' ' + this.soyad + '<a href="#" class="times" onclick="silKullanici(' + this.id + ')" @Html.Raw(isHidden)><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function musterileriGetir() {
+        $.post('@Url.Action("gorevMusterileriGetir")', {id : @gorev.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#musteriList").html("");
+                $.each(data.Message, function () {
+                    $("#musteriList").append('<div class="removable-item">' + this.firma_adi + '<a href="#" class="times" onclick="silMusteri(' + this.id + ')" @Html.Raw(isHidden) hidden><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function dosyalariGetir() {
+        $.post('@Url.Action("gorevDosyalariGetir")', {id : @gorev.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#dosyaList").html("");
+                $.each(data.Message, function () {
+                    $("#dosyaList").append('<div class="removable-item"><a href="@Html.Raw(GorevYoneticisi.Tools.config.url + "public/upload/dosyalar/")' + this.url + '" target="_blank">' + this.isim + '</a><a href="#" onclick="silDosya(' + this.id + ')" class="times" hidden><i class="fa fa-times" aria-hidden="true"></i></a></div>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function loglariGetir() {
+        $.post('@Url.Action("gorevLoglariGetir")', {id : @gorev.id}, function (data) {
+            if (data.IsSuccess == true) {
+                console.log(data);
+                $("#logList").html("");
+                $.each(data.Message, function () {
+                    $("#logList").append('<li><span class="icon">%</span>'
+                        + '<span class="yazi">' + this.aciklama + '</span>'
+                        + '<span class="date">' + this.ad + ' ' + this.soyad + ' - ' + this.date + '</span></li>');
+                });
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>
+
+
+

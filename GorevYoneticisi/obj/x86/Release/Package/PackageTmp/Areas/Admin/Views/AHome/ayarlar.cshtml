@@ -1,0 +1,60 @@
+﻿@model GorevYoneticisi.Models.kullanicilar
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Ayarlar</h2>
+</div>
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <div class="item">
+                <input type="text" name="ad" placeholder="Ad" value="@Html.Raw(Model.ad)" required />
+            </div>
+            <div class="item">
+                <input type="text" name="soyad" placeholder="Soyad" value="@Html.Raw(Model.soyad)" required />
+            </div>
+            <div class="item">
+                <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(Model.tel)" required />
+            </div>
+            <div class="item">
+                <input type="text" name="email" placeholder="e-Mail Adresi" value="@Html.Raw(Model.email)" required />
+            </div>
+            <div class="item">
+                <input type="text" name="sgk_no" placeholder="SGK Numarası" value="@Html.Raw(Model.sgk_no)" />
+            </div>
+            <div class="item">
+                <input type="text" name="tc_no" placeholder="T.C. Kimlik Numarası" value="@Html.Raw(Model.tc_no)" />
+            </div>
+            <div class="item">
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(Model.vergi_dairesi)" />
+            </div>
+            <div class="item">
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(Model.vergi_no)" />
+            </div>
+            <div class="item">
+                <textarea name="adres" placeholder="Adres">@Html.Raw(Model.adres)</textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('@Url.Action("ayarlarKaydet", "AHome")', form.serialize(), function (data) {
+            alert(data.Message);
+        });
+    }
+</script>

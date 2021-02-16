@@ -1,0 +1,48 @@
+﻿@model List<GorevYoneticisi.Models.yardim>
+@{
+    ViewBag.Title = "Yardim Sayfaları";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Yardim Sayfaları</h2>
+</div>
+<div class="ilan-list">
+
+    <a id="yeni-uye" href="@Url.Action("YardimEkle", "YardimSayfasi")">+</a><br><br>
+    <div class="head clearfix">
+        <h4 class="col-sm-10">BAŞLIK</h4>
+        <h4 class="col-sm-2"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.yardim yrd in Model)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-10">@Html.Raw(yrd.baslik)</div>
+            <div class="col-sm-2">
+                <a id="teklif-button" href="@Html.Raw(Url.Action("YardimDuzenle", "YardimSayfasi", new { id = yrd.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a id="wrong-button" href="#" data-id="@Html.Raw(yrd.url)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    }
+</div>
+
+    <script type="text/javascript">
+        function sil(url) {
+            $.ajax({
+                url: "@Url.Action("silYardim", "YardimSayfasi")",
+                data: { id: url },
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        }
+        $(document).on("click", "#wrong-button", function (e) {
+            e.preventDefault();
+            sil($(this).data("id"));
+        });
+    </script>
+
+

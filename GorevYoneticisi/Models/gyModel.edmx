@@ -1,0 +1,2747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gorevYoneticisiModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dosyalar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="firma_musavir">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="proje_sayisi" Type="int" Nullable="false" />
+          <Property Name="surec_sayisi" Type="int" Nullable="false" />
+          <Property Name="gorev_sayisi" Type="int" Nullable="false" />
+          <Property Name="musteri_sayisi" Type="int" Nullable="false" />
+          <Property Name="kullanici_sayisi" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="firma_adi" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_dairesi" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_no" Type="varchar" MaxLength="200" />
+          <Property Name="adres" Type="text" />
+          <Property Name="fm_tur" Type="int" Nullable="false" />
+          <Property Name="konum_periyot" Type="int" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="firma_mail" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_pass" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_ssl" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_port" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_host" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="musteri_no" Type="text" Nullable="false" />
+          <Property Name="sms_header" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorev_baglanti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="bagli_gorev" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorev_dosya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="dosya_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorev_loglari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="islem" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="gorevin_eski_durumu" Type="int" Nullable="false" />
+          <Property Name="gorevin_yeni_durumu" Type="int" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorev_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="musteri_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorev_proje">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="proje_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorevler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="yuzde" Type="int" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="durum" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="onaylayan_yetkili" Type="int" Nullable="false" />
+          <Property Name="tamamlanma_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_multiply" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanici_gorev">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanici_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="musteri_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanici_proje">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="proje_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="soyad" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="tel" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="kullanici_turu" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="satis_musteri_id" Type="varchar" MaxLength="200" />
+          <Property Name="sgk_no" Type="varchar" MaxLength="300" />
+          <Property Name="adres" Type="text" />
+          <Property Name="tc_no" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_dairesi" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_no" Type="varchar" MaxLength="300" />
+          <Property Name="reset_guid" Type="varchar" MaxLength="300" />
+          <Property Name="reset_guidexpiredate" Type="datetime" Precision="0" />
+          <Property Name="mail_permission" Type="int" Nullable="false" />
+          <Property Name="sms_permission" Type="int" Nullable="false" />
+          <Property Name="mail_port" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="mail_ssl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="mail_host" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="mail_psw" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="mailler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gonderen_id" Type="int" Nullable="false" />
+          <Property Name="gonderen_mail" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="alan_mail" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="konu" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="icerik" Type="text" Nullable="false" />
+          <Property Name="hedef_id" Type="int" Nullable="false" />
+          <Property Name="hedef_tur" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="mail_grup_id" Type="int" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mesajlar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gonderen_id" Type="int" Nullable="false" />
+          <Property Name="alan_id" Type="int" Nullable="false" />
+          <Property Name="mesaj" Type="text" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="parent_url" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="musteriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="soyad" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="firma" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="firma_adi" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_dairesi" Type="varchar" MaxLength="300" />
+          <Property Name="vergi_no" Type="varchar" MaxLength="300" />
+          <Property Name="adres" Type="text" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="tel" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="gsm" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proje_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="proje_id" Type="int" Nullable="false" />
+          <Property Name="musteri_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proje_surec">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="tur" Type="int" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="durum" Type="int" Nullable="false" />
+          <Property Name="yuzde" Type="int" Nullable="false" />
+          <Property Name="periyot_turu" Type="int" Nullable="false" />
+          <Property Name="parent_vid" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="mevcut_donem" Type="int" Nullable="false" />
+          <Property Name="onaylayan_yetkili" Type="int" Nullable="false" />
+          <Property Name="tamamlanma_tarihi" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saha_takip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="latitude" Type="decimal" Precision="10" Scale="8" Nullable="false" />
+          <Property Name="longitude" Type="decimal" Precision="10" Scale="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sistem_ayarlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="mail_address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_pswd" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_port" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_ssl" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="mail_host" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="sms_header" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="sms_password" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="sms_username" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sistem_bildirimleri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="bildirim_turu" Type="int" Nullable="false" />
+          <Property Name="ilgili_id" Type="int" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" Nullable="false" />
+          <Property Name="okundu" Type="int" Nullable="false" />
+          <Property Name="okunma_tarihi" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ilgili_url" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="mesaj" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="smsler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gonderen_id" Type="int" Nullable="false" />
+          <Property Name="hedef_numara" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="icerik" Type="text" Nullable="false" />
+          <Property Name="hedef_id" Type="int" Nullable="false" />
+          <Property Name="hedef_tur" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="sms_grup_id" Type="int" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yapilacaklar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="gorev_id" Type="int" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="aciklama" Type="text" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="durum" Type="int" Nullable="false" />
+          <Property Name="gerceklestiren_id" Type="int" Nullable="false" />
+          <Property Name="firma_id" Type="int" Nullable="false" />
+          <Property Name="tamamlanma_tarihi" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yardim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flag" Type="int" Nullable="false" />
+          <Property Name="vid" Type="int" Nullable="false" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="baslik" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="icerik" Type="text" Nullable="false" />
+          <Property Name="video" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ekleyen" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_alan">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="mesajlar" Type="Self.mesajlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mesajlar">
+              <PropertyRef Name="alan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="proje_surec" Type="Self.proje_surec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_surec">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_firma_musavir">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="firma_musavir" Type="Self.firma_musavir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="firma_musavir">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_gorevler">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorevler">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_musteriler">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="musteriler">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_yapilacaklar">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="yapilacaklar" Type="Self.yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_yardim">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="yardim" Type="Self.yardim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yardim">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gonderen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="mesajlar" Type="Self.mesajlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mesajlar">
+              <PropertyRef Name="gonderen_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_baglanti_bagli_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_baglanti" Type="Self.gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="bagli_gorev" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_baglanti_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="gorev_baglanti" Type="Self.gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_baglanti_gorev_id">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_baglanti" Type="Self.gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya_dosya">
+          <End Role="dosyalar" Type="Self.dosyalar" Multiplicity="1" />
+          <End Role="gorev_dosya" Type="Self.gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dosyalar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="dosya_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="dosyalar" Type="Self.dosyalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="dosyalar">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_dosya" Type="Self.gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya2_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="gorev_dosya" Type="Self.gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_loglari_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_loglari" Type="Self.gorev_loglari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_loglari">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_loglari_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="gorev_loglari" Type="Self.gorev_loglari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_loglari">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="gorev_musteri" Type="Self.gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_musteri" Type="Self.gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_musteri">
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="1" />
+          <End Role="gorev_musteri" Type="Self.gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_proje_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="gorev_proje" Type="Self.gorev_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_proje">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_proje_proje">
+          <End Role="proje_surec" Type="Self.proje_surec" Multiplicity="1" />
+          <End Role="gorev_proje" Type="Self.gorev_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_proje">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_yapilacaklar">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="yapilacaklar" Type="Self.yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_gorev" Type="Self.kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_gorev">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="1" />
+          <End Role="kullanici_gorev" Type="Self.kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_gorev" Type="Self.kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_proje" Type="Self.kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_musteri" Type="Self.kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_musteri">
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="1" />
+          <End Role="kullanici_musteri" Type="Self.kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_musteri" Type="Self.kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="kullanici_proje" Type="Self.kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_proje">
+          <End Role="proje_surec" Type="Self.proje_surec" Multiplicity="1" />
+          <End Role="kullanici_proje" Type="Self.kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_musteri_firma">
+          <End Role="firma_musavir" Type="Self.firma_musavir" Multiplicity="1" />
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="musteriler">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_proj_musteri_musteri">
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="1" />
+          <End Role="proje_musteri" Type="Self.proje_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_proj_musteri_proj">
+          <End Role="proje_surec" Type="Self.proje_surec" Multiplicity="1" />
+          <End Role="proje_musteri" Type="Self.proje_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_musteri">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_proje_surec_firma">
+          <End Role="firma_musavir" Type="Self.firma_musavir" Multiplicity="1" />
+          <End Role="proje_surec" Type="Self.proje_surec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_surec">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_saha_takip_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="saha_takip" Type="Self.saha_takip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="saha_takip">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sistem_bildirimleri_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="sistem_bildirimleri" Type="Self.sistem_bildirimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sistem_bildirimleri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sistem_ekleyen">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="sistem_ayarlari" Type="Self.sistem_ayarlari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sistem_ayarlari">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_smsler_kullanici">
+          <End Role="kullanicilar" Type="Self.kullanicilar" Multiplicity="1" />
+          <End Role="smsler" Type="Self.smsler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smsler">
+              <PropertyRef Name="gonderen_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_yapilacaklar_firma">
+          <End Role="firma_musavir" Type="Self.firma_musavir" Multiplicity="1" />
+          <End Role="yapilacaklar" Type="Self.yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="gorevYoneticisiModelStoreContainer">
+          <EntitySet Name="dosyalar" EntityType="Self.dosyalar" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="firma_musavir" EntityType="Self.firma_musavir" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorev_baglanti" EntityType="Self.gorev_baglanti" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorev_dosya" EntityType="Self.gorev_dosya" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorev_loglari" EntityType="Self.gorev_loglari" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorev_musteri" EntityType="Self.gorev_musteri" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorev_proje" EntityType="Self.gorev_proje" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="gorevler" EntityType="Self.gorevler" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="kullanici_gorev" EntityType="Self.kullanici_gorev" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="kullanici_musteri" EntityType="Self.kullanici_musteri" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="kullanici_proje" EntityType="Self.kullanici_proje" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="mailler" EntityType="Self.mailler" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="mesajlar" EntityType="Self.mesajlar" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="musteriler" EntityType="Self.musteriler" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="proje_musteri" EntityType="Self.proje_musteri" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="proje_surec" EntityType="Self.proje_surec" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="saha_takip" EntityType="Self.saha_takip" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="sistem_ayarlari" EntityType="Self.sistem_ayarlari" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="sistem_bildirimleri" EntityType="Self.sistem_bildirimleri" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="smsler" EntityType="Self.smsler" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="yapilacaklar" EntityType="Self.yapilacaklar" Schema="vrlfgysdb" store:Type="Tables" />
+          <EntitySet Name="yardim" EntityType="Self.yardim" Schema="vrlfgysdb" store:Type="Tables" />
+          <AssociationSet Name="fk_alan" Association="Self.fk_alan">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="mesajlar" EntitySet="mesajlar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen" Association="Self.fk_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="proje_surec" EntitySet="proje_surec" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_firma_musavir" Association="Self.fk_ekleyen_firma_musavir">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_gorevler" Association="Self.fk_ekleyen_gorevler">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorevler" EntitySet="gorevler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_musteriler" Association="Self.fk_ekleyen_musteriler">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="musteriler" EntitySet="musteriler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_yapilacaklar" Association="Self.fk_ekleyen_yapilacaklar">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_yardim" Association="Self.fk_ekleyen_yardim">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="yardim" EntitySet="yardim" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gonderen" Association="Self.fk_gonderen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="mesajlar" EntitySet="mesajlar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_baglanti_bagli_gorev" Association="Self.fk_gorev_baglanti_bagli_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_baglanti_ekleyen" Association="Self.fk_gorev_baglanti_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_baglanti_gorev_id" Association="Self.fk_gorev_baglanti_gorev_id">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya_dosya" Association="Self.fk_gorev_dosya_dosya">
+            <End Role="dosyalar" EntitySet="dosyalar" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya_ekleyen" Association="Self.fk_gorev_dosya_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="dosyalar" EntitySet="dosyalar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya_gorev" Association="Self.fk_gorev_dosya_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya2_ekleyen" Association="Self.fk_gorev_dosya2_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_loglari_gorev" Association="Self.fk_gorev_loglari_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_loglari" EntitySet="gorev_loglari" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_loglari_kullanici" Association="Self.fk_gorev_loglari_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_loglari" EntitySet="gorev_loglari" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_ekleyen" Association="Self.fk_gorev_musteri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_gorev" Association="Self.fk_gorev_musteri_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_musteri" Association="Self.fk_gorev_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_proje_gorev" Association="Self.fk_gorev_proje_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_proje" EntitySet="gorev_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_proje_proje" Association="Self.fk_gorev_proje_proje">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="gorev_proje" EntitySet="gorev_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_yapilacaklar" Association="Self.fk_gorev_yapilacaklar">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_ekleyen" Association="Self.fk_kullanici_gorev_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_gorev" Association="Self.fk_kullanici_gorev_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_kullanici" Association="Self.fk_kullanici_gorev_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_ekleyen" Association="Self.fk_kullanici_musteri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_kullanici" Association="Self.fk_kullanici_musteri_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_musteri" Association="Self.fk_kullanici_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_ekleyen" Association="Self.fk_kullanici_proje_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_kullanici" Association="Self.fk_kullanici_proje_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_proje" Association="Self.fk_kullanici_proje_proje">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_musteri_firma" Association="Self.fk_musteri_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="musteriler" EntitySet="musteriler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_proj_musteri_musteri" Association="Self.fk_proj_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="proje_musteri" EntitySet="proje_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_proj_musteri_proj" Association="Self.fk_proj_musteri_proj">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="proje_musteri" EntitySet="proje_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_proje_surec_firma" Association="Self.fk_proje_surec_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="proje_surec" EntitySet="proje_surec" />
+          </AssociationSet>
+          <AssociationSet Name="fk_saha_takip_kullanici" Association="Self.fk_saha_takip_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="saha_takip" EntitySet="saha_takip" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sistem_bildirimleri_ekleyen" Association="Self.fk_sistem_bildirimleri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="sistem_bildirimleri" EntitySet="sistem_bildirimleri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sistem_ekleyen" Association="Self.fk_sistem_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="sistem_ayarlari" EntitySet="sistem_ayarlari" />
+          </AssociationSet>
+          <AssociationSet Name="fk_smsler_kullanici" Association="Self.fk_smsler_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="smsler" EntitySet="smsler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_yapilacaklar_firma" Association="Self.fk_yapilacaklar_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gorevYoneticisiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dosyalar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="isim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aciklama" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="gorev_dosya" Relationship="Self.fk_gorev_dosya_dosya" FromRole="dosyalar" ToRole="gorev_dosya" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_gorev_dosya_ekleyen" FromRole="dosyalar" ToRole="kullanicilar" />
+        </EntityType>
+        <EntityType Name="firma_musavir">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="isim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aciklama" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proje_sayisi" Type="Int32" Nullable="false" />
+          <Property Name="surec_sayisi" Type="Int32" Nullable="false" />
+          <Property Name="gorev_sayisi" Type="Int32" Nullable="false" />
+          <Property Name="musteri_sayisi" Type="Int32" Nullable="false" />
+          <Property Name="kullanici_sayisi" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firma_adi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_dairesi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_no" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="fm_tur" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="musteriler" Relationship="gorevYoneticisiModel.fk_musteri_firma" FromRole="firma_musavir" ToRole="musteriler" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen_firma_musavir" FromRole="firma_musavir" ToRole="kullanicilar" />
+          <NavigationProperty Name="yapilacaklar" Relationship="gorevYoneticisiModel.fk_yapilacaklar_firma" FromRole="firma_musavir" ToRole="yapilacaklar" />
+          <NavigationProperty Name="proje_surec" Relationship="gorevYoneticisiModel.fk_proje_surec_firma" FromRole="firma_musavir" ToRole="proje_surec" />
+          <Property Name="konum_periyot" Type="Int32" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="firma_mail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_pass" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_ssl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_port" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_host" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="musteri_no" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="sms_header" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gorev_dosya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="dosya_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="dosyalar" Relationship="Self.fk_gorev_dosya_dosya" FromRole="gorev_dosya" ToRole="dosyalar" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_dosya_gorev" FromRole="gorev_dosya" ToRole="gorevler" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_gorev_dosya2_ekleyen" FromRole="gorev_dosya" ToRole="kullanicilar" />
+        </EntityType>
+        <EntityType Name="gorev_loglari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="islem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gorevin_eski_durumu" Type="Int32" Nullable="false" />
+          <Property Name="gorevin_yeni_durumu" Type="Int32" Nullable="false" />
+          <Property Name="aciklama" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_gorev_loglari_kullanici" FromRole="gorev_loglari" ToRole="kullanicilar" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_loglari_gorev" FromRole="gorev_loglari" ToRole="gorevler" />
+        </EntityType>
+        <EntityType Name="gorev_proje">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="proje_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_proje_gorev" FromRole="gorev_proje" ToRole="gorevler" />
+          <NavigationProperty Name="proje_surec" Relationship="gorevYoneticisiModel.fk_gorev_proje_proje" FromRole="gorev_proje" ToRole="proje_surec" />
+        </EntityType>
+        <EntityType Name="kullanici_gorev">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_ekleyen" FromRole="kullanici_gorev" ToRole="kullanicilar" />
+          <NavigationProperty Name="kullanicilar1" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_kullanici" FromRole="kullanici_gorev" ToRole="kullanicilar" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_gorev" FromRole="kullanici_gorev" ToRole="gorevler" />
+        </EntityType>
+        <EntityType Name="kullanici_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="musteri_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="musteriler" Relationship="Self.fk_kullanici_musteri_musteri" FromRole="kullanici_musteri" ToRole="musteriler" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_kullanici_musteri_kullanici" FromRole="kullanici_musteri" ToRole="kullanicilar" />
+          <NavigationProperty Name="kullanicilar1" Relationship="gorevYoneticisiModel.fk_kullanici_proje_ekleyen" FromRole="kullanici_musteri" ToRole="kullanicilar" />
+        </EntityType>
+        <EntityType Name="kullanici_proje">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="proje_id" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_kullanici_musteri_ekleyen" FromRole="kullanici_proje" ToRole="kullanicilar" />
+          <NavigationProperty Name="kullanicilar1" Relationship="gorevYoneticisiModel.fk_kullanici_proje_kullanici" FromRole="kullanici_proje" ToRole="kullanicilar" />
+          <NavigationProperty Name="proje_surec" Relationship="gorevYoneticisiModel.fk_kullanici_proje_proje" FromRole="kullanici_proje" ToRole="proje_surec" />
+        </EntityType>
+        <EntityType Name="mesajlar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gonderen_id" Type="Int32" Nullable="false" />
+          <Property Name="alan_id" Type="Int32" Nullable="false" />
+          <Property Name="mesaj" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_alan" FromRole="mesajlar" ToRole="kullanicilar" />
+          <NavigationProperty Name="kullanicilar1" Relationship="gorevYoneticisiModel.fk_gonderen" FromRole="mesajlar" ToRole="kullanicilar" />
+          <Property Name="parent_url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="musteriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="ad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="soyad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firma" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aciklama" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanici_musteri" Relationship="Self.fk_kullanici_musteri_musteri" FromRole="musteriler" ToRole="kullanici_musteri" />
+          <NavigationProperty Name="proje_musteri" Relationship="Self.fk_proj_musteri_musteri" FromRole="musteriler" ToRole="proje_musteri" />
+          <Property Name="firma_adi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_dairesi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_no" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="firma_musavir" Relationship="gorevYoneticisiModel.fk_musteri_firma" FromRole="musteriler" ToRole="firma_musavir" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen_musteriler" FromRole="musteriler" ToRole="kullanicilar" />
+          <NavigationProperty Name="gorev_musteri" Relationship="gorevYoneticisiModel.fk_gorev_musteri_musteri" FromRole="musteriler" ToRole="gorev_musteri" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="gsm" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="proje_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="proje_id" Type="Int32" Nullable="false" />
+          <Property Name="musteri_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="musteriler" Relationship="Self.fk_proj_musteri_musteri" FromRole="proje_musteri" ToRole="musteriler" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="proje_surec" Relationship="gorevYoneticisiModel.fk_proj_musteri_proj" FromRole="proje_musteri" ToRole="proje_surec" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saha_takip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="latitude" Type="Decimal" Nullable="false" />
+          <Property Name="longitude" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_saha_takip_kullanici" FromRole="saha_takip" ToRole="kullanicilar" />
+        </EntityType>
+        <EntityType Name="sistem_bildirimleri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="bildirim_turu" Type="Int32" Nullable="false" />
+          <Property Name="ilgili_id" Type="Int32" Nullable="false" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+          <Property Name="okundu" Type="Int32" Nullable="false" />
+          <Property Name="okunma_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="ilgili_url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_sistem_bildirimleri_ekleyen" FromRole="sistem_bildirimleri" ToRole="kullanicilar" />
+          <Property Name="mesaj" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="yardim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="baslik" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="icerik" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="video" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen_yardim" FromRole="yardim" ToRole="kullanicilar" />
+        </EntityType>
+        <Association Name="fk_gorev_dosya_dosya">
+          <End Role="dosyalar" Type="Self.dosyalar" Multiplicity="1" />
+          <End Role="gorev_dosya" Type="Self.gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dosyalar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="dosya_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_musteri">
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="1" />
+          <End Role="kullanici_musteri" Type="Self.kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_proj_musteri_musteri">
+          <End Role="musteriler" Type="Self.musteriler" Multiplicity="1" />
+          <End Role="proje_musteri" Type="Self.proje_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vrlfgysdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dosyalar" EntityType="Self.dosyalar" />
+          <EntitySet Name="firma_musavir" EntityType="Self.firma_musavir" />
+          <EntitySet Name="gorev_dosya" EntityType="Self.gorev_dosya" />
+          <EntitySet Name="gorev_loglari" EntityType="Self.gorev_loglari" />
+          <EntitySet Name="gorev_proje" EntityType="Self.gorev_proje" />
+          <EntitySet Name="kullanici_gorev" EntityType="Self.kullanici_gorev" />
+          <EntitySet Name="kullanici_musteri" EntityType="Self.kullanici_musteri" />
+          <EntitySet Name="kullanici_proje" EntityType="Self.kullanici_proje" />
+          <EntitySet Name="mesajlar" EntityType="Self.mesajlar" />
+          <EntitySet Name="musteriler" EntityType="Self.musteriler" />
+          <EntitySet Name="proje_musteri" EntityType="Self.proje_musteri" />
+          <EntitySet Name="saha_takip" EntityType="Self.saha_takip" />
+          <EntitySet Name="sistem_bildirimleri" EntityType="Self.sistem_bildirimleri" />
+          <EntitySet Name="yardim" EntityType="Self.yardim" />
+          <AssociationSet Name="fk_gorev_dosya_dosya" Association="Self.fk_gorev_dosya_dosya">
+            <End Role="dosyalar" EntitySet="dosyalar" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_musteri" Association="Self.fk_kullanici_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_proj_musteri_musteri" Association="Self.fk_proj_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="proje_musteri" EntitySet="proje_musteri" />
+          </AssociationSet>
+          <EntitySet Name="mailler" EntityType="gorevYoneticisiModel.mailler" />
+          <AssociationSet Name="fk_musteri_firma" Association="gorevYoneticisiModel.fk_musteri_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="musteriler" EntitySet="musteriler" />
+          </AssociationSet>
+          <EntitySet Name="kullanicilar" EntityType="gorevYoneticisiModel.kullanicilar" />
+          <EntitySet Name="yapilacaklar" EntityType="gorevYoneticisiModel.yapilacaklar" />
+          <AssociationSet Name="fk_ekleyen_firma_musavir" Association="gorevYoneticisiModel.fk_ekleyen_firma_musavir">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+          </AssociationSet>
+          <AssociationSet Name="fk_yapilacaklar_firma" Association="gorevYoneticisiModel.fk_yapilacaklar_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_loglari_kullanici" Association="gorevYoneticisiModel.fk_gorev_loglari_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_loglari" EntitySet="gorev_loglari" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_ekleyen" Association="gorevYoneticisiModel.fk_kullanici_gorev_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_kullanici" Association="gorevYoneticisiModel.fk_kullanici_gorev_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_kullanici" Association="gorevYoneticisiModel.fk_kullanici_musteri_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_ekleyen" Association="gorevYoneticisiModel.fk_kullanici_proje_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_musteri" EntitySet="kullanici_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_musteri_ekleyen" Association="gorevYoneticisiModel.fk_kullanici_musteri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_kullanici" Association="gorevYoneticisiModel.fk_kullanici_proje_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_alan" Association="gorevYoneticisiModel.fk_alan">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="mesajlar" EntitySet="mesajlar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_musteriler" Association="gorevYoneticisiModel.fk_ekleyen_musteriler">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="musteriler" EntitySet="musteriler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_yapilacaklar" Association="gorevYoneticisiModel.fk_ekleyen_yapilacaklar">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_yardim" Association="gorevYoneticisiModel.fk_ekleyen_yardim">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="yardim" EntitySet="yardim" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gonderen" Association="gorevYoneticisiModel.fk_gonderen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="mesajlar" EntitySet="mesajlar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_saha_takip_kullanici" Association="gorevYoneticisiModel.fk_saha_takip_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="saha_takip" EntitySet="saha_takip" />
+          </AssociationSet>
+          <EntitySet Name="gorev_musteri" EntityType="gorevYoneticisiModel.gorev_musteri" />
+          <EntitySet Name="gorevler" EntityType="gorevYoneticisiModel.gorevler" />
+          <AssociationSet Name="fk_gorev_dosya_gorev" Association="gorevYoneticisiModel.fk_gorev_dosya_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_loglari_gorev" Association="gorevYoneticisiModel.fk_gorev_loglari_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_loglari" EntitySet="gorev_loglari" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_gorev" Association="gorevYoneticisiModel.fk_gorev_musteri_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_musteri" Association="gorevYoneticisiModel.fk_gorev_musteri_musteri">
+            <End Role="musteriler" EntitySet="musteriler" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_proje_gorev" Association="gorevYoneticisiModel.fk_gorev_proje_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_proje" EntitySet="gorev_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen_gorevler" Association="gorevYoneticisiModel.fk_ekleyen_gorevler">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorevler" EntitySet="gorevler" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_yapilacaklar" Association="gorevYoneticisiModel.fk_gorev_yapilacaklar">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="yapilacaklar" EntitySet="yapilacaklar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_gorev_gorev" Association="gorevYoneticisiModel.fk_kullanici_gorev_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="kullanici_gorev" EntitySet="kullanici_gorev" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_musteri_ekleyen" Association="gorevYoneticisiModel.fk_gorev_musteri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_musteri" EntitySet="gorev_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya_ekleyen" Association="gorevYoneticisiModel.fk_gorev_dosya_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="dosyalar" EntitySet="dosyalar" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_dosya2_ekleyen" Association="gorevYoneticisiModel.fk_gorev_dosya2_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_dosya" EntitySet="gorev_dosya" />
+          </AssociationSet>
+          <EntitySet Name="proje_surec" EntityType="gorevYoneticisiModel.proje_surec" />
+          <AssociationSet Name="fk_proje_surec_firma" Association="gorevYoneticisiModel.fk_proje_surec_firma">
+            <End Role="firma_musavir" EntitySet="firma_musavir" />
+            <End Role="proje_surec" EntitySet="proje_surec" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_proje_proje" Association="gorevYoneticisiModel.fk_gorev_proje_proje">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="gorev_proje" EntitySet="gorev_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kullanici_proje_proje" Association="gorevYoneticisiModel.fk_kullanici_proje_proje">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="kullanici_proje" EntitySet="kullanici_proje" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ekleyen" Association="gorevYoneticisiModel.fk_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="proje_surec" EntitySet="proje_surec" />
+          </AssociationSet>
+          <AssociationSet Name="fk_proj_musteri_proj" Association="gorevYoneticisiModel.fk_proj_musteri_proj">
+            <End Role="proje_surec" EntitySet="proje_surec" />
+            <End Role="proje_musteri" EntitySet="proje_musteri" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sistem_bildirimleri_ekleyen" Association="gorevYoneticisiModel.fk_sistem_bildirimleri_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="sistem_bildirimleri" EntitySet="sistem_bildirimleri" />
+          </AssociationSet>
+          <EntitySet Name="gorev_baglanti" EntityType="gorevYoneticisiModel.gorev_baglanti" />
+          <AssociationSet Name="fk_gorev_baglanti_bagli_gorev" Association="gorevYoneticisiModel.fk_gorev_baglanti_bagli_gorev">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_baglanti_ekleyen" Association="gorevYoneticisiModel.fk_gorev_baglanti_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gorev_baglanti_gorev_id" Association="gorevYoneticisiModel.fk_gorev_baglanti_gorev_id">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="gorev_baglanti" EntitySet="gorev_baglanti" />
+          </AssociationSet>
+          <EntitySet Name="smsler" EntityType="gorevYoneticisiModel.smsler" />
+          <AssociationSet Name="fk_smsler_kullanici" Association="gorevYoneticisiModel.fk_smsler_kullanici">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="smsler" EntitySet="smsler" />
+          </AssociationSet>
+          <EntitySet Name="sistem_ayarlari" EntityType="gorevYoneticisiModel.sistem_ayarlari" />
+          <AssociationSet Name="fk_sistem_ekleyen" Association="gorevYoneticisiModel.fk_sistem_ekleyen">
+            <End Role="kullanicilar" EntitySet="kullanicilar" />
+            <End Role="sistem_ayarlari" EntitySet="sistem_ayarlari" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="mailler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gonderen_id" Type="Int32" Nullable="false" />
+          <Property Name="gonderen_mail" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="alan_mail" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="konu" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="icerik" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="hedef_id" Type="Int32" Nullable="false" />
+          <Property Name="hedef_tur" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="mail_grup_id" Type="Int32" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_musteri_firma">
+          <End Type="gorevYoneticisiModel.firma_musavir" Role="firma_musavir" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.musteriler" Role="musteriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="musteriler">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="ad" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <Property Name="kullanici_turu" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="satis_musteri_id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sgk_no" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="tc_no" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_dairesi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="vergi_no" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="reset_guid" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="reset_guidexpiredate" Type="DateTime" />
+          <NavigationProperty Name="firma_musavir" Relationship="gorevYoneticisiModel.fk_ekleyen_firma_musavir" FromRole="kullanicilar" ToRole="firma_musavir" />
+          <NavigationProperty Name="gorev_loglari" Relationship="gorevYoneticisiModel.fk_gorev_loglari_kullanici" FromRole="kullanicilar" ToRole="gorev_loglari" />
+          <NavigationProperty Name="kullanici_gorev" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_ekleyen" FromRole="kullanicilar" ToRole="kullanici_gorev" />
+          <NavigationProperty Name="kullanici_gorev1" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_kullanici" FromRole="kullanicilar" ToRole="kullanici_gorev" />
+          <NavigationProperty Name="kullanici_musteri" Relationship="gorevYoneticisiModel.fk_kullanici_musteri_kullanici" FromRole="kullanicilar" ToRole="kullanici_musteri" />
+          <NavigationProperty Name="kullanici_musteri1" Relationship="gorevYoneticisiModel.fk_kullanici_proje_ekleyen" FromRole="kullanicilar" ToRole="kullanici_musteri" />
+          <NavigationProperty Name="kullanici_proje" Relationship="gorevYoneticisiModel.fk_kullanici_musteri_ekleyen" FromRole="kullanicilar" ToRole="kullanici_proje" />
+          <NavigationProperty Name="kullanici_proje1" Relationship="gorevYoneticisiModel.fk_kullanici_proje_kullanici" FromRole="kullanicilar" ToRole="kullanici_proje" />
+          <NavigationProperty Name="mesajlar" Relationship="gorevYoneticisiModel.fk_alan" FromRole="kullanicilar" ToRole="mesajlar" />
+          <NavigationProperty Name="musteriler" Relationship="gorevYoneticisiModel.fk_ekleyen_musteriler" FromRole="kullanicilar" ToRole="musteriler" />
+          <NavigationProperty Name="yapilacaklar" Relationship="gorevYoneticisiModel.fk_ekleyen_yapilacaklar" FromRole="kullanicilar" ToRole="yapilacaklar" />
+          <NavigationProperty Name="yardim" Relationship="gorevYoneticisiModel.fk_ekleyen_yardim" FromRole="kullanicilar" ToRole="yardim" />
+          <NavigationProperty Name="mesajlar1" Relationship="gorevYoneticisiModel.fk_gonderen" FromRole="kullanicilar" ToRole="mesajlar" />
+          <NavigationProperty Name="saha_takip" Relationship="gorevYoneticisiModel.fk_saha_takip_kullanici" FromRole="kullanicilar" ToRole="saha_takip" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_ekleyen_gorevler" FromRole="kullanicilar" ToRole="gorevler" />
+          <NavigationProperty Name="gorev_musteri" Relationship="gorevYoneticisiModel.fk_gorev_musteri_ekleyen" FromRole="kullanicilar" ToRole="gorev_musteri" />
+          <NavigationProperty Name="dosyalar" Relationship="gorevYoneticisiModel.fk_gorev_dosya_ekleyen" FromRole="kullanicilar" ToRole="dosyalar" />
+          <NavigationProperty Name="gorev_dosya" Relationship="gorevYoneticisiModel.fk_gorev_dosya2_ekleyen" FromRole="kullanicilar" ToRole="gorev_dosya" />
+          <NavigationProperty Name="proje_surec" Relationship="gorevYoneticisiModel.fk_ekleyen" FromRole="kullanicilar" ToRole="proje_surec" />
+          <NavigationProperty Name="sistem_bildirimleri" Relationship="gorevYoneticisiModel.fk_sistem_bildirimleri_ekleyen" FromRole="kullanicilar" ToRole="sistem_bildirimleri" />
+          <Property Name="mail_permission" Type="Int32" Nullable="false" />
+          <Property Name="sms_permission" Type="Int32" Nullable="false" />
+          <Property Name="mail_port" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mail_ssl" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mail_host" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mail_psw" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="gorev_baglanti" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_ekleyen" FromRole="kullanicilar" ToRole="gorev_baglanti" />
+          <NavigationProperty Name="smsler" Relationship="gorevYoneticisiModel.fk_smsler_kullanici" FromRole="kullanicilar" ToRole="smsler" />
+          <NavigationProperty Name="sistem_ayarlari" Relationship="gorevYoneticisiModel.fk_sistem_ekleyen" FromRole="kullanicilar" ToRole="sistem_ayarlari" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="yapilacaklar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="isim" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="durum" Type="Int32" Nullable="false" />
+          <Property Name="gerceklestiren_id" Type="Int32" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="firma_musavir" Relationship="gorevYoneticisiModel.fk_yapilacaklar_firma" FromRole="yapilacaklar" ToRole="firma_musavir" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen_yapilacaklar" FromRole="yapilacaklar" ToRole="kullanicilar" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_yapilacaklar" FromRole="yapilacaklar" ToRole="gorevler" />
+          <Property Name="tamamlanma_tarihi" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_ekleyen_firma_musavir">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.firma_musavir" Role="firma_musavir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="firma_musavir">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_yapilacaklar_firma">
+          <End Type="gorevYoneticisiModel.firma_musavir" Role="firma_musavir" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.yapilacaklar" Role="yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_loglari_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_loglari" Role="gorev_loglari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_loglari">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_gorev" Role="kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_gorev" Role="kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_musteri" Role="kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_musteri" Role="kullanici_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_musteri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_musteri_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_proje" Role="kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_proje" Role="kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_alan">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.mesajlar" Role="mesajlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mesajlar">
+              <PropertyRef Name="alan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_musteriler">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.musteriler" Role="musteriler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="musteriler">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_yapilacaklar">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.yapilacaklar" Role="yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_yardim">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.yardim" Role="yardim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yardim">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gonderen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.mesajlar" Role="mesajlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mesajlar">
+              <PropertyRef Name="gonderen_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_saha_takip_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.saha_takip" Role="saha_takip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="saha_takip">
+              <PropertyRef Name="kullanici_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="gorev_musteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="musteri_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_musteri_gorev" FromRole="gorev_musteri" ToRole="gorevler" />
+          <NavigationProperty Name="musteriler" Relationship="gorevYoneticisiModel.fk_gorev_musteri_musteri" FromRole="gorev_musteri" ToRole="musteriler" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_gorev_musteri_ekleyen" FromRole="gorev_musteri" ToRole="kullanicilar" />
+          <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gorevler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="yuzde" Type="Int32" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="isim" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="gorev_dosya" Relationship="gorevYoneticisiModel.fk_gorev_dosya_gorev" FromRole="gorevler" ToRole="gorev_dosya" />
+          <NavigationProperty Name="gorev_loglari" Relationship="gorevYoneticisiModel.fk_gorev_loglari_gorev" FromRole="gorevler" ToRole="gorev_loglari" />
+          <NavigationProperty Name="gorev_musteri" Relationship="gorevYoneticisiModel.fk_gorev_musteri_gorev" FromRole="gorevler" ToRole="gorev_musteri" />
+          <NavigationProperty Name="gorev_proje" Relationship="gorevYoneticisiModel.fk_gorev_proje_gorev" FromRole="gorevler" ToRole="gorev_proje" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen_gorevler" FromRole="gorevler" ToRole="kullanicilar" />
+          <NavigationProperty Name="yapilacaklar" Relationship="gorevYoneticisiModel.fk_gorev_yapilacaklar" FromRole="gorevler" ToRole="yapilacaklar" />
+          <NavigationProperty Name="kullanici_gorev" Relationship="gorevYoneticisiModel.fk_kullanici_gorev_gorev" FromRole="gorevler" ToRole="kullanici_gorev" />
+          <Property Name="onaylayan_yetkili" Type="Int32" Nullable="false" />
+          <Property Name="tamamlanma_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_multiply" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="gorev_baglanti" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_bagli_gorev" FromRole="gorevler" ToRole="gorev_baglanti" />
+          <NavigationProperty Name="gorev_baglanti1" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_gorev_id" FromRole="gorevler" ToRole="gorev_baglanti" />
+        </EntityType>
+        <Association Name="fk_gorev_dosya_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_dosya" Role="gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_loglari_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_loglari" Role="gorev_loglari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_loglari">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_musteri" Role="gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_musteri">
+          <End Type="gorevYoneticisiModel.musteriler" Role="musteriler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_musteri" Role="gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="musteri_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_proje_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_proje" Role="gorev_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_proje">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen_gorevler">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorevler">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_yapilacaklar">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.yapilacaklar" Role="yapilacaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="yapilacaklar">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_gorev_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_gorev" Role="kullanici_gorev" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_gorev">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_musteri_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_musteri" Role="gorev_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_musteri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.dosyalar" Role="dosyalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="dosyalar">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_dosya2_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_dosya" Role="gorev_dosya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_dosya">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="proje_surec">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <Property Name="tur" Type="Int32" Nullable="false" />
+          <Property Name="baslangic_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="bitis_tarihi" Type="DateTime" Nullable="false" />
+          <Property Name="isim" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="Int32" Nullable="false" />
+          <Property Name="yuzde" Type="Int32" Nullable="false" />
+          <Property Name="periyot_turu" Type="Int32" Nullable="false" />
+          <Property Name="parent_vid" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="mevcut_donem" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="firma_musavir" Relationship="gorevYoneticisiModel.fk_proje_surec_firma" FromRole="proje_surec" ToRole="firma_musavir" />
+          <NavigationProperty Name="gorev_proje" Relationship="gorevYoneticisiModel.fk_gorev_proje_proje" FromRole="proje_surec" ToRole="gorev_proje" />
+          <NavigationProperty Name="kullanici_proje" Relationship="gorevYoneticisiModel.fk_kullanici_proje_proje" FromRole="proje_surec" ToRole="kullanici_proje" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_ekleyen" FromRole="proje_surec" ToRole="kullanicilar" />
+          <NavigationProperty Name="proje_musteri" Relationship="gorevYoneticisiModel.fk_proj_musteri_proj" FromRole="proje_surec" ToRole="proje_musteri" />
+          <Property Name="onaylayan_yetkili" Type="Int32" Nullable="false" />
+          <Property Name="tamamlanma_tarihi" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_proje_surec_firma">
+          <End Type="gorevYoneticisiModel.firma_musavir" Role="firma_musavir" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.proje_surec" Role="proje_surec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma_musavir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_surec">
+              <PropertyRef Name="firma_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_proje_proje">
+          <End Type="gorevYoneticisiModel.proje_surec" Role="proje_surec" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_proje" Role="gorev_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_proje">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kullanici_proje_proje">
+          <End Type="gorevYoneticisiModel.proje_surec" Role="proje_surec" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.kullanici_proje" Role="kullanici_proje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kullanici_proje">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.proje_surec" Role="proje_surec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_surec">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_proj_musteri_proj">
+          <End Type="gorevYoneticisiModel.proje_surec" Role="proje_surec" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.proje_musteri" Role="proje_musteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proje_surec">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="proje_musteri">
+              <PropertyRef Name="proje_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sistem_bildirimleri_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.sistem_bildirimleri" Role="sistem_bildirimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sistem_bildirimleri">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="gorev_baglanti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gorev_id" Type="Int32" Nullable="false" />
+          <Property Name="bagli_gorev" Type="Int32" Nullable="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="gorevler" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_bagli_gorev" FromRole="gorev_baglanti" ToRole="gorevler" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_ekleyen" FromRole="gorev_baglanti" ToRole="kullanicilar" />
+          <NavigationProperty Name="gorevler1" Relationship="gorevYoneticisiModel.fk_gorev_baglanti_gorev_id" FromRole="gorev_baglanti" ToRole="gorevler" />
+        </EntityType>
+        <Association Name="fk_gorev_baglanti_bagli_gorev">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_baglanti" Role="gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="bagli_gorev" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_baglanti_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_baglanti" Role="gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gorev_baglanti_gorev_id">
+          <End Type="gorevYoneticisiModel.gorevler" Role="gorevler" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.gorev_baglanti" Role="gorev_baglanti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gorev_baglanti">
+              <PropertyRef Name="gorev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="smsler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="gonderen_id" Type="Int32" Nullable="false" />
+          <Property Name="hedef_numara" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="icerik" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="hedef_id" Type="Int32" Nullable="false" />
+          <Property Name="hedef_tur" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sms_grup_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_smsler_kullanici" FromRole="smsler" ToRole="kullanicilar" />
+          <Property Name="firma_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_smsler_kullanici">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.smsler" Role="smsler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="smsler">
+              <PropertyRef Name="gonderen_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sistem_ayarlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vid" Type="Int32" Nullable="false" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="mail_address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_pswd" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_port" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_ssl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail_host" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sms_header" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sms_password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sms_username" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ekleyen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="kullanicilar" Relationship="gorevYoneticisiModel.fk_sistem_ekleyen" FromRole="sistem_ayarlari" ToRole="kullanicilar" />
+          <Property Name="flag" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_sistem_ekleyen">
+          <End Type="gorevYoneticisiModel.kullanicilar" Role="kullanicilar" Multiplicity="1" />
+          <End Type="gorevYoneticisiModel.sistem_ayarlari" Role="sistem_ayarlari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullanicilar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sistem_ayarlari">
+              <PropertyRef Name="ekleyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gorevYoneticisiModelStoreContainer" CdmEntityContainer="vrlfgysdbEntities">
+          <EntitySetMapping Name="dosyalar">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.dosyalar">
+              <MappingFragment StoreEntitySet="dosyalar">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firma_musavir">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.firma_musavir">
+              <MappingFragment StoreEntitySet="firma_musavir">
+                <ScalarProperty Name="sms_header" ColumnName="sms_header" />
+                <ScalarProperty Name="musteri_no" ColumnName="musteri_no" />
+                <ScalarProperty Name="mail_host" ColumnName="mail_host" />
+                <ScalarProperty Name="mail_port" ColumnName="mail_port" />
+                <ScalarProperty Name="mail_ssl" ColumnName="mail_ssl" />
+                <ScalarProperty Name="mail_pass" ColumnName="mail_pass" />
+                <ScalarProperty Name="firma_mail" ColumnName="firma_mail" />
+                <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+                <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+                <ScalarProperty Name="konum_periyot" ColumnName="konum_periyot" />
+                <ScalarProperty Name="fm_tur" ColumnName="fm_tur" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+                <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+                <ScalarProperty Name="firma_adi" ColumnName="firma_adi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="proje_sayisi" ColumnName="proje_sayisi" />
+                <ScalarProperty Name="surec_sayisi" ColumnName="surec_sayisi" />
+                <ScalarProperty Name="gorev_sayisi" ColumnName="gorev_sayisi" />
+                <ScalarProperty Name="musteri_sayisi" ColumnName="musteri_sayisi" />
+                <ScalarProperty Name="kullanici_sayisi" ColumnName="kullanici_sayisi" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorev_dosya">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_dosya">
+              <MappingFragment StoreEntitySet="gorev_dosya">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="dosya_id" ColumnName="dosya_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorev_loglari">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_loglari">
+              <MappingFragment StoreEntitySet="gorev_loglari">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="islem" ColumnName="islem" />
+                <ScalarProperty Name="gorevin_eski_durumu" ColumnName="gorevin_eski_durumu" />
+                <ScalarProperty Name="gorevin_yeni_durumu" ColumnName="gorevin_yeni_durumu" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorev_proje">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_proje">
+              <MappingFragment StoreEntitySet="gorev_proje">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanici_gorev">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_gorev">
+              <MappingFragment StoreEntitySet="kullanici_gorev">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanici_musteri">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_musteri">
+              <MappingFragment StoreEntitySet="kullanici_musteri">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanici_proje">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanici_proje">
+              <MappingFragment StoreEntitySet="kullanici_proje">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mesajlar">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.mesajlar">
+              <MappingFragment StoreEntitySet="mesajlar">
+                <ScalarProperty Name="parent_url" ColumnName="parent_url" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+                <ScalarProperty Name="alan_id" ColumnName="alan_id" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musteriler">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.musteriler">
+              <MappingFragment StoreEntitySet="musteriler">
+                <ScalarProperty Name="gsm" ColumnName="gsm" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+                <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+                <ScalarProperty Name="firma_adi" ColumnName="firma_adi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proje_musteri">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.proje_musteri">
+              <MappingFragment StoreEntitySet="proje_musteri">
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="proje_id" ColumnName="proje_id" />
+                <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saha_takip">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.saha_takip">
+              <MappingFragment StoreEntitySet="saha_takip">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sistem_bildirimleri">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.sistem_bildirimleri">
+              <MappingFragment StoreEntitySet="sistem_bildirimleri">
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="ilgili_url" ColumnName="ilgili_url" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="bildirim_turu" ColumnName="bildirim_turu" />
+                <ScalarProperty Name="ilgili_id" ColumnName="ilgili_id" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="okundu" ColumnName="okundu" />
+                <ScalarProperty Name="okunma_tarihi" ColumnName="okunma_tarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yardim">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.yardim">
+              <MappingFragment StoreEntitySet="yardim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="video" ColumnName="video" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mailler">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.mailler">
+              <MappingFragment StoreEntitySet="mailler">
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="mail_grup_id" ColumnName="mail_grup_id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="hedef_tur" ColumnName="hedef_tur" />
+                <ScalarProperty Name="hedef_id" ColumnName="hedef_id" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="konu" ColumnName="konu" />
+                <ScalarProperty Name="alan_mail" ColumnName="alan_mail" />
+                <ScalarProperty Name="gonderen_mail" ColumnName="gonderen_mail" />
+                <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanicilar">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.kullanicilar">
+              <MappingFragment StoreEntitySet="kullanicilar">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="mail_psw" ColumnName="mail_psw" />
+                <ScalarProperty Name="mail_host" ColumnName="mail_host" />
+                <ScalarProperty Name="mail_ssl" ColumnName="mail_ssl" />
+                <ScalarProperty Name="mail_port" ColumnName="mail_port" />
+                <ScalarProperty Name="sms_permission" ColumnName="sms_permission" />
+                <ScalarProperty Name="mail_permission" ColumnName="mail_permission" />
+                <ScalarProperty Name="reset_guidexpiredate" ColumnName="reset_guidexpiredate" />
+                <ScalarProperty Name="reset_guid" ColumnName="reset_guid" />
+                <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+                <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+                <ScalarProperty Name="tc_no" ColumnName="tc_no" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="sgk_no" ColumnName="sgk_no" />
+                <ScalarProperty Name="satis_musteri_id" ColumnName="satis_musteri_id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="kullanici_turu" ColumnName="kullanici_turu" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yapilacaklar">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.yapilacaklar">
+              <MappingFragment StoreEntitySet="yapilacaklar">
+                <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="gerceklestiren_id" ColumnName="gerceklestiren_id" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorev_musteri">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_musteri">
+              <MappingFragment StoreEntitySet="gorev_musteri">
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="musteri_id" ColumnName="musteri_id" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorevler">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorevler">
+              <MappingFragment StoreEntitySet="gorevler">
+                <ScalarProperty Name="gorev_multiply" ColumnName="gorev_multiply" />
+                <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+                <ScalarProperty Name="onaylayan_yetkili" ColumnName="onaylayan_yetkili" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+                <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+                <ScalarProperty Name="yuzde" ColumnName="yuzde" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proje_surec">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.proje_surec">
+              <MappingFragment StoreEntitySet="proje_surec">
+                <ScalarProperty Name="tamamlanma_tarihi" ColumnName="tamamlanma_tarihi" />
+                <ScalarProperty Name="onaylayan_yetkili" ColumnName="onaylayan_yetkili" />
+                <ScalarProperty Name="mevcut_donem" ColumnName="mevcut_donem" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="parent_vid" ColumnName="parent_vid" />
+                <ScalarProperty Name="periyot_turu" ColumnName="periyot_turu" />
+                <ScalarProperty Name="yuzde" ColumnName="yuzde" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+                <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorev_baglanti">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.gorev_baglanti">
+              <MappingFragment StoreEntitySet="gorev_baglanti">
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="bagli_gorev" ColumnName="bagli_gorev" />
+                <ScalarProperty Name="gorev_id" ColumnName="gorev_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="smsler">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.smsler">
+              <MappingFragment StoreEntitySet="smsler">
+                <ScalarProperty Name="firma_id" ColumnName="firma_id" />
+                <ScalarProperty Name="sms_grup_id" ColumnName="sms_grup_id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="hedef_tur" ColumnName="hedef_tur" />
+                <ScalarProperty Name="hedef_id" ColumnName="hedef_id" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="hedef_numara" ColumnName="hedef_numara" />
+                <ScalarProperty Name="gonderen_id" ColumnName="gonderen_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sistem_ayarlari">
+            <EntityTypeMapping TypeName="gorevYoneticisiModel.sistem_ayarlari">
+              <MappingFragment StoreEntitySet="sistem_ayarlari">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="ekleyen" ColumnName="ekleyen" />
+                <ScalarProperty Name="sms_username" ColumnName="sms_username" />
+                <ScalarProperty Name="sms_password" ColumnName="sms_password" />
+                <ScalarProperty Name="sms_header" ColumnName="sms_header" />
+                <ScalarProperty Name="mail_host" ColumnName="mail_host" />
+                <ScalarProperty Name="mail_ssl" ColumnName="mail_ssl" />
+                <ScalarProperty Name="mail_port" ColumnName="mail_port" />
+                <ScalarProperty Name="mail_pswd" ColumnName="mail_pswd" />
+                <ScalarProperty Name="mail_address" ColumnName="mail_address" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

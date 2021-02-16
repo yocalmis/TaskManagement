@@ -1,0 +1,129 @@
+﻿@model GorevYoneticisi.Models.kullanicilar
+@{
+    ViewBag.Title = "Kullanıcı";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+    GorevYoneticisi.Models.LoggedUserModel lgm = GorevYoneticisi.Tools.GetCurrentUser.GetUser();
+    int firmaId = lgm.firma_id;
+    if (Model != null && Model.firma_id != 0)
+    {
+        firmaId = Model.firma_id;
+    }
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Kullanıcı</h2>
+</div>
+
+<form class="form-default" id="_form">
+    <div class="clearfix">
+        <input id="url" name="url" type="hidden" value="@Model.url">
+        <input id="firma_id" name="firma_id" type="hidden" value="@firmaId">
+        <div class="item">
+            <div class="lbl">Kullanıcı</div>
+            <select name="kullanici_turu">
+                @Html.Raw(lgm.kullanici_turu < GorevYoneticisi.Tools.KullaniciTurleri.firma_admin ? ("<option value=\"" + GorevYoneticisi.Tools.KullaniciTurleri.firma_admin + "\" " + (Model.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.firma_admin ? "selected" : "") + ">Firma Yöneticisi</option>") : "")
+                @Html.Raw(lgm.kullanici_turu < GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili ? ("<option value=\"" + GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili + "\" " + (Model.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.firma_yetkili ? "selected" : "") + ">Firma Temsilcisi</option>") : "")
+                @Html.Raw(lgm.kullanici_turu < GorevYoneticisi.Tools.KullaniciTurleri.user ? ("<option value=\"" + GorevYoneticisi.Tools.KullaniciTurleri.user + "\" " + (Model.kullanici_turu == GorevYoneticisi.Tools.KullaniciTurleri.user ? "selected" : "") + ">Kullanıcı</option>") : "")
+            </select>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Ad</div>
+                <input type="text" name="ad" placeholder="Ad" value="@Html.Raw(Model.ad)" required />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Soyad</div>
+                <input type="text" name="soyad" placeholder="Soyad" value="@Html.Raw(Model.soyad)" required />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Kullanıcı Adı</div>
+                <input type="text" name="username" placeholder="Kullanıcı Adı" value="@Html.Raw(Model.username)" required />
+            </div>            
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">e-Mail</div>
+                <input type="text" name="email" placeholder="e-Mail Adresi" value="@Html.Raw(Model.email)" required />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Telefon</div>
+                <input type="text" name="tel" placeholder="Telefon" value="@Html.Raw(Model.tel)" required />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">SGK Numarası</div>
+                <input type="text" name="sgk_no" placeholder="SGK Numarası" value="@Html.Raw(Model.sgk_no)" />
+            </div>
+            
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">T.C. Numarası</div>
+                <input type="text" name="tc_no" placeholder="T.C. Kimlik Numarası" value="@Html.Raw(Model.tc_no)" />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi Dairesi</div>
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" value="@Html.Raw(Model.vergi_dairesi)" />
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Vergi No</div>
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" value="@Html.Raw(Model.vergi_no)" />
+            </div>
+        </div>
+        <div class="item">
+            <div class="lbl">Adres</div>
+            <textarea name="adres" placeholder="Adres">@Html.Raw(Model.adres)</textarea>
+        </div>
+        <div class="row clearfix">
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Şifre</div>
+                <input type="password" name="password" placeholder="Şifre" />
+            </div>
+            <div class="item col-sm-6" style="margin:0 0 25px;">
+                <div class="lbl">Şifre(Tekrar)</div>
+                <input type="password" name="password_control" placeholder="Şifre(Tekrar)" />
+            </div>
+        </div>
+
+        <div class="item col-sm-12">
+            <input type="checkbox" name="mail_permission" value="Mail İzni" style="display:inline;width:40px;" @Html.Raw(Model.mail_permission == GorevYoneticisi.Tools.Permissions.granted ? "checked" : "") />Sistem bildirimlerini mail olarak almak istiyorum.
+        </div>
+        <div class="item col-sm-12">
+            <input type="checkbox" name="sms_permission" value="Sms İzni" style="display:inline;width:40px;" @Html.Raw(Model.sms_permission == GorevYoneticisi.Tools.Permissions.granted ? "checked" : "") />Sistem bildirimlerini sms olarak almak istiyorum.
+        </div>
+        
+    </div>
+    <div class="item" style="text-align:right;">
+        <button class="btn-first">GÖNDER</button>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('@Url.Action("KullaniciDuzenle")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                var uurl = $('#url').val();
+                if (uurl == "") {
+                    $("#_form")[0].reset();
+                }
+                alert("Kullanıcı Kaydedildi.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,78 @@
+﻿ @model GorevYoneticisi.Models.firma_musavir
+@{
+    ViewBag.Title = "Firma/Müşavir Düzenle";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Firma/Müşavir Düzenle</h2>
+</div>
+    <form class="form-default" id="_form">
+        <div class="clearfix">
+            <input id="url" name="url" type="hidden" value="@Model.url">
+            <div class="item col-md-6">
+                <select name="fm_tur">
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.firma" @((Model.fm_tur == GorevYoneticisi.Tools.FirmaMusavirTur.firma) ? "selected" : "")>Firma</option>
+                    <option value="@GorevYoneticisi.Tools.FirmaMusavirTur.musavir" @((Model.fm_tur == GorevYoneticisi.Tools.FirmaMusavirTur.musavir) ? "selected" : "")>Müşavir</option>
+                </select>
+            </div>
+            <div class="item col-md-6">
+                <input type="text" name="firma_adi" placeholder="Firma Adı" required value="@Html.Raw(Model.firma_adi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="text" name="vergi_dairesi" placeholder="Vergi Dairesi" required value="@Html.Raw(Model.vergi_dairesi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="text" name="vergi_no" placeholder="Vergi Numarası" required value="@Html.Raw(Model.vergi_no)" />
+            </div>
+            <div class="item">
+                <input type="number" min="1" max="30" name="konum_periyot" placeholder="Çalışan Konum Alma Aralığı(Dakika)" value="@Html.Raw(Model.konum_periyot)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="number" min="0" name="kullanici_sayisi" placeholder="Kullanıcı Sayısı" required value="@Html.Raw(Model.kullanici_sayisi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="number" min="0" name="musteri_sayisi" placeholder="Müşteri Sayısı" required value="@Html.Raw(Model.musteri_sayisi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="number" min="0" name="gorev_sayisi" placeholder="Görev Sayısı" required value="@Html.Raw(Model.gorev_sayisi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="number" min="0" name="surec_sayisi" placeholder="Süreç Sayısı" required value="@Html.Raw(Model.surec_sayisi)" />
+            </div>
+            <div class="item col-md-6">
+                <input type="number" min="0" name="proje_sayisi" placeholder="Proje Sayısı" required value="@Html.Raw(Model.proje_sayisi)" />
+            </div>
+            <div class="item col-md-6">
+                <textarea name="aciklama" placeholder="Açıklama">@Html.Raw(Model.aciklama)</textarea>
+            </div>
+            <div class="item col-md-6">
+                <textarea name="adres" placeholder="Adres" required>@Html.Raw(Model.adres)</textarea>
+            </div>
+        </div>
+        <div class="item" style="text-align:right;">
+            <button class="btn-first">GÖNDER</button>
+        </div>
+    </form>
+<script type="text/javascript">
+    $(function () {
+        $('#_form').validate({
+            rules: {
+                email: { email: true }
+            },
+            submitHandler: function (form) {
+                user_send($(form));
+            }
+        });
+    });
+    function user_send(form) {
+        $.post('@Url.Action("editFirmaMusavir", "FirmaMusavir")', form.serialize(), function (data) {
+            if (data.IsSuccess == true) {
+                alert("Firma bilgileri güncellenmiştir.");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,3949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Çalışmalar\Görev Yönetim Sistemi\Published</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/Admin/public/fonts/Flaticon.eot">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/Flaticon.svg">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/Flaticon.ttf">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/Flaticon.woff">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/fontawesome-webfont.eot">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/fontawesome-webfont.svg">
+      <publishTime>08/03/2017 02:34:50</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/fontawesome-webfont.ttf">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/fontawesome-webfont.woff">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/fontawesome-webfont.woff2">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/fonts/FontAwesome.otf">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/bootstrap.min.css">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/favicon.png">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/font-awesome.min.css">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/logo.png">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/query.css">
+      <publishTime>09/15/2017 02:50:19</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/sidebar-bg.png">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/img/style.css">
+      <publishTime>09/15/2017 02:50:20</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/bootstrap.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/script.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/additional-methods.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/additional-methods.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/jquery-validate.bootstrap-tooltip.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/jquery.validate.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/jquery.validate.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ar.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ar.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_bg.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_bg.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ca.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ca.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_cs.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_cs.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_da.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_da.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_de.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_de.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_el.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_el.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_es.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_es.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_es_AR.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_es_AR.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_et.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_et.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_eu.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_eu.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fa.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fa.min.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fi.js">
+      <publishTime>08/03/2017 02:34:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fi.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fr.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_fr.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_gl.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_gl.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_he.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_he.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_hr.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_hr.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_hu.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_hu.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_id.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_id.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_is.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_is.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_it.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_it.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ja.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ja.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ka.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ka.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_kk.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_kk.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ko.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ko.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_lt.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_lt.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_lv.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_lv.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_my.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_my.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_nl.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_nl.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_no.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_no.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pl.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pl.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pt_BR.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pt_BR.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pt_PT.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_pt_PT.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ro.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ro.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ru.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_ru.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_si.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_si.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sk.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sk.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sl.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sl.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sr.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sr.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sr_lat.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sr_lat.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sv.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_sv.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_th.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_th.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_tj.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_tj.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_tr.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_tr.min.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_uk.js">
+      <publishTime>08/03/2017 02:34:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_uk.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_vi.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_vi.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_zh.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_zh.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_zh_TW.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/messages_zh_TW.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_de.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_de.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_es_CL.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_es_CL.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_fi.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_fi.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_nl.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_nl.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_pt.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/js/validate/localization/methods_pt.min.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/query.css">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/script.js">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/public/style.css">
+      <publishTime>08/03/2017 02:34:53</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AdminLogin/Index.cshtml">
+      <publishTime>08/07/2017 17:11:42</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AHome/ayarlar.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AHome/Index.cshtml">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AHome/sifreAyarlari.cshtml">
+      <publishTime>08/11/2017 17:33:20</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/FirmaMusavir/firmaMusavirDuzenle.cshtml">
+      <publishTime>09/30/2017 19:10:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/FirmaMusavir/Index.cshtml">
+      <publishTime>10/06/2017 01:16:10</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/FirmaMusavir/yeniFirmaMusavir.cshtml">
+      <publishTime>10/06/2017 09:39:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Gorevler/GorevBilgisi.cshtml">
+      <publishTime>10/06/2017 01:20:07</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Gorevler/Index.cshtml">
+      <publishTime>10/06/2017 01:03:32</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Kullanicilar/Index.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Kullanicilar/kullaniciDuzenle.cshtml">
+      <publishTime>09/16/2017 15:27:38</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Kullanicilar/yeniKullanici.cshtml">
+      <publishTime>10/06/2017 09:39:24</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Mesajlar/Index.cshtml">
+      <publishTime>08/25/2017 03:38:39</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Mesajlarim/Index.cshtml">
+      <publishTime>08/25/2017 03:33:04</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Mesajlarim/MesajimGoster.cshtml">
+      <publishTime>09/15/2017 02:50:20</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Musteriler/Index.cshtml">
+      <publishTime>09/14/2017 04:27:37</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Musteriler/Musteri.cshtml">
+      <publishTime>10/05/2017 04:49:19</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Projeler/Index.cshtml">
+      <publishTime>10/06/2017 01:04:03</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Projeler/ProjeBilgisi.cshtml">
+      <publishTime>10/06/2017 01:20:29</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/AdminLayout.cshtml">
+      <publishTime>09/02/2017 14:47:35</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Surecler/Index.cshtml">
+      <publishTime>10/06/2017 01:09:46</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Surecler/SurecBilgisi.cshtml">
+      <publishTime>10/06/2017 01:21:08</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/web.config">
+      <publishTime>07/29/2017 04:14:51</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/YardimSayfasi/Index.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/YardimSayfasi/YardimDuzenle.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/YardimSayfasi/YardimEkle.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/17/2017 05:30:15</publishTime>
+    </File>
+    <File Include="bin/CKFinder.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/17/2017 05:30:19</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>07/17/2017 05:30:19</publishTime>
+    </File>
+    <File Include="bin/GorevYoneticisi.dll">
+      <publishTime>10/13/2017 15:51:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>07/17/2017 05:30:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>07/17/2017 05:30:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>07/17/2017 05:30:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>07/17/2017 05:30:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>07/17/2017 05:36:28</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>07/17/2017 05:36:41</publishTime>
+    </File>
+    <File Include="bin/MySql.Web.dll">
+      <publishTime>07/17/2017 05:36:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/17/2017 05:30:17</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>07/17/2017 05:30:22</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/18/2017 01:27:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/18/2017 01:28:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>09/18/2017 01:28:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/17/2017 05:30:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/17/2017 05:30:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/17/2017 05:30:14</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/17/2017 05:30:15</publishTime>
+    </File>
+    <File Include="ckeditor/adapters/jquery.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/build-config.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/CHANGES.md">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/ckeditor.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/config.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/contents.css">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/af.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ar.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/bg.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/bn.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/bs.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ca.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/cs.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/cy.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/da.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/de-ch.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/de.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/el.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/en-au.js">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="ckeditor/lang/en-ca.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/en-gb.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/en.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/eo.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/es.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/et.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/eu.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/fa.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/fi.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/fo.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/fr-ca.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/fr.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/gl.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/gu.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/he.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/hi.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/hr.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/hu.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/id.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/is.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/it.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ja.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ka.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/km.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ko.js">
+      <publishTime>08/03/2017 02:35:31</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ku.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/lt.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/lv.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/mk.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/mn.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ms.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/nb.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/nl.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/no.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/pl.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/pt-br.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/pt.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ro.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ru.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/si.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sk.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sl.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sq.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sr-latn.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sr.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/sv.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/th.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/tr.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/tt.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/ug.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/uk.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/vi.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/zh-cn.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/lang/zh.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/LICENSE.md">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/af.js">
+      <publishTime>08/03/2017 02:35:32</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ar.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/bg.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ca.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/cs.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/cy.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/da.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/de.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/el.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/en.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/eo.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/es.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/et.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/eu.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/fa.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/fi.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/fo.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/fr.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/gl.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/gu.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/he.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/hi.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/hr.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/hu.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/id.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/it.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ja.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/km.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ko.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ku.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/lt.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/lv.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/mk.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/mn.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/nb.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/nl.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/no.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/pl.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/pt.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ro.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ru.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/si.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sk.js">
+      <publishTime>08/03/2017 02:35:33</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sl.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sq.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sr.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/sv.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/th.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/tr.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/tt.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/ug.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/uk.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/vi.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/zh.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/about/dialogs/about.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/about/dialogs/logo_ckeditor.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/clipboard/dialogs/paste.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/dialog/dialogDefinition.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/icons.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/icons_hidpi.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/image/dialogs/image.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/image/images/noimage.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/link/dialogs/anchor.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/link/dialogs/link.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/link/images/anchor.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/link/images/hidpi/anchor.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/magicline/images/hidpi/icon-rtl.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/magicline/images/hidpi/icon.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/magicline/images/icon-rtl.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/magicline/images/icon.png">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/pastefromword/filter/default.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/scayt/CHANGELOG.md">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/scayt/dialogs/options.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/scayt/dialogs/toolbar.css">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/scayt/LICENSE.md">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/scayt/README.md">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/af.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ar.js">
+      <publishTime>08/03/2017 02:35:34</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/bg.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ca.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/cs.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/cy.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/da.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/de-ch.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/de.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/el.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/en-gb.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/en.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/eo.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/es.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/et.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/eu.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/fa.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/fi.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/fr.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/gl.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/he.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/hr.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/hu.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/id.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/it.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ja.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/km.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ko.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ku.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/lt.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/lv.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/nb.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/nl.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/no.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/pl.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/pt-br.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/pt.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ru.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/si.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/sk.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/sl.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/sq.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/sv.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/th.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/tr.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/tt.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/ug.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/uk.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/vi.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js">
+      <publishTime>08/03/2017 02:35:35</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/zh.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/specialchar/dialogs/specialchar.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/table/dialogs/table.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/tabletools/dialogs/tableCell.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/dialogs/ciframe.html">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/dialogs/tmpFrameset.html">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/dialogs/wsc.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/dialogs/wsc.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/dialogs/wsc_ie.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/LICENSE.md">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/plugins/wsc/README.md">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/README.md">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/dialog.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/dialog_ie.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/dialog_ie7.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/dialog_ie8.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/dialog_iequirks.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor_gecko.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor_ie.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor_ie7.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor_ie8.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/editor_iequirks.css">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/icons.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/icons_hidpi.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/arrow.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/close.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/hidpi/close.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/hidpi/lock-open.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/hidpi/lock.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/hidpi/refresh.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/lock-open.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/lock.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/refresh.png">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/images/spinner.gif">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/skins/moono/readme.md">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckeditor/styles.js">
+      <publishTime>08/03/2017 02:35:36</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Debug/CKFinder.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Debug/CKFinder_FileEditor.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Debug/CKFinder_ImageResize.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Debug/CKFinder_Watermark.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Release/CKFinder.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Release/CKFinder_FileEditor.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Release/CKFinder_ImageResize.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/bin/Release/CKFinder_Watermark.dll">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/changelog.txt">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/ckfinder.html">
+      <publishTime>08/03/2017 02:35:19</publishTime>
+    </File>
+    <File Include="ckfinder/ckfinder.js">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/ckfinder_v1.js">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/config.ascx">
+      <publishTime>08/03/2017 02:37:15</publishTime>
+    </File>
+    <File Include="ckfinder/config.js">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/connector.aspx">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/bg.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/ca.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/cs.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/cy.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/da.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/de.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/el.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/en.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/eo.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/es-mx.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/es.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/et.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/fa.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/fi.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/fr.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/gu.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/he.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/hi.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/hr.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/hu.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/it.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/ja.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/lt.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/lv.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/nb.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/nl.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/nn.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/no.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/pl.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/pt-br.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/ro.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/ru.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/sk.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/sl.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/sr.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/sv.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/tr.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/vi.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/zh-cn.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/core/connector/aspx/lang/zh-tw.xml">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/001.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/002.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/003.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/004.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/005.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/006.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/007.html">
+      <publishTime>08/03/2017 02:35:20</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/008.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/009.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/010.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/011.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/012.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/013.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/014.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/015.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/header.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/license.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/files/toc.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/cs/index.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/001.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/002.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/003.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/004.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/005.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/006.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/007.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/008.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/009.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/010.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/011.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/012.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/013.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/014.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/015.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/header.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/license.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/files/toc.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/en/index.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/001.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/002.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/003.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/004.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/005.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/006.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/007.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/008.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/009.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/010.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/011.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/012.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/013.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/header.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/001.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/002.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/003.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/004.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/005.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/006.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/007.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/008.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/009.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/010.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/011.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/012.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/013.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/014.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/015.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/016.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/017.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/018.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/019.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/images/020.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/license.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/files/toc.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es-mx/index.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/001.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/002.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/003.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/004.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/005.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/006.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/007.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/008.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/009.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/010.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/011.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/012.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/013.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/header.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/001.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/002.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/003.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/004.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/005.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/006.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/007.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/008.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/009.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/010.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/011.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/012.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/013.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/014.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/015.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/016.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/017.gif">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/018.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/019.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/images/020.png">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/license.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/files/toc.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/es/index.html">
+      <publishTime>08/03/2017 02:35:21</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/001.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/002.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/003.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/004.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/005.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/006.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/007.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/008.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/009.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/010.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/011.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/012.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/013.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/header.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/001.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/002.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/003.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/004.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/005.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/006.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/007.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/008.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/009.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/010.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/011.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/012.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/013.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/014.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/015.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/016.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/017.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/018.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/019.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/images/020.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/license.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/files/toc.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/fi/index.html">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/002.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/003.gif">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_basket_clear.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_basket_drag.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_basket_empty.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_basket_file_menu.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_basket_remove.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_already_exists.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_copied.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_delete.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_display_01.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_display_02.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_display_03.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_display_04.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_drag_copy.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_drag_move.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_menu.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_moved.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_pane.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_rename.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize.png">
+      <publishTime>08/03/2017 02:35:22</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize_both.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize_new.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize_overwrite.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize_resized.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_resize_thumbnails.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_select_hovered.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_select_selected.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_select_unselected.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_view_list.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_file_view_thumbnails.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_collapse.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_copied_from_basket.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_delete.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_expand.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_loading.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_menu.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_moved_from_basket.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_new.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_pane.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_rename.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_folder_select.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_interface.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_menu_arrow.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_menu_arrows.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_resize_lock.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_resize_reset.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_resize_unlock.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_settings.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_status_empty.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_status_file.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_status_folder.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_toolbar.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_toolbar_help.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_toolbar_refresh.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_upload_01.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_upload_03.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_upload_04.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_upload_09.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/images/CKFinder_upload_10.png">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/other/help.css">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/files/other/help.js">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/001.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/002.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/003.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/004.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/005.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/006.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/007.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/008.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/009.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/010.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/011.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/012.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/013.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/header.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/001.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/002.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/003.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/004.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/005.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/006.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/007.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/008.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/009.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/010.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/011.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/012.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/013.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/014.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/015.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/016.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/017.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/018.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/019.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/images/020.gif">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/license.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/files/toc.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/lt/index.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/001.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/002.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/003.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/004.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/005.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/006.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/007.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/008.html">
+      <publishTime>08/03/2017 02:35:23</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/009.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/010.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/011.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/012.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/013.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/014.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/015.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/header.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/license.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/suggestions.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/files/toc.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/help/pl/index.html">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/install.txt">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/bg.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/ca.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/cs.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/cy.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/da.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/de.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/el.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/en.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/eo.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/es-mx.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/es.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/et.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/fa.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/fi.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/fr.js">
+      <publishTime>08/03/2017 02:35:24</publishTime>
+    </File>
+    <File Include="ckfinder/lang/gu.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/he.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/hi.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/hr.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/hu.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/it.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/ja.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/lt.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/lv.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/nb.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/nl.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/nn.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/no.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/pl.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/pt-br.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/ro.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/ru.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/sk.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/sl.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/sr.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/sv.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/tr.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/vi.js">
+      <publishTime>08/03/2017 02:35:25</publishTime>
+    </File>
+    <File Include="ckfinder/lang/zh-cn.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/lang/zh-tw.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/lang/_translationstatus.txt">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/license.txt">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/dummy/lang/en.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/dummy/lang/pl.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/dummy/plugin.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/addon/mode/overlay.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/lib/codemirror.css">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/lib/codemirror.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/LICENSE">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/clike/clike.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/css/css.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/htmlmixed/htmlmixed.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/javascript/javascript.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/markdown/markdown.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/perl/perl.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/python/python.js">
+      <publishTime>08/03/2017 02:35:26</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/rst/rst.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/ruby/ruby.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/sass/sass.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/sql/sql.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/stex/stex.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/codemirror/mode/xml/xml.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/fileeditor/plugin.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/colorbox.css">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/border.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/controls.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderBottomCenter.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderBottomLeft.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderBottomRight.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderMiddleLeft.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderMiddleRight.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderTopCenter.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderTopLeft.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/ie6/borderTopRight.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/loading.gif">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/loading_background.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/images/overlay.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/jquery.colorbox-min.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/jquery.min.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/gallery/colorbox/license.txt">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/imageresize/images/mini.gif">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/imageresize/plugin.js">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/plugins/watermark/logo.gif">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/app.css">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/assets/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/assets/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/assets/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/assets/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/assets/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/host.css">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/ai.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/avi.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/bmp.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/cs.png">
+      <publishTime>08/03/2017 02:35:27</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/default.icon.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/dll.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/doc.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/docx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/exe.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/fla.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/gif.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/jpg.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/js.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/mdb.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/mp3.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/ogg.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/pdf.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/ppt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/pptx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/rdp.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/swf.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/swt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/txt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/vsd.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/xls.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/xlsx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/xml.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/16/zip.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/ai.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/avi.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/cs.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/default.icon.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/dll.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/doc.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/docx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/exe.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/fla.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/gif.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/jpg.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/js.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/mdb.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/mp3.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/ogg.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/pdf.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/ppt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/pptx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/rdp.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/swf.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/swt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/txt.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/vsd.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/xls.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/xlsx.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/xml.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/images/icons/32/zip.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/skin.js">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/bootstrap/uipanel.css">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/app.css">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/host.css">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/ckffolder.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/ckffolderopened.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/ckfminus.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/ckfnothumb.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/ckfplus.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/ai.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/avi.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/bmp.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/cs.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/default.icon.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/dll.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/doc.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/docx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/exe.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/fla.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/gif.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/jpg.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/js.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/mdb.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/mp3.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/ogg.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/pdf.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/ppt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/pptx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/rdp.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/swf.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/swt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/txt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/vsd.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/xls.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/xlsx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/xml.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/16/zip.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/ai.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/avi.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/bmp.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/cs.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/default.icon.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/dll.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/doc.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/docx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/exe.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/fla.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/gif.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/jpg.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/js.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/mdb.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/mp3.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/ogg.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/ogg.png">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/pdf.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/ppt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/pptx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/rdp.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/swf.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/swt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/txt.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/vsd.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/xls.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/xlsx.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/xml.gif">
+      <publishTime>08/03/2017 02:35:28</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/icons/32/zip.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/loaders/16x16.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/loaders/32x32.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/spacer.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/sprites.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/sprites_ie6.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/add.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/clear_basket.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/delete.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/download.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/help.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/maximize.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/refresh.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/settings.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/images/toolbar/view.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/richcombo.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/skin.js">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/kama/uipanel.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/app.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/host.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/ckffolder.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/ckffolderopened.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/ckfminus.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/ckfnothumb.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/ckfplus.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/dialog_sides.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/dialog_sides.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/dialog_sides_rtl.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/ai.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/avi.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/bmp.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/cs.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/default.icon.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/dll.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/doc.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/docx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/exe.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/fla.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/gif.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/jpg.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/js.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/mdb.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/mp3.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/pdf.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/ppt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/pptx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/rdp.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/swf.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/swt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/txt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/vsd.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/xls.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/xlsx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/xml.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/16/zip.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/ai.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/avi.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/bmp.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/cs.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/default.icon.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/dll.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/doc.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/docx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/exe.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/fla.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/gif.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/jpg.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/js.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/mdb.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/mp3.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/pdf.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/ppt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/pptx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/rdp.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/swf.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/swt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/txt.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/vsd.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/xls.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/xlsx.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/xml.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/icons/32/zip.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/loaders/16x16.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/loaders/32x32.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/spacer.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/sprites.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/sprites_ie6.png">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/add.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/clear_basket.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/delete.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/download.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/help.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/maximize.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/refresh.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/settings.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar/view.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/images/toolbar_start.gif">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/richcombo.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/skin.js">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/skins/v1/uipanel.css">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/translations.txt">
+      <publishTime>08/03/2017 02:35:29</publishTime>
+    </File>
+    <File Include="ckfinder/userfiles/.htaccess">
+      <publishTime>08/03/2017 02:35:30</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/17/2017 05:30:06</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/17/2017 05:30:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/17/2017 05:30:06</publishTime>
+    </File>
+    <File Include="Models/gyModel.edmx.diagram">
+      <publishTime>10/09/2017 05:06:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/18/2017 01:28:04</publishTime>
+    </File>
+    <File Include="public/fonts/Flaticon.eot">
+      <publishTime>08/03/2017 02:31:17</publishTime>
+    </File>
+    <File Include="public/fonts/Flaticon.svg">
+      <publishTime>08/03/2017 02:31:17</publishTime>
+    </File>
+    <File Include="public/fonts/Flaticon.ttf">
+      <publishTime>08/03/2017 02:31:17</publishTime>
+    </File>
+    <File Include="public/fonts/Flaticon.woff">
+      <publishTime>08/03/2017 02:31:17</publishTime>
+    </File>
+    <File Include="public/fonts/fontawesome-webfont.eot">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/fonts/fontawesome-webfont.svg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/fonts/fontawesome-webfont.ttf">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/fonts/fontawesome-webfont.woff">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/fonts/fontawesome-webfont.woff2">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/fonts/FontAwesome.otf">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/images/close.png">
+      <publishTime>08/25/2017 15:20:43</publishTime>
+    </File>
+    <File Include="public/images/loading.gif">
+      <publishTime>08/25/2017 15:20:44</publishTime>
+    </File>
+    <File Include="public/images/next.png">
+      <publishTime>08/25/2017 15:20:44</publishTime>
+    </File>
+    <File Include="public/images/prev.png">
+      <publishTime>08/25/2017 15:20:46</publishTime>
+    </File>
+    <File Include="public/img/01.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/01hover.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/all-menu-blue.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/all-menu.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/back.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/bootstrap.min.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/contact-home-bg.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/courier.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/font-awesome.min.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/foot-bg.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/fullcalendar.min.css">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="public/img/fullcalendar.print.min.css">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="public/img/haber1.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/jquery.mCustomScrollbar.min.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/kurumsal-page.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/lightbox.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/logo.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/logoicon.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/news-bg.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/news-bg.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/noimage.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/nouser.jpg">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="public/img/owl.carousel.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/proje1.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/query.css">
+      <publishTime>08/25/2017 15:20:46</publishTime>
+    </File>
+    <File Include="public/img/reset.css">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/services-bg.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/sidebar-bg.png">
+      <publishTime>08/11/2017 17:33:22</publishTime>
+    </File>
+    <File Include="public/img/slider-1.jpg">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/img/style.css">
+      <publishTime>10/09/2017 17:42:42</publishTime>
+    </File>
+    <File Include="public/img/tanitim-resmi.png">
+      <publishTime>08/03/2017 02:31:18</publishTime>
+    </File>
+    <File Include="public/js/bootstrap.min.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/customMap.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/fastclick.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/googlemap.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/isonsc.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/isonsc.min.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/jquery-1.11.2.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/jquery-2.1.1.min.js">
+      <publishTime>08/03/2017 02:31:19</publishTime>
+    </File>
+    <File Include="public/js/jquery.ba-bbq.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/jquery.fullPage.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/jquery.smooth-scroll.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/lightbox.min.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/modernzr.min.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/moment.min.js">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="public/js/owl.carousel.min.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/roundslider.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/script.js">
+      <publishTime>10/04/2017 14:57:05</publishTime>
+    </File>
+    <File Include="public/js/script.js.712_1.15.partial">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/tr.js">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="public/js/validate/additional-methods.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/validate/additional-methods.min.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/validate/jquery-validate.bootstrap-tooltip.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/validate/jquery.validate.js">
+      <publishTime>08/03/2017 02:31:20</publishTime>
+    </File>
+    <File Include="public/js/validate/jquery.validate.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ar.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ar.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_bg.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_bg.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ca.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ca.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_cs.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_cs.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_da.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_da.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_de.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_de.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_el.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_el.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_es.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_es.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_es_AR.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_es_AR.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_et.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_et.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_eu.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_eu.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fa.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fa.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fi.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fi.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fr.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_fr.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_gl.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_gl.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_he.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_he.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_hr.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_hr.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_hu.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_hu.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_id.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_id.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_is.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_is.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_it.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_it.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ja.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ja.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ka.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ka.min.js">
+      <publishTime>08/03/2017 02:31:21</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_kk.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_kk.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ko.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ko.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_lt.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_lt.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_lv.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_lv.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_my.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_my.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_nl.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_nl.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_no.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_no.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pl.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pl.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pt_BR.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pt_BR.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pt_PT.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_pt_PT.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ro.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ro.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ru.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_ru.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_si.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_si.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sk.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sk.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sl.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sl.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sr.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sr.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sr_lat.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sr_lat.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sv.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_sv.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_th.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_th.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_tj.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_tj.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_tr.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_tr.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_uk.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_uk.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_vi.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_vi.min.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_zh.js">
+      <publishTime>08/03/2017 02:31:22</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_zh.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_zh_TW.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/messages_zh_TW.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_de.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_de.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_es_CL.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_es_CL.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_fi.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_fi.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_nl.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_nl.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_pt.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/js/validate/localization/methods_pt.min.js">
+      <publishTime>08/03/2017 02:31:23</publishTime>
+    </File>
+    <File Include="public/upload/img/Temp/t_soru_Image.jpg">
+      <publishTime>08/03/2017 02:31:24</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/17/2017 05:30:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>07/17/2017 05:30:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>07/17/2017 05:30:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>07/17/2017 05:30:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/17/2017 05:30:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>07/17/2017 05:30:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>07/17/2017 05:30:17</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>07/17/2017 05:30:17</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>07/17/2017 05:30:15</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/17/2017 05:30:16</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/17/2017 05:30:16</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>09/24/2017 19:05:40</publishTime>
+    </File>
+    <File Include="Views/Home/ayarlar.cshtml">
+      <publishTime>08/25/2017 15:20:43</publishTime>
+    </File>
+    <File Include="Views/Home/excelUpload.cshtml">
+      <publishTime>10/06/2017 09:39:24</publishTime>
+    </File>
+    <File Include="Views/Home/Firma.cshtml">
+      <publishTime>09/30/2017 19:13:29</publishTime>
+    </File>
+    <File Include="Views/Home/Gorev.cshtml">
+      <publishTime>10/09/2017 06:52:06</publishTime>
+    </File>
+    <File Include="Views/Home/Gorevler.cshtml">
+      <publishTime>10/06/2017 01:10:47</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/13/2017 13:33:03</publishTime>
+    </File>
+    <File Include="Views/Home/Kullanici.cshtml">
+      <publishTime>09/16/2017 15:27:46</publishTime>
+    </File>
+    <File Include="Views/Home/Kullanicilar.cshtml">
+      <publishTime>08/11/2017 17:33:21</publishTime>
+    </File>
+    <File Include="Views/Home/MainPage.cshtml">
+      <publishTime>10/07/2017 03:26:26</publishTime>
+    </File>
+    <File Include="Views/Home/Mesaj.cshtml">
+      <publishTime>08/25/2017 15:20:46</publishTime>
+    </File>
+    <File Include="Views/Home/Mesajlar.cshtml">
+      <publishTime>08/25/2017 03:33:01</publishTime>
+    </File>
+    <File Include="Views/Home/Musteri.cshtml">
+      <publishTime>10/05/2017 04:48:02</publishTime>
+    </File>
+    <File Include="Views/Home/Musteriler.cshtml">
+      <publishTime>10/06/2017 09:39:24</publishTime>
+    </File>
+    <File Include="Views/Home/Proje.cshtml">
+      <publishTime>10/09/2017 07:19:08</publishTime>
+    </File>
+    <File Include="Views/Home/Projeler.cshtml">
+      <publishTime>10/05/2017 03:30:56</publishTime>
+    </File>
+    <File Include="Views/Home/raporlar.cshtml">
+      <publishTime>10/09/2017 17:42:42</publishTime>
+    </File>
+    <File Include="Views/Home/sifreAyarlari.cshtml">
+      <publishTime>08/25/2017 15:20:45</publishTime>
+    </File>
+    <File Include="Views/Home/sifremiUnuttum.cshtml">
+      <publishTime>08/07/2017 20:53:47</publishTime>
+    </File>
+    <File Include="Views/Home/sifreSifirla.cshtml">
+      <publishTime>08/09/2017 16:56:43</publishTime>
+    </File>
+    <File Include="Views/Home/Surec.cshtml">
+      <publishTime>10/09/2017 07:18:13</publishTime>
+    </File>
+    <File Include="Views/Home/Surecler.cshtml">
+      <publishTime>10/05/2017 03:31:04</publishTime>
+    </File>
+    <File Include="Views/Home/Uyari.cshtml">
+      <publishTime>08/07/2017 16:59:43</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>09/28/2017 02:30:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutIc.cshtml">
+      <publishTime>10/04/2017 14:57:05</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/17/2017 05:30:06</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/17/2017 05:30:06</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/13/2017 15:51:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

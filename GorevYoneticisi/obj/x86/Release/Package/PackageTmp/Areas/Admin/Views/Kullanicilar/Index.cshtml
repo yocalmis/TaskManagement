@@ -1,0 +1,65 @@
+﻿@model List<GorevYoneticisi.Models.kullanicilar>
+@{
+    ViewBag.Title = "Kullanıcı Hesapları";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="top">
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    <h2>Kullanıcı Hesapları</h2>
+</div>
+
+<div class="ilan-list">
+    <a id="yeni-uye" href="@Url.Action("yeniKullanici", "Kullanicilar")">+</a>
+    <div class="head clearfix">
+        <h4 class="col-sm-4">AD SOYAD</h4>
+        <h4 class="col-sm-3">E-MAIL</h4>
+        <h4 class="col-sm-3">DURUM</h4>
+        <h4 class="col-sm-2"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.kullanicilar user in Model)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-4">@Html.Raw(user.ad + " " + user.soyad)</div>
+            <div class="col-sm-3">@Html.Raw(user.email)</div>
+            <div class="col-sm-3">@Html.Raw(GorevYoneticisi.Tools.durumlar.getDurum(user.flag))</div>
+            <div class="col-sm-2">
+                @Html.Raw(user.flag == GorevYoneticisi.Tools.durumlar.emailOnayBekliyor ? "<a id=\"teklif-button\" href=\"#\" data-id=\"" + user.url + "\" onclick=\"emailOnay('" + user.url + "')\">e-Mail Onayla</a>" : "")
+                <a id="teklif-button" href="@Html.Raw(Url.Action("kullaniciDuzenle", "Kullanicilar", new { id = user.url }))"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a id="wrong-button" href="#" data-id="@Html.Raw(user.url)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    }
+</div>
+
+<script type="text/javascript">
+    function sil(id) {
+        $.ajax({
+            url: "@Url.Action("silKullanici", "Kullanicilar")",
+            data: { id: id },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+    $(document).on("click", "#wrong-button", function (e) {
+        e.preventDefault();
+        sil($(this).data("id"));
+    });
+    function emailOnay(id) {
+        $.ajax({
+            url: "@Url.Action("emailOnayla", "Kullanicilar")",
+            data: { id: id },
+        dataType: "json",
+        type: "POST",
+        success: function (data) {
+            location.reload();
+        }
+    });
+    }
+</script>
+
+

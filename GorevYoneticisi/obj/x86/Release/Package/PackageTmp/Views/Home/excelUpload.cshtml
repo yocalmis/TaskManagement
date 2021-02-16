@@ -1,0 +1,97 @@
+﻿@model List<GorevYoneticisi.Models.musteriler>
+@{
+    ViewBag.Title = "Excel Firma Upload";
+    Layout = "~/Views/Shared/_LayoutIc.cshtml";
+    int index = 1;
+}
+<div class="top">
+    <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+    <h2>Excel Firma Upload</h2>
+    <form class="form-default2" id="dosya_form">
+        <div class="inp">
+            <input type="file" name="fileUpload" id="fileUpload" style="width: 100%;" required>
+        </div>
+    </form>
+    
+</div>
+<div class="ilan-list excel-list">
+    <a id="listeyi_kaydet" class="btn-first" href="#" onclick="tempFirmalariKaydet()"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
+    <div class="head clearfix">
+        <h4 class="col-sm-1"></h4>        
+        <h4 class="col-sm-2">Firma İsmi</h4>    
+        <h4 class="col-sm-1">Telefon</h4>        
+        <h4 class="col-sm-1">Vergi Dairesi</h4>
+        <h4 class="col-sm-1">Vergi Numarası</h4>
+        <h4 class="col-sm-2">Adres</h4>
+        <h4 class="col-sm-3">Açıklama</h4>
+        <h4 class="col-sm-1"></h4>
+    </div>
+    @foreach (GorevYoneticisi.Models.musteriler user in Model)
+    {
+        <div class="satir clearfix">
+            <div class="col-sm-1">@Html.Raw(index)</div>
+            <div class="col-sm-2">@Html.Raw(user.firma_adi)</div>
+            <div class="col-sm-1">@Html.Raw(user.tel)</div>
+            <div class="col-sm-1">@Html.Raw(user.vergi_dairesi)</div>
+            <div class="col-sm-1">@Html.Raw(user.vergi_no)</div>
+            <div class="col-sm-2">@Html.Raw(user.adres)</div>
+            <div class="col-sm-3">@Html.Raw(user.aciklama)</div>
+            <div class="col-sm-1">
+                <a id="wrong-button" href="#" onclick="silTempFirma(@user.id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        index++;
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("input[type=file]").change(function () {
+            $("#dosya_form").submit();
+        })
+    });
+    $("#dosya_form").submit(function () {
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: '@Url.Action("ExcelUploadF")',
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {
+                console.log(data);
+                if (data.IsSuccess == false) {
+                    alert(data.Message);
+                }
+                else if (data.IsSuccess == true) {
+                    window.location.replace("@Html.Raw(GorevYoneticisi.Tools.config.url + "excelUpload")?sifirla=1");
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+    });
+    function silTempFirma(id) {
+        $.post('@Url.Action("silTempFirma")', { id: id }, function (data) {
+            if (data == true) {
+                window.location.replace("@Html.Raw(GorevYoneticisi.Tools.config.url + "excelUpload")?sifirla=1");
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+    function tempFirmalariKaydet() {
+        $.post('@Url.Action("tempFirmalariKaydet")', { }, function (data) {
+            if (data.IsSuccess == true) {
+                alert(data.Message);
+                location.reload();
+            }
+            else {
+                alert(data.Message);
+            }
+        });
+    }
+</script>
+
